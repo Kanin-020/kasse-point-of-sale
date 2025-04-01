@@ -5,7 +5,6 @@
  */
 package com.control;
 
-
 import java.sql.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,13 +12,11 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.DAO.DAOProducto;
-import com.modelo.Inventarista;
-import com.modelo.Producto;
-import com.vista.VistaAbastecerProducto;
-import com.vista.VistaVentanaInventarista;
-
-
+import com.dao.ProductDAO;
+import com.data.Product;
+import com.utils.DatabaseConnection;
+import com.view.VistaAbastecerProducto;
+import com.view.VistaVentanaInventarista;
 
 /**
  *
@@ -30,7 +27,8 @@ public class ControlAbastecerProducto implements ActionListener {
     private VistaAbastecerProducto vistaAbastecerProducto;
     private VistaVentanaInventarista vistaVentanaInventarista;
 
-    public ControlAbastecerProducto(VistaAbastecerProducto vistaAbastecerProducto, VistaVentanaInventarista vistaVentanaInventarista) {
+    public ControlAbastecerProducto(VistaAbastecerProducto vistaAbastecerProducto,
+            VistaVentanaInventarista vistaVentanaInventarista) {
         this.vistaAbastecerProducto = vistaAbastecerProducto;
         this.vistaVentanaInventarista = vistaVentanaInventarista;
 
@@ -44,13 +42,17 @@ public class ControlAbastecerProducto implements ActionListener {
         if (vistaAbastecerProducto.getBotonAbastecer() == evento.getSource()) {
             try {
                 if (vistaAbastecerProducto.getFieldCantidad().getText().length() == 0) {
-                    JOptionPane.showMessageDialog(null, "Campo de cantidad vacio", "Alerta", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Campo de cantidad vacio", "Alerta",
+                            JOptionPane.WARNING_MESSAGE);
                 } else {
 
-                    Producto producto = new Producto(Long.parseLong(vistaAbastecerProducto.getFieldCodigo().getText()),
-                            vistaAbastecerProducto.getFieldNombre().getText(), Integer.parseInt(vistaAbastecerProducto.getFieldCantidad().getText()));
-                    Inventarista inventarista = new Inventarista(producto);
-                    inventarista.abastecer();
+                    Product producto = new Product(
+                            Integer.parseInt(vistaAbastecerProducto.getFieldCodigo().getText()),
+                            vistaAbastecerProducto.getFieldNombre().getText(),
+                            Integer.parseInt(vistaAbastecerProducto.getFieldCantidad().getText()));
+
+                    //TODO abastecer
+                   
                     ConexionTabla();
                     vistaAbastecerProducto.dispose();
                 }
@@ -62,35 +64,42 @@ public class ControlAbastecerProducto implements ActionListener {
             vistaAbastecerProducto.dispose();
         }
         if (vistaAbastecerProducto.getBotonComprobar() == evento.getSource()) {
-            ArrayList<Producto> lista = new ArrayList<Producto>();
+            ArrayList<Product> lista = new ArrayList<Product>();
             try {
-                if ((vistaAbastecerProducto.getFieldCodigo().getText().length() == 0) && (vistaAbastecerProducto.getFieldNombre().getText().length() == 0)) {
+                if ((vistaAbastecerProducto.getFieldCodigo().getText().length() == 0)
+                        && (vistaAbastecerProducto.getFieldNombre().getText().length() == 0)) {
                     JOptionPane.showMessageDialog(null, "Campos vacios", "Alerta", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    long aux;
+                    int aux;
                     if (vistaAbastecerProducto.getFieldCodigo().getText().length() == 0) {
                         aux = 0;
                     } else {
-                        aux = Long.parseLong(vistaAbastecerProducto.getFieldCodigo().getText());
+                        aux = Integer.parseInt(vistaAbastecerProducto.getFieldCodigo().getText());
                     }
-                    Producto producto = new Producto(aux, vistaAbastecerProducto.getFieldNombre().getText());
-                    Inventarista inventarista = new Inventarista(producto);
-                    lista = inventarista.consultar();
+                    Product producto = new Product(aux, vistaAbastecerProducto.getFieldNombre().getText());
+                    
+                    lista = ProductDAO.select(producto);
+
                     if (lista.isEmpty() == false) {
-                        JOptionPane.showMessageDialog(null, "Producto encontrado", "Proceso exitoso", JOptionPane.INFORMATION_MESSAGE);
-                        vistaAbastecerProducto.getFieldCodigo().setText(String.valueOf(lista.get(0).getCodigo()));
-                        vistaAbastecerProducto.getFieldNombre().setText(lista.get(0).getNombre());
+                        JOptionPane.showMessageDialog(null, "Producto encontrado", "Proceso exitoso",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        vistaAbastecerProducto.getFieldCodigo().setText(String.valueOf(lista.get(0).getCode()));
+                        vistaAbastecerProducto.getFieldNombre().setText(lista.get(0).getName());
                         vistaAbastecerProducto.getFieldCodigo().setEnabled(false);
                         vistaAbastecerProducto.getFieldNombre().setEnabled(false);
                         vistaAbastecerProducto.getBotonAbastecer().setEnabled(true);
                         vistaAbastecerProducto.getBotonComprobar().setEnabled(false);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Producto no encontrado", "Alerta", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Producto no encontrado", "Alerta",
+                                JOptionPane.WARNING_MESSAGE);
                         vistaAbastecerProducto.getBotonAbastecer().setEnabled(false);
                     }
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Entrada invalida", "Alerta", JOptionPane.WARNING_MESSAGE);
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
         }
 
@@ -113,11 +122,10 @@ public class ControlAbastecerProducto implements ActionListener {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            DAOProducto enlace = new DAOProducto();
-            Connection con = enlace.getConeccion();
+            Connection connection = DatabaseConnection.getInstance().getConnection();
 
             String orden = "SELECT codigo, nombre, categoria, cantidad, costo, precio_venta FROM productos";
-            ps = con.prepareStatement(orden);
+            ps = connection.prepareStatement(orden);
             rs = ps.executeQuery();
 
             ResultSetMetaData metadata = rs.getMetaData();

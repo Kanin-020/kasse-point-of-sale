@@ -11,14 +11,14 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.DAO.DAOUsuario;
-import com.modelo.Manager;
-import com.vista.VistaCrearUsuario;
-import com.vista.VistaLogin;
-import com.vista.VistaVentanaAdministrador;
-import com.vista.VistaVentanaInventarista;
-import com.vista.VistaVentanaVendedor;
-
+import com.dao.UserDAO;
+import com.data.User;
+import com.utils.DatabaseConnection;
+import com.view.VistaCrearUsuario;
+import com.view.VistaLogin;
+import com.view.VistaVentanaAdministrador;
+import com.view.VistaVentanaInventarista;
+import com.view.VistaVentanaVendedor;
 
 /**
  *
@@ -46,7 +46,8 @@ public class ControlVentanaAdministrador implements ActionListener {
 
             VistaCrearUsuario vistaCrearUsuario = new VistaCrearUsuario();
 
-            ControlCrearUsuario controlCrearUsuario = new ControlCrearUsuario(vistaCrearUsuario, vistaVentanaAdministrador);
+            ControlCrearUsuario controlCrearUsuario = new ControlCrearUsuario(vistaCrearUsuario,
+                    vistaVentanaAdministrador);
             vistaCrearUsuario.setVisible(true);
 
         }
@@ -57,14 +58,21 @@ public class ControlVentanaAdministrador implements ActionListener {
             indice = vistaVentanaAdministrador.getTablaUsuarios().getSelectedRow();
             try {
                 if (indice == -1) {
-                    JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario", "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
                 } else {
-                    respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el usuario?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el usuario?",
+                            "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (respuesta == JOptionPane.YES_OPTION) {
-                        Manager administrador = new Manager(vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 0).toString(),
+
+                        User user = new User(
+                                vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 0).toString(),
                                 vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 1).toString(),
-                                vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 2).toString());
-                        administrador.eliminar();
+                                vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 2).toString()
+
+                        );
+
+                        UserDAO.delete(user);
                         ConexionTabla();
                     }
                 }
@@ -76,7 +84,8 @@ public class ControlVentanaAdministrador implements ActionListener {
 
         if (vistaVentanaAdministrador.getBotonInventario() == evento.getSource()) {
             int respuesta;
-            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cambiar a modo Inventarista?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cambiar a modo Inventarista?",
+                    "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaAdministrador.setVisible(false);
@@ -85,14 +94,15 @@ public class ControlVentanaAdministrador implements ActionListener {
                 ControlVentanaInventarista controlInventarista = new ControlVentanaInventarista(ventanaInventarista);
                 ventanaInventarista.setVisible(true);
             } else {
-                //Se cierra xd
+                // Se cierra xd
             }
 
         }
 
         if (vistaVentanaAdministrador.getBotonVentas() == evento.getSource()) {
             int respuesta;
-            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cambiar a modo Ventas?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cambiar a modo Ventas?", "Confirmación",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaAdministrador.setVisible(false);
@@ -101,7 +111,7 @@ public class ControlVentanaAdministrador implements ActionListener {
                 ControlVentanaVendedor controlVendedor = new ControlVentanaVendedor(ventanaVendedor);
                 ventanaVendedor.setVisible(true);
             } else {
-                //Se cierra xd
+                // Se cierra xd
             }
 
         }
@@ -109,7 +119,8 @@ public class ControlVentanaAdministrador implements ActionListener {
         if (vistaVentanaAdministrador.getBotonSalir() == evento.getSource()) {
 
             int respuesta;
-            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cerrar sesión?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cerrar sesión?", "Confirmación",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaAdministrador.setVisible(false);
@@ -118,7 +129,7 @@ public class ControlVentanaAdministrador implements ActionListener {
                 ControlLogin controllogin = new ControlLogin(login);
                 login.setVisible(true);
             } else {
-                //Se cierra xd
+                // Se cierra xd
             }
 
         }
@@ -142,11 +153,10 @@ public class ControlVentanaAdministrador implements ActionListener {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            DAOUsuario enlace = new DAOUsuario();
-            Connection con = enlace.getConeccion();
+            Connection connection = DatabaseConnection.getInstance().getConnection();
 
             String orden = "SELECT nombre, contraseña, cargo FROM usuario";
-            ps = con.prepareStatement(orden);
+            ps = connection.prepareStatement(orden);
             rs = ps.executeQuery();
 
             ResultSetMetaData metadata = rs.getMetaData();

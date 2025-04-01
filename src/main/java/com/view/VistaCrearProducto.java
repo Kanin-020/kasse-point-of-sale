@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vista;
+package com.view;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,12 +16,12 @@ import javax.swing.JTextField;
  *
  * @author l2001
  */
-public class VistaModificarProducto extends javax.swing.JFrame {
+public class VistaCrearProducto extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaCrear
      */
-    public VistaModificarProducto() {
+    public VistaCrearProducto() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/images/Fuente.png")).getImage());
@@ -38,7 +38,7 @@ public class VistaModificarProducto extends javax.swing.JFrame {
 
         PanelBase = new javax.swing.JPanel();
         PanelSuperior = new javax.swing.JPanel();
-        BotonModificar = new javax.swing.JButton();
+        BotonAgregar = new javax.swing.JButton();
         BotonCancelar = new javax.swing.JButton();
         LabelNombre = new javax.swing.JLabel();
         FieldNombre = new javax.swing.JTextField();
@@ -50,7 +50,7 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         ComboBoxCategoria = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Modificar producto");
+        setTitle("Agregar producto");
         setMinimumSize(new java.awt.Dimension(594, 424));
         setResizable(false);
 
@@ -70,19 +70,9 @@ public class VistaModificarProducto extends javax.swing.JFrame {
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        BotonModificar.setText("Modificar");
-        BotonModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonModificarActionPerformed(evt);
-            }
-        });
+        BotonAgregar.setText("Agregar");
 
         BotonCancelar.setText("Cancelar");
-        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCancelarActionPerformed(evt);
-            }
-        });
 
         LabelNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         LabelNombre.setText("Nombre: ");
@@ -108,11 +98,6 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         FieldPrecioVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         ComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alimentos", "Bebidas", "Botanas", "Dulcería", "Frutas y Verduras", "Higiene", "Vinos y Licores" }));
-        ComboBoxCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxCategoriaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
         PanelBase.setLayout(PanelBaseLayout);
@@ -130,20 +115,20 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                         .addComponent(LabelCosto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelBaseLayout.createSequentialGroup()
-                        .addComponent(LabelPrecioVenta)
-                        .addGap(18, 18, 18)
-                        .addComponent(FieldPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
                         .addComponent(LabelCategoria)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelBaseLayout.createSequentialGroup()
+                        .addComponent(LabelPrecioVenta)
+                        .addGap(18, 18, 18)
+                        .addComponent(FieldPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(204, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonCancelar)
                 .addGap(18, 18, 18)
-                .addComponent(BotonModificar)
+                .addComponent(BotonAgregar)
                 .addGap(41, 41, 41))
         );
         PanelBaseLayout.setVerticalGroup(
@@ -158,7 +143,7 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LabelCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ComboBoxCategoria))
-                .addGap(18, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCosto)
                     .addComponent(FieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,11 +151,11 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelPrecioVenta)
                     .addComponent(FieldPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(84, 84, 84)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonModificar)
+                    .addComponent(BotonAgregar)
                     .addComponent(BotonCancelar))
-                .addGap(39, 39, 39))
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,7 +166,7 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
         );
 
         pack();
@@ -190,18 +175,6 @@ public class VistaModificarProducto extends javax.swing.JFrame {
     private void FieldCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldCostoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldCostoActionPerformed
-
-    private void ComboBoxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCategoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxCategoriaActionPerformed
-
-    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonCancelarActionPerformed
-
-    private void BotonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,18 +193,14 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCrearProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCrearProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCrearProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCrearProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -240,15 +209,15 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaModificarProducto().setVisible(true);
+                new VistaCrearProducto().setVisible(true);
             }
         });
     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAgregar;
     private javax.swing.JButton BotonCancelar;
-    private javax.swing.JButton BotonModificar;
     private javax.swing.JComboBox<String> ComboBoxCategoria;
     private javax.swing.JTextField FieldCosto;
     private javax.swing.JTextField FieldNombre;
@@ -262,12 +231,12 @@ public class VistaModificarProducto extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    public JButton getBotonModificar() {
-        return BotonModificar;
+    public JButton getBotonAgregar() {
+        return BotonAgregar;
     }
 
-    public void setBotonModificar(JButton BotonModificar) {
-        this.BotonModificar = BotonModificar;
+    public void setBotonAgregar(JButton BotonAgregar) {
+        this.BotonAgregar = BotonAgregar;
     }
 
     public JComboBox<String> getComboBoxCategoria() {

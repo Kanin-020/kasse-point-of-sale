@@ -13,12 +13,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.DAO.DAOProducto;
-import com.modelo.Inventarista;
-import com.modelo.Producto;
-import com.vista.VistaModificarProducto;
-import com.vista.VistaVentanaInventarista;
-
+import com.dao.ProductDAO;
+import com.data.Product;
+import com.utils.DatabaseConnection;
+import com.view.VistaModificarProducto;
+import com.view.VistaVentanaInventarista;
 
 /**
  *
@@ -28,9 +27,10 @@ public class ControlModificarProducto implements ActionListener {
 
     private VistaModificarProducto vistaModificarProducto;
     private VistaVentanaInventarista vistaVentanaInventarista;
-    private Producto producto;
+    private Product producto;
 
-    public ControlModificarProducto(VistaModificarProducto vistaModificarProducto, VistaVentanaInventarista vistaVentanaInventarista, Producto producto) {
+    public ControlModificarProducto(VistaModificarProducto vistaModificarProducto,
+            VistaVentanaInventarista vistaVentanaInventarista, Product producto) {
         this.vistaModificarProducto = vistaModificarProducto;
         this.vistaVentanaInventarista = vistaVentanaInventarista;
         this.producto = producto;
@@ -42,15 +42,18 @@ public class ControlModificarProducto implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
         if (vistaModificarProducto.getBotonModificar() == evento.getSource()) {
             try {
-                Producto productoaux = new Producto(vistaModificarProducto.getFieldNombre().getText(),
+                Product productoaux = new Product(vistaModificarProducto.getFieldNombre().getText(),
                         vistaModificarProducto.getComboBoxCategoria().getSelectedItem().toString(),
                         0, Double.parseDouble(vistaModificarProducto.getFieldCosto().getText()),
                         Double.parseDouble(vistaModificarProducto.getFieldPrecioVenta().getText()));
-                if (productoaux.getNombre().length() == 0 || productoaux.getCategoria() == "None" || productoaux.getCantidad() < 0 || productoaux.getCosto() < 0 || productoaux.getPrecio_venta() < 0) {
+                if (productoaux.getName().length() == 0 || productoaux.getCategory() == "None"
+                        || productoaux.getQuantity() < 0 || productoaux.getSupplierCost() < 0
+                        || productoaux.getCostOfSale() < 0) {
                     JOptionPane.showMessageDialog(null, "Campos vacios", "Alerta", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    Inventarista inventarista = new Inventarista(productoaux);
-                    inventarista.modificar(producto); //modificar a modificar
+                    
+                    ProductDAO.modify(producto);
+
                     ConexionTabla();
 
                     vistaModificarProducto.dispose();
@@ -58,6 +61,9 @@ public class ControlModificarProducto implements ActionListener {
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Entrada invalida", "Alerta", JOptionPane.WARNING_MESSAGE);
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
         }
         if (vistaModificarProducto.getBotonCancelar() == evento.getSource()) {
@@ -85,11 +91,10 @@ public class ControlModificarProducto implements ActionListener {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            DAOProducto enlace = new DAOProducto();
-            Connection con = enlace.getConeccion();
+            Connection connection = DatabaseConnection.getInstance().getConnection();
 
             String orden = "SELECT codigo, nombre, categoria, cantidad, costo, precio_venta FROM productos";
-            ps = con.prepareStatement(orden);
+            ps = connection.prepareStatement(orden);
             rs = ps.executeQuery();
 
             ResultSetMetaData metadata = rs.getMetaData();

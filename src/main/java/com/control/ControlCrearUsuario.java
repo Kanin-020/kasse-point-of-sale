@@ -10,10 +10,12 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.DAO.DAOUsuario;
-import com.modelo.Manager;
-import com.vista.VistaCrearUsuario;
-import com.vista.VistaVentanaAdministrador;
+import com.dao.ProductDAO;
+import com.dao.UserDAO;
+import com.data.User;
+import com.utils.DatabaseConnection;
+import com.view.VistaCrearUsuario;
+import com.view.VistaVentanaAdministrador;
 
 /**
  *
@@ -24,7 +26,8 @@ public class ControlCrearUsuario implements ActionListener {
     private VistaCrearUsuario vistaCrearUsuario;
     private VistaVentanaAdministrador vistaVentanaAdministrador;
 
-    public ControlCrearUsuario(VistaCrearUsuario vistaCrearUsuario, VistaVentanaAdministrador vistaVentanaAdministrador) {
+    public ControlCrearUsuario(VistaCrearUsuario vistaCrearUsuario,
+            VistaVentanaAdministrador vistaVentanaAdministrador) {
         this.vistaVentanaAdministrador = vistaVentanaAdministrador;
         this.vistaCrearUsuario = vistaCrearUsuario;
 
@@ -34,27 +37,35 @@ public class ControlCrearUsuario implements ActionListener {
 
     public void actionPerformed(ActionEvent evento) {
 
-        if (vistaCrearUsuario.getBotonAgregar() == evento.getSource()) {
+        try {
 
-            Manager administrador = new Manager(vistaCrearUsuario.getFieldUsuario().getText(),
-                    vistaCrearUsuario.getFieldContraseña().getText(), vistaCrearUsuario.getComboBoxCargo().getSelectedItem().toString());
+            if (vistaCrearUsuario.getBotonAgregar() == evento.getSource()) {
 
-            if (administrador.getUsername().length() == 0 || administrador.getPassword().length() == 0 || administrador.getPosition() == "None") {
-                JOptionPane.showMessageDialog(null, "Campos vacios", "Alerta", JOptionPane.WARNING_MESSAGE);
-            } else {
-                administrador.agregar();
+                User user = new User(
+                        vistaCrearUsuario.getFieldUsuario().getText(),
+                        vistaCrearUsuario.getFieldContraseña().getText(),
+                        vistaCrearUsuario.getComboBoxCargo().getSelectedItem().toString());
+
+                if (user.getUsername().length() == 0 || user.getPassword().length() == 0
+                        || user.getPosition() == "None") {
+                    JOptionPane.showMessageDialog(null, "Campos vacios", "Alerta", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    UserDAO.add(user);
+                    vistaCrearUsuario.dispose();
+
+                    ConexionTabla();
+
+                }
+            }
+
+            if (vistaCrearUsuario.getBotonCancelar() == evento.getSource()) {
 
                 vistaCrearUsuario.dispose();
 
-                ConexionTabla();
-
             }
-        }
 
-        if (vistaCrearUsuario.getBotonCancelar() == evento.getSource()) {
-
-            vistaCrearUsuario.dispose();
-
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
@@ -76,11 +87,10 @@ public class ControlCrearUsuario implements ActionListener {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            DAOUsuario enlace = new DAOUsuario();
-            Connection con = enlace.getConeccion();
+            Connection connection = DatabaseConnection.getInstance().getConnection();
 
             String orden = "SELECT nombre, contraseña, cargo FROM usuario";
-            ps = con.prepareStatement(orden);
+            ps = connection.prepareStatement(orden);
             rs = ps.executeQuery();
 
             ResultSetMetaData metadata = rs.getMetaData();
@@ -102,7 +112,7 @@ public class ControlCrearUsuario implements ActionListener {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error", "Error al conectar con la tabla", JOptionPane.ERROR_MESSAGE);
 
         }
 

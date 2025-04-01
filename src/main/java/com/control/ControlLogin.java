@@ -6,14 +6,16 @@
 package com.control;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
-import com.modelo.Usuario;
-import com.vista.VistaLogin;
-import com.vista.VistaVentanaAdministrador;
-import com.vista.VistaVentanaInventarista;
-import com.vista.VistaVentanaVendedor;
-
+import com.dao.UserDAO;
+import com.data.User;
+import com.view.VistaLogin;
+import com.view.VistaVentanaAdministrador;
+import com.view.VistaVentanaInventarista;
+import com.view.VistaVentanaVendedor;
 
 /**
  *
@@ -33,12 +35,13 @@ public class ControlLogin implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
 
         if (vistaLogin.getBotonIniciarSesion() == evento.getSource()) {
-            Usuario usuario = new Usuario(vistaLogin.getFieldUsuario().getText(), vistaLogin.getFieldContraseña().getText());
-            usuario = usuario.login();
+            User usuario = new User(vistaLogin.getFieldUsuario().getText(), vistaLogin.getFieldContraseña().getText());
+            this.login(usuario);
 
             if (usuario.getPosition() == null) {
 
-                JOptionPane.showMessageDialog(null, "Usuario/Contraseña invalida", "Alerta", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario/Contraseña invalida", "Alerta",
+                        JOptionPane.WARNING_MESSAGE);
 
             } else {
                 vistaLogin.setVisible(false);
@@ -48,14 +51,16 @@ public class ControlLogin implements ActionListener {
                     case "Administrador":
 
                         VistaVentanaAdministrador ventanaAdministrador = new VistaVentanaAdministrador();
-                        ControlVentanaAdministrador controlAdministrador = new ControlVentanaAdministrador(ventanaAdministrador);
+                        ControlVentanaAdministrador controlAdministrador = new ControlVentanaAdministrador(
+                                ventanaAdministrador);
                         ventanaAdministrador.setVisible(true);
 
                         break;
                     case "Inventarista":
 
                         VistaVentanaInventarista ventanaInventarista = new VistaVentanaInventarista();
-                        ControlVentanaInventarista controlInventarista = new ControlVentanaInventarista(ventanaInventarista);
+                        ControlVentanaInventarista controlInventarista = new ControlVentanaInventarista(
+                                ventanaInventarista);
                         ventanaInventarista.setVisible(true);
                         ventanaInventarista.getBotonSwitch().setEnabled(false);
 
@@ -73,6 +78,22 @@ public class ControlLogin implements ActionListener {
 
         }
 
+    }
+
+    private User login(User user) {
+
+        try {
+
+            ArrayList<User> userList = UserDAO.select(user);
+
+            if (!userList.isEmpty()) {
+                user = userList.get(0);
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        return user;
     }
 
 }

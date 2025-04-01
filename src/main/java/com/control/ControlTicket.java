@@ -13,8 +13,8 @@ import java.awt.print.*;
 
 import javax.swing.table.DefaultTableModel;
 
-import com.vista.VistaTicketKasse;
-import com.vista.VistaVentanaVendedor;
+import com.view.VistaTicketKasse;
+import com.view.VistaVentanaVendedor;
 
 /**
  *

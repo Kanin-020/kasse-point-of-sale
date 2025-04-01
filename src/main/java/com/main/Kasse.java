@@ -6,8 +6,8 @@
 package com.main;
 
 import com.control.ControlLogin;
-import com.vista.VistaInicio;
-import com.vista.VistaLogin;
+import com.view.VistaInicio;
+import com.view.VistaLogin;
 
 /**
  *
@@ -19,7 +19,6 @@ public class Kasse {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException {
-       
         VistaInicio vistaInicio = new VistaInicio();
         vistaInicio.setVisible(true);
         Thread.sleep(1300);
@@ -27,6 +26,7 @@ public class Kasse {
         VistaLogin vistaLogin = new VistaLogin();
         ControlLogin controlLogin = new ControlLogin(vistaLogin);
 
+        System.out.println(controlLogin.getClass().getName() + " is running...");
         
         vistaLogin.setVisible(true);
      

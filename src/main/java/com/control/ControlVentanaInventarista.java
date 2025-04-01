@@ -21,16 +21,15 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.DAO.DAOProducto;
-import com.modelo.Inventarista;
-import com.modelo.Producto;
-import com.vista.VistaAbastecerProducto;
-import com.vista.VistaCrearProducto;
-import com.vista.VistaLogin;
-import com.vista.VistaModificarProducto;
-import com.vista.VistaVentanaAdministrador;
-import com.vista.VistaVentanaInventarista;
-
+import com.dao.ProductDAO;
+import com.data.Product;
+import com.utils.DatabaseConnection;
+import com.view.VistaAbastecerProducto;
+import com.view.VistaCrearProducto;
+import com.view.VistaLogin;
+import com.view.VistaModificarProducto;
+import com.view.VistaVentanaAdministrador;
+import com.view.VistaVentanaInventarista;
 
 /**
  *
@@ -59,7 +58,8 @@ public class ControlVentanaInventarista implements ActionListener {
         if (vistaVentanaInventarista.getBotonAgregar() == evento.getSource()) {
             VistaCrearProducto vistaCrearProducto = new VistaCrearProducto();
 
-            ControlCrearProducto controlCrearProducto = new ControlCrearProducto(vistaCrearProducto, vistaVentanaInventarista);
+            ControlCrearProducto controlCrearProducto = new ControlCrearProducto(vistaCrearProducto,
+                    vistaVentanaInventarista);
             vistaCrearProducto.setVisible(true);
         }
 
@@ -70,34 +70,43 @@ public class ControlVentanaInventarista implements ActionListener {
 
             try {
                 if (indice == -1) {
-                    JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
                 } else {
-                    respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de modificar el producto?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de modificar el producto?",
+                            "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (respuesta == JOptionPane.YES_OPTION) {
 
-                        Producto producto = new Producto(Long.parseLong(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 0).toString()),
+                        Product producto = new Product(
+                                Integer.parseInt(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 0).toString()),
                                 vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 1).toString(),
                                 vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 2).toString(),
-                                Integer.parseInt(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 3).toString()),
-                                Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 4).toString()),
-                                Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 5).toString()));
+                                Integer.parseInt(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 3).toString()),
+                                Double.parseDouble(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 4).toString()),
+                                Double.parseDouble(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 5).toString()));
                         VistaModificarProducto vistaModificarProducto = new VistaModificarProducto();
-                        ControlModificarProducto controlModificarProducto = new ControlModificarProducto(vistaModificarProducto, vistaVentanaInventarista, producto);
+                        ControlModificarProducto controlModificarProducto = new ControlModificarProducto(
+                                vistaModificarProducto, vistaVentanaInventarista, producto);
                         vistaModificarProducto.setVisible(true);
-                        vistaModificarProducto.getFieldNombre().setText(producto.getNombre());
-                        vistaModificarProducto.getComboBoxCategoria().setToolTipText(producto.getCategoria()); //escribir bien en combobox
+                        vistaModificarProducto.getFieldNombre().setText(producto.getName());
+                        vistaModificarProducto.getComboBoxCategoria().setToolTipText(producto.getCategory());
                         indice = -1;
                         for (int i = 0; i < 8; i++) {
                             String auxiliar;
                             vistaModificarProducto.getComboBoxCategoria().setSelectedIndex(i);
                             auxiliar = vistaModificarProducto.getComboBoxCategoria().getSelectedItem().toString();
-                            if (producto.getCategoria().equals(auxiliar) == true) {
+                            if (producto.getCategory().equals(auxiliar) == true) {
                                 indice = i;
                             }
                         }
                         vistaModificarProducto.getComboBoxCategoria().setSelectedIndex(indice);
-                        vistaModificarProducto.getFieldCosto().setText(String.valueOf(producto.getCosto()));
-                        vistaModificarProducto.getFieldPrecioVenta().setText(String.valueOf(producto.getPrecio_venta()));
+                        vistaModificarProducto.getFieldCosto().setText(String.valueOf(producto.getCode()));
+                        vistaModificarProducto.getFieldPrecioVenta()
+                                .setText(String.valueOf(producto.getCostOfSale()));
                     }
                 }
             } catch (Exception e) {
@@ -111,17 +120,24 @@ public class ControlVentanaInventarista implements ActionListener {
             indice = vistaVentanaInventarista.getTablaProductos().getSelectedRow();
             try {
                 if (indice == -1) {
-                    JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
                 } else {
-                    respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el producto?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el producto?",
+                            "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (respuesta == JOptionPane.YES_OPTION) {
-                        Producto producto = new Producto(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 1).toString(),
+                        Product producto = new Product(
+                                vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 1).toString(),
                                 vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 2).toString(),
-                                Integer.parseInt(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 3).toString()),
-                                Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 4).toString()),
-                                Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 5).toString()));
-                        Inventarista inventarista = new Inventarista(producto);
-                        inventarista.eliminar();
+                                Integer.parseInt(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 3).toString()),
+                                Double.parseDouble(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 4).toString()),
+                                Double.parseDouble(
+                                        vistaVentanaInventarista.getTablaProductos().getValueAt(indice, 5).toString()));
+                        
+                                        ProductDAO.delete(producto);
+
                         ConexionTabla();
                     }
                 }
@@ -133,28 +149,32 @@ public class ControlVentanaInventarista implements ActionListener {
 
         if (vistaVentanaInventarista.getBotonAbastecer() == evento.getSource()) {
             VistaAbastecerProducto vistaAbastecerProducto = new VistaAbastecerProducto();
-            ControlAbastecerProducto controlAbastecerProducto = new ControlAbastecerProducto(vistaAbastecerProducto, vistaVentanaInventarista);
+            ControlAbastecerProducto controlAbastecerProducto = new ControlAbastecerProducto(vistaAbastecerProducto,
+                    vistaVentanaInventarista);
             vistaAbastecerProducto.setVisible(true);
             vistaAbastecerProducto.getBotonAbastecer().setEnabled(false);
         }
 
         if (vistaVentanaInventarista.getBotonExcel() == evento.getSource()) {
-            int respuesta = JOptionPane.showConfirmDialog(null, "¿Quiere generar un documento de Excel?", "Generar Excel", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Quiere generar un documento de Excel?",
+                    "Generar Excel", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (respuesta == JOptionPane.YES_OPTION) {
 
                 crearExcel();
-                //SQLExcel();
-                JOptionPane.showMessageDialog(null, "Documento generado", "Documento generado", JOptionPane.INFORMATION_MESSAGE);
+                // SQLExcel();
+                JOptionPane.showMessageDialog(null, "Documento generado", "Documento generado",
+                        JOptionPane.INFORMATION_MESSAGE);
 
             } else {
-                //Se cierra xd
+                // Se cierra xd
             }
 
         }
 
         if (vistaVentanaInventarista.getBotonSalir() == evento.getSource()) {
             int respuesta;
-            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cerrar sesión?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de cerrar sesión?", "Confirmación",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaInventarista.setVisible(false);
@@ -163,23 +183,25 @@ public class ControlVentanaInventarista implements ActionListener {
                 ControlLogin controllogin = new ControlLogin(login);
                 login.setVisible(true);
             } else {
-                //Se cierra xd
+                // Se cierra xd
             }
 
         }
 
         if (vistaVentanaInventarista.getBotonSwitch() == evento.getSource()) {
             int respuesta;
-            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de regresar a la ventana Administrador?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de regresar a la ventana Administrador?",
+                    "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaInventarista.setVisible(false);
                 vistaVentanaInventarista.dispose();
                 VistaVentanaAdministrador ventanaAdministrador = new VistaVentanaAdministrador();
-                ControlVentanaAdministrador controlAdministrador = new ControlVentanaAdministrador(ventanaAdministrador);
+                ControlVentanaAdministrador controlAdministrador = new ControlVentanaAdministrador(
+                        ventanaAdministrador);
                 ventanaAdministrador.setVisible(true);
             } else {
-                //Se cierra xd
+                // Se cierra xd
             }
 
         }
@@ -203,11 +225,10 @@ public class ControlVentanaInventarista implements ActionListener {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            DAOProducto enlace = new DAOProducto();
-            Connection con = enlace.getConeccion();
+            Connection connection = DatabaseConnection.getInstance().getConnection();
 
             String orden = "SELECT codigo, nombre, categoria, cantidad, costo, precio_venta FROM productos";
-            ps = con.prepareStatement(orden);
+            ps = connection.prepareStatement(orden);
             rs = ps.executeQuery();
 
             ResultSetMetaData metadata = rs.getMetaData();
@@ -255,19 +276,25 @@ public class ControlVentanaInventarista implements ActionListener {
             // vistaVentanaInventarista.setRowSelectionInterval(i+1,noFilas);
             fila = sheet.createRow(i + 1);
 
-            fila.createCell(0).setCellValue(Long.parseLong(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 0).toString()));
+            fila.createCell(0).setCellValue(
+                    Long.parseLong(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 0).toString()));
             fila.createCell(1).setCellValue(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 1).toString());
             fila.createCell(2).setCellValue(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 2).toString());
-            fila.createCell(3).setCellValue(Integer.parseInt(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 3).toString()));
-            fila.createCell(4).setCellValue(Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 4).toString()));
-            fila.createCell(5).setCellValue(Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 5).toString()));
+            fila.createCell(3).setCellValue(
+                    Integer.parseInt(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 3).toString()));
+            fila.createCell(4).setCellValue(
+                    Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 4).toString()));
+            fila.createCell(5).setCellValue(
+                    Double.parseDouble(vistaVentanaInventarista.getTablaProductos().getValueAt(i, 5).toString()));
         }
 
         try {
 
             FileOutputStream fileout = new FileOutputStream("ReporteDeVenta.xlsx");
             book.write(fileout);
+
             fileout.close();
+            book.close();
 
         } catch (FileNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Archivo no encontrado", "Alerta", JOptionPane.WARNING_MESSAGE);

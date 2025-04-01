@@ -5,7 +5,6 @@
  */
 package com.control;
 
-
 import java.sql.*;
 
 import java.awt.event.ActionEvent;
@@ -14,11 +13,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.DAO.DAOProducto;
-import com.modelo.Inventarista;
-import com.modelo.Producto;
-import com.vista.VistaCrearProducto;
-import com.vista.VistaVentanaInventarista;
+import com.dao.ProductDAO;
+import com.data.Product;
+import com.utils.DatabaseConnection;
+import com.view.VistaCrearProducto;
+import com.view.VistaVentanaInventarista;
 
 /**
  *
@@ -29,7 +28,8 @@ public class ControlCrearProducto implements ActionListener {
     private VistaCrearProducto vistaCrearProducto;
     private VistaVentanaInventarista vistaVentanaInventarista;
 
-    public ControlCrearProducto(VistaCrearProducto vistaCrearProducto, VistaVentanaInventarista vistaVentanaInventarista) {
+    public ControlCrearProducto(VistaCrearProducto vistaCrearProducto,
+            VistaVentanaInventarista vistaVentanaInventarista) {
         this.vistaCrearProducto = vistaCrearProducto;
         this.vistaVentanaInventarista = vistaVentanaInventarista;
 
@@ -41,17 +41,17 @@ public class ControlCrearProducto implements ActionListener {
 
         if (vistaCrearProducto.getBotonAgregar() == evento.getSource()) {
             try {
-                Producto producto = new Producto(vistaCrearProducto.getFieldNombre().getText(),
+                Product producto = new Product(vistaCrearProducto.getFieldNombre().getText(),
                         vistaCrearProducto.getComboBoxCategoria().getSelectedItem().toString(),
                         0, Double.parseDouble(vistaCrearProducto.getFieldCosto().getText()),
                         Double.parseDouble(vistaCrearProducto.getFieldPrecioVenta().getText()));
-                Inventarista inventarista = new Inventarista(producto);
 
-                if (producto.getNombre().length() == 0 || producto.getCategoria() == "None" || producto.getCantidad() < 0 || producto.getCosto() < 0 || producto.getPrecio_venta() < 0) {
+                if (producto.getName().length() == 0 || producto.getCategory() == "None"
+                        || producto.getQuantity() < 0 || producto.getSupplierCost() < 0 || producto.getCostOfSale() < 0) {
                     JOptionPane.showMessageDialog(null, "Campos vacios", "Alerta", JOptionPane.WARNING_MESSAGE);
                 } else {
 
-                    inventarista.agregar();
+                    ProductDAO.add(producto);
                     ConexionTabla();
 
                     vistaCrearProducto.dispose();
@@ -61,6 +61,9 @@ public class ControlCrearProducto implements ActionListener {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Entrada invalida", "Alerta", JOptionPane.WARNING_MESSAGE);
 
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
         }
         if (vistaCrearProducto.getBotonCancelar() == evento.getSource()) {
@@ -88,11 +91,10 @@ public class ControlCrearProducto implements ActionListener {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            DAOProducto enlace = new DAOProducto();
-            Connection con = enlace.getConeccion();
+            Connection connection = DatabaseConnection.getInstance().getConnection();
 
             String orden = "SELECT codigo, nombre, categoria, cantidad, costo, precio_venta FROM productos";
-            ps = con.prepareStatement(orden);
+            ps = connection.prepareStatement(orden);
             rs = ps.executeQuery();
 
             ResultSetMetaData metadata = rs.getMetaData();
