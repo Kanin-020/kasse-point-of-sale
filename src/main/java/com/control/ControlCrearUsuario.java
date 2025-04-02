@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import com.dao.ProductDAO;
 import com.dao.UserDAO;
 import com.data.User;
+import com.data.UserPosition;
 import com.utils.DatabaseConnection;
 import com.view.VistaCrearUsuario;
 import com.view.VistaVentanaAdministrador;
@@ -44,10 +45,9 @@ public class ControlCrearUsuario implements ActionListener {
                 User user = new User(
                         vistaCrearUsuario.getFieldUsuario().getText(),
                         vistaCrearUsuario.getFieldContraseña().getText(),
-                        vistaCrearUsuario.getComboBoxCargo().getSelectedItem().toString());
+                        UserPosition.GENERAL_MANAGER);
 
-                if (user.getUsername().length() == 0 || user.getPassword().length() == 0
-                        || user.getPosition() == "None") {
+                if (user.getUsername().length() == 0 || user.getPassword().length() == 0) {
                     JOptionPane.showMessageDialog(null, "Campos vacios", "Alerta", JOptionPane.WARNING_MESSAGE);
                 } else {
                     UserDAO.add(user);

@@ -5,9 +5,9 @@
  */
 package com.main;
 
-import com.control.ControlLogin;
+import com.control.LoginController;
 import com.view.VistaInicio;
-import com.view.VistaLogin;
+import com.view.LoginView;
 
 /**
  *
@@ -23,8 +23,8 @@ public class Kasse {
         vistaInicio.setVisible(true);
         Thread.sleep(1300);
         vistaInicio.dispose();
-        VistaLogin vistaLogin = new VistaLogin();
-        ControlLogin controlLogin = new ControlLogin(vistaLogin);
+        LoginView vistaLogin = new LoginView();
+        LoginController controlLogin = new LoginController(vistaLogin);
 
         System.out.println(controlLogin.getClass().getName() + " is running...");
         

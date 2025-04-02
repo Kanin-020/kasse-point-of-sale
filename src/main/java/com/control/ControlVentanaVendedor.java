@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.dao.ProductDAO;
 import com.data.Product;
-import com.view.VistaLogin;
+import com.view.LoginView;
 import com.view.VistaTicketKasse;
 import com.view.VistaVentanaAdministrador;
 import com.view.VistaVentanaVendedor;
@@ -194,8 +194,8 @@ public class ControlVentanaVendedor implements ActionListener {
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaVendedor.setVisible(false);
                 vistaVentanaVendedor.dispose();
-                VistaLogin login = new VistaLogin();
-                ControlLogin controllogin = new ControlLogin(login);
+                LoginView login = new LoginView();
+                LoginController controllogin = new LoginController(login);
                 login.setVisible(true);
             } else {
                 // Se cierra xd

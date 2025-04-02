@@ -85,4 +85,10 @@ public class Product {
         this.costOfSale = costOfSale;
     }
 
+    @Override
+    public String toString() {
+        return "Product [code=" + code + ", name=" + name + ", category=" + category + ", quantity=" + quantity
+                + ", supplierCost=" + supplierCost + ", costOfSale=" + costOfSale + "]";
+    }
+
 }

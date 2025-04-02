@@ -26,7 +26,7 @@ import com.data.Product;
 import com.utils.DatabaseConnection;
 import com.view.VistaAbastecerProducto;
 import com.view.VistaCrearProducto;
-import com.view.VistaLogin;
+import com.view.LoginView;
 import com.view.VistaModificarProducto;
 import com.view.VistaVentanaAdministrador;
 import com.view.VistaVentanaInventarista;
@@ -179,8 +179,8 @@ public class ControlVentanaInventarista implements ActionListener {
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaInventarista.setVisible(false);
                 vistaVentanaInventarista.dispose();
-                VistaLogin login = new VistaLogin();
-                ControlLogin controllogin = new ControlLogin(login);
+                LoginView login = new LoginView();
+                LoginController controllogin = new LoginController(login);
                 login.setVisible(true);
             } else {
                 // Se cierra xd

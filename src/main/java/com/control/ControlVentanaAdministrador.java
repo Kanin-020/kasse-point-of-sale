@@ -13,9 +13,10 @@ import javax.swing.table.DefaultTableModel;
 
 import com.dao.UserDAO;
 import com.data.User;
+import com.data.UserPosition;
 import com.utils.DatabaseConnection;
 import com.view.VistaCrearUsuario;
-import com.view.VistaLogin;
+import com.view.LoginView;
 import com.view.VistaVentanaAdministrador;
 import com.view.VistaVentanaInventarista;
 import com.view.VistaVentanaVendedor;
@@ -68,7 +69,7 @@ public class ControlVentanaAdministrador implements ActionListener {
                         User user = new User(
                                 vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 0).toString(),
                                 vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 1).toString(),
-                                vistaVentanaAdministrador.getTablaUsuarios().getValueAt(indice, 2).toString()
+                                UserPosition.GENERAL_MANAGER
 
                         );
 
@@ -125,8 +126,8 @@ public class ControlVentanaAdministrador implements ActionListener {
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaAdministrador.setVisible(false);
                 vistaVentanaAdministrador.dispose();
-                VistaLogin login = new VistaLogin();
-                ControlLogin controllogin = new ControlLogin(login);
+                LoginView login = new LoginView();
+                LoginController controllogin = new LoginController(login);
                 login.setVisible(true);
             } else {
                 // Se cierra xd
