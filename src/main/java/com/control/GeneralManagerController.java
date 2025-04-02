@@ -14,7 +14,7 @@ import com.data.User;
 import com.view.GeneralManagerView;
 import com.view.LoginView;
 import com.view.AddUserView;
-import com.view.VistaVentanaInventarista;
+import com.view.InventoryManagerView;
 import com.view.VistaVentanaVendedor;
 
 public class GeneralManagerController implements ActionListener {
@@ -24,16 +24,17 @@ public class GeneralManagerController implements ActionListener {
     private DefaultTableModel userTableModel;
 
     public GeneralManagerController(GeneralManagerView generalManagerView) {
-
         this.generalManagerView = generalManagerView;
-
         updateTable();
+        addActionListeners();
+    }
 
-        this.generalManagerView.getBotonAgregar().addActionListener(this);
-        this.generalManagerView.getBotonEliminar().addActionListener(this);
-        this.generalManagerView.getBotonInventario().addActionListener(this);
-        this.generalManagerView.getBotonVentas().addActionListener(this);
-        this.generalManagerView.getBotonSalir().addActionListener(this);
+    private void addActionListeners() {
+        generalManagerView.getBotonAgregar().addActionListener(this);
+        generalManagerView.getBotonEliminar().addActionListener(this);
+        generalManagerView.getBotonInventario().addActionListener(this);
+        generalManagerView.getBotonVentas().addActionListener(this);
+        generalManagerView.getBotonSalir().addActionListener(this);
     }
 
     @Override
@@ -45,8 +46,8 @@ public class GeneralManagerController implements ActionListener {
         } else if (source == generalManagerView.getBotonEliminar()) {
             deleteUser();
         } else if (source == generalManagerView.getBotonInventario()) {
-            VistaVentanaInventarista vistaVentanaInventarista = new VistaVentanaInventarista();
-            changeWindow(vistaVentanaInventarista, new ControlVentanaInventarista(vistaVentanaInventarista));
+            InventoryManagerView inventoryManagerView = new InventoryManagerView();
+            changeWindow(inventoryManagerView, new InventoryManagerController(inventoryManagerView));
         } else if (source == generalManagerView.getBotonVentas()) {
             VistaVentanaVendedor vistaVentanaVendedor = new VistaVentanaVendedor();
             changeWindow(vistaVentanaVendedor, new ControlVentanaVendedor(vistaVentanaVendedor));
@@ -141,7 +142,7 @@ public class GeneralManagerController implements ActionListener {
     private void updateTable() {
         try {
 
-            userTableModel = (DefaultTableModel) this.generalManagerView.getTablaUsuarios()
+            userTableModel = (DefaultTableModel) generalManagerView.getTablaUsuarios()
                     .getModel();
 
             userTableModel.setRowCount(0);

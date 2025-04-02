@@ -18,12 +18,12 @@ import javax.swing.JToggleButton;
  *
  * @author l2001
  */
-public class VistaVentanaInventarista extends javax.swing.JFrame {
+public class InventoryManagerView extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaPrincipal
      */
-    public VistaVentanaInventarista() {
+    public InventoryManagerView() {
         initComponents();
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
@@ -336,13 +336,13 @@ public class VistaVentanaInventarista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaInventarista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaInventarista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaInventarista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaInventarista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -352,7 +352,7 @@ public class VistaVentanaInventarista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaVentanaInventarista().setVisible(true);
+                new InventoryManagerView().setVisible(true);
             }
         });
     }

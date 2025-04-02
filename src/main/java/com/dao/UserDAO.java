@@ -21,7 +21,7 @@ public class UserDAO {
 
         statement.setString(1, user.getUsername());
         statement.setString(2, user.getPassword());
-        statement.setString(3, user.getPosition().toString());
+        statement.setString(3, user.getPosition());
 
         return statement.executeUpdate();
     }

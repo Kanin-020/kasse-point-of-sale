@@ -24,9 +24,7 @@ public class Kasse {
         Thread.sleep(1300);
         vistaInicio.dispose();
         LoginView vistaLogin = new LoginView();
-        LoginController controlLogin = new LoginController(vistaLogin);
-
-        System.out.println(controlLogin.getClass().getName() + " is running...");
+        new LoginController(vistaLogin);
         
         vistaLogin.setVisible(true);
      

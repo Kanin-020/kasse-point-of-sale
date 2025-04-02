@@ -16,12 +16,12 @@ import javax.swing.JTextField;
  *
  * @author l2001
  */
-public class VistaModificarProducto extends javax.swing.JFrame {
+public class ModifyProductView extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaCrear
      */
-    public VistaModificarProducto() {
+    public ModifyProductView() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/images/Fuente.png")).getImage());
@@ -44,8 +44,10 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         FieldNombre = new javax.swing.JTextField();
         LabelCategoria = new javax.swing.JLabel();
         LabelCosto = new javax.swing.JLabel();
+        LabelCantidad = new javax.swing.JLabel();
         LabelPrecioVenta = new javax.swing.JLabel();
         FieldCosto = new javax.swing.JTextField();
+        FieldCantidad = new javax.swing.JTextField();
         FieldPrecioVenta = new javax.swing.JTextField();
         ComboBoxCategoria = new javax.swing.JComboBox<>();
 
@@ -92,6 +94,9 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         LabelCategoria.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         LabelCategoria.setText("Categoría:");
 
+        LabelCantidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        LabelCantidad.setText("Cantidad:");
+
         LabelCosto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         LabelCosto.setText("Costo:");
 
@@ -104,6 +109,14 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                 FieldCostoActionPerformed(evt);
             }
         });
+
+        FieldCantidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        FieldCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FieldCantidadActionPerformed(evt);
+            }
+        });
+
 
         FieldPrecioVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -126,6 +139,10 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                         .addComponent(LabelNombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                        .addComponent(LabelCantidad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
                         .addComponent(LabelCosto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -160,6 +177,10 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                     .addComponent(ComboBoxCategoria))
                 .addGap(18, 34, Short.MAX_VALUE)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelCantidad)
+                    .addComponent(FieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCosto)
                     .addComponent(FieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -190,6 +211,10 @@ public class VistaModificarProducto extends javax.swing.JFrame {
     private void FieldCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldCostoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldCostoActionPerformed
+    private void FieldCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldCostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldCantidadActionPerformed
+
 
     private void ComboBoxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCategoriaActionPerformed
         // TODO add your handling code here:
@@ -220,13 +245,13 @@ public class VistaModificarProducto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaModificarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyProductView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -240,7 +265,7 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaModificarProducto().setVisible(true);
+                new ModifyProductView().setVisible(true);
             }
         });
     
@@ -251,10 +276,12 @@ public class VistaModificarProducto extends javax.swing.JFrame {
     private javax.swing.JButton BotonModificar;
     private javax.swing.JComboBox<String> ComboBoxCategoria;
     private javax.swing.JTextField FieldCosto;
+    private javax.swing.JTextField FieldCantidad;
     private javax.swing.JTextField FieldNombre;
     private javax.swing.JTextField FieldPrecioVenta;
     private javax.swing.JLabel LabelCategoria;
     private javax.swing.JLabel LabelCosto;
+    private javax.swing.JLabel LabelCantidad;
     private javax.swing.JLabel LabelNombre;
     private javax.swing.JLabel LabelPrecioVenta;
     private javax.swing.JPanel PanelBase;
@@ -287,6 +314,14 @@ public class VistaModificarProducto extends javax.swing.JFrame {
         this.FieldCosto = FieldCosto;
     }
 
+    public JTextField getFieldCantidad() {
+        return FieldCantidad;
+    }
+
+    public void setFieldCantidad(JTextField FieldCantidad) {
+        this.FieldCantidad = FieldCantidad;
+    }
+
     public JTextField getFieldNombre() {
         return FieldNombre;
     }
@@ -317,6 +352,14 @@ public class VistaModificarProducto extends javax.swing.JFrame {
 
     public void setLabelCosto(JLabel LabelCosto) {
         this.LabelCosto = LabelCosto;
+    }
+
+    public JLabel getLabelCantidad() {
+        return LabelCantidad;
+    }
+
+    public void setLabelCantidad(JLabel LabelCantidad) {
+        this.LabelCantidad = LabelCantidad;
     }
 
     public JLabel getLabelNombre() {

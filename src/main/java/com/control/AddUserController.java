@@ -23,8 +23,8 @@ public class AddUserController implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent evento) {
-        Object source = evento.getSource();
+    public void actionPerformed(ActionEvent event) {
+        Object source = event.getSource();
 
         if (source == addUserView.getBotonAgregar()) {
             addUser();
@@ -67,7 +67,10 @@ public class AddUserController implements ActionListener {
             addUserView.dispose();
 
         } catch (SQLException exception) {
-            JOptionPane.showMessageDialog(addUserView, "Error al agregar usuario: " + exception.getMessage(), "Error",
+            JOptionPane.showMessageDialog(
+                    addUserView,
+                    "Error al agregar usuario: " + exception.getMessage(),
+                    "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -75,4 +78,5 @@ public class AddUserController implements ActionListener {
     private void cancel() {
         addUserView.dispose();
     }
+    
 }

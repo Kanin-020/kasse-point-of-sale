@@ -11,7 +11,7 @@ import com.data.User;
 import com.data.UserPosition;
 import com.view.LoginView;
 import com.view.GeneralManagerView;
-import com.view.VistaVentanaInventarista;
+import com.view.InventoryManagerView;
 import com.view.VistaVentanaVendedor;
 
 public class LoginController implements ActionListener {
@@ -68,7 +68,7 @@ public class LoginController implements ActionListener {
     }
 
     private void selectWindow(String position) {
-        
+
         javax.swing.JFrame view;
         Object controller;
         boolean switchActivated = false;
@@ -79,8 +79,8 @@ public class LoginController implements ActionListener {
                 controller = new GeneralManagerController((GeneralManagerView) view);
                 break;
             case UserPosition.INVENTORY_MANAGER:
-                view = new VistaVentanaInventarista();
-                controller = new ControlVentanaInventarista((VistaVentanaInventarista) view);
+                view = new InventoryManagerView();
+                controller = new InventoryManagerController((InventoryManagerView) view);
                 switchActivated = true;
                 break;
             case UserPosition.SELLER:
@@ -102,8 +102,8 @@ public class LoginController implements ActionListener {
 
     private void openNewWindow(javax.swing.JFrame view, Object controller, boolean switchActivated) {
         if (switchActivated) {
-            if (view instanceof VistaVentanaInventarista) {
-                ((VistaVentanaInventarista) view).getBotonSwitch().setEnabled(true);
+            if (view instanceof InventoryManagerView) {
+                ((InventoryManagerView) view).getBotonSwitch().setEnabled(true);
             } else if (view instanceof VistaVentanaVendedor) {
                 ((VistaVentanaVendedor) view).getBotonSwitch().setEnabled(true);
             }
