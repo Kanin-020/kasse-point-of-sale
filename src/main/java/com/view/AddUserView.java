@@ -16,12 +16,12 @@ import javax.swing.JTextField;
  *
  * @author l2001
  */
-public class VistaCrearUsuario extends javax.swing.JFrame {
+public class AddUserView extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaCrear
      */
-    public VistaCrearUsuario() {
+    public AddUserView() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/images/Fuente.png")).getImage());
@@ -91,7 +91,7 @@ public class VistaCrearUsuario extends javax.swing.JFrame {
         LabelCargo.setText("Cargo:");
 
         ComboBoxCargo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ComboBoxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Administrador", "Vendedor", "Inventarista" }));
+        ComboBoxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "General Manager", "Inventory Manager", "Seller" }));
 
         javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
         PanelBase.setLayout(PanelBaseLayout);
@@ -180,13 +180,13 @@ public class VistaCrearUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCrearUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -200,7 +200,7 @@ public class VistaCrearUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaCrearUsuario().setVisible(true);
+                new AddUserView().setVisible(true);
             }
         });
     }

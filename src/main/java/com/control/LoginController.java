@@ -10,7 +10,7 @@ import com.dao.UserDAO;
 import com.data.User;
 import com.data.UserPosition;
 import com.view.LoginView;
-import com.view.VistaVentanaAdministrador;
+import com.view.GeneralManagerView;
 import com.view.VistaVentanaInventarista;
 import com.view.VistaVentanaVendedor;
 
@@ -39,13 +39,17 @@ public class LoginController implements ActionListener {
         if (user.isPresent()) {
             selectWindow(user.get().getPosition());
         } else {
-            JOptionPane.showMessageDialog(null, "Usuario/Contraseña inválida", "Alerta",
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Usuario/Contraseña inválida",
+                    "Alerta",
                     JOptionPane.WARNING_MESSAGE);
         }
     }
 
     private Optional<User> validateCredentials(String username, String password) {
         try {
+
             List<User> userList = UserDAO.select(new User(username, password));
 
             return userList.stream()
@@ -64,23 +68,25 @@ public class LoginController implements ActionListener {
     }
 
     private void selectWindow(String position) {
+        
+        javax.swing.JFrame view;
+        Object controller;
+        boolean switchActivated = false;
+
         switch (position) {
             case UserPosition.GENERAL_MANAGER:
-                openNewWindow(
-                        new VistaVentanaAdministrador(),
-                        new ControlVentanaAdministrador(new VistaVentanaAdministrador()),
-                        false);
+                view = new GeneralManagerView();
+                controller = new GeneralManagerController((GeneralManagerView) view);
                 break;
             case UserPosition.INVENTORY_MANAGER:
-                openNewWindow(
-                        new VistaVentanaInventarista(),
-                        new ControlVentanaInventarista(new VistaVentanaInventarista()),
-                        true);
+                view = new VistaVentanaInventarista();
+                controller = new ControlVentanaInventarista((VistaVentanaInventarista) view);
+                switchActivated = true;
                 break;
             case UserPosition.SELLER:
-                openNewWindow(new VistaVentanaVendedor(),
-                        new ControlVentanaVendedor(new VistaVentanaVendedor()),
-                        true);
+                view = new VistaVentanaVendedor();
+                controller = new ControlVentanaVendedor((VistaVentanaVendedor) view);
+                switchActivated = true;
                 break;
             default:
                 JOptionPane.showMessageDialog(
@@ -88,18 +94,19 @@ public class LoginController implements ActionListener {
                         "Rol no reconocido",
                         "Error",
                         JOptionPane.ERROR_MESSAGE);
-
-                break;
-
+                return;
         }
+
+        openNewWindow(view, controller, switchActivated);
     }
 
     private void openNewWindow(javax.swing.JFrame view, Object controller, boolean switchActivated) {
-
-        if (switchActivated && view instanceof VistaVentanaInventarista) {
-            ((VistaVentanaInventarista) view).getBotonSwitch().setEnabled(true);
-        } else if (switchActivated && view instanceof VistaVentanaVendedor) {
-            ((VistaVentanaVendedor) view).getBotonSwitch().setEnabled(true);
+        if (switchActivated) {
+            if (view instanceof VistaVentanaInventarista) {
+                ((VistaVentanaInventarista) view).getBotonSwitch().setEnabled(true);
+            } else if (view instanceof VistaVentanaVendedor) {
+                ((VistaVentanaVendedor) view).getBotonSwitch().setEnabled(true);
+            }
         }
 
         view.setVisible(true);

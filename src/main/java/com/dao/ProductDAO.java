@@ -25,8 +25,6 @@ public class ProductDAO {
         statement.setDouble(4, product.getSupplierCost());
         statement.setDouble(5, product.getCostOfSale());
 
-        statement.close();
-
         return statement.executeUpdate();
     }
 
@@ -52,9 +50,6 @@ public class ProductDAO {
             productList.add(product);
 
         }
-
-        resultSet.close();
-        statement.close();
 
         return productList;
     }

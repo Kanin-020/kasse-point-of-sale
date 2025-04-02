@@ -16,7 +16,7 @@ import com.dao.ProductDAO;
 import com.data.Product;
 import com.view.LoginView;
 import com.view.VistaTicketKasse;
-import com.view.VistaVentanaAdministrador;
+import com.view.GeneralManagerView;
 import com.view.VistaVentanaVendedor;
 
 /**
@@ -210,8 +210,8 @@ public class ControlVentanaVendedor implements ActionListener {
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaVendedor.setVisible(false);
                 vistaVentanaVendedor.dispose();
-                VistaVentanaAdministrador ventanaAdministrador = new VistaVentanaAdministrador();
-                ControlVentanaAdministrador controlAdministrador = new ControlVentanaAdministrador(
+                GeneralManagerView ventanaAdministrador = new GeneralManagerView();
+                GeneralManagerController controlAdministrador = new GeneralManagerController(
                         ventanaAdministrador);
                 ventanaAdministrador.setVisible(true);
             } else {

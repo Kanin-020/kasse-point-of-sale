@@ -17,13 +17,13 @@ import javax.swing.JTable;
  *
  * @author l2001
  */
-public class VistaVentanaAdministrador extends javax.swing.JFrame  {
+public class GeneralManagerView extends javax.swing.JFrame  {
 
     /**
      * Creates new form vistaPrincipal
      */
   
-    public VistaVentanaAdministrador() {
+    public GeneralManagerView() {
         
         initComponents();
         this.setExtendedState(6);
@@ -337,13 +337,13 @@ public class VistaVentanaAdministrador extends javax.swing.JFrame  {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GeneralManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GeneralManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GeneralManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaVentanaAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GeneralManagerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -365,7 +365,7 @@ public class VistaVentanaAdministrador extends javax.swing.JFrame  {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaVentanaAdministrador().setVisible(true);
+                new GeneralManagerView().setVisible(true);
             }
         });
     }

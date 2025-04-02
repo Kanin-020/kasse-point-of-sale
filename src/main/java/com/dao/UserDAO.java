@@ -23,8 +23,6 @@ public class UserDAO {
         statement.setString(2, user.getPassword());
         statement.setString(3, user.getPosition().toString());
 
-        statement.close();
-
         return statement.executeUpdate();
     }
 
@@ -50,11 +48,30 @@ public class UserDAO {
             userList.add(user);
         }
 
-        resultSet.close();
-        statement.close();
 
         return userList;
     }
+
+    public static ArrayList<User> selectAll() throws SQLException {
+
+        ArrayList<User> userList = new ArrayList<>();
+    
+        String query = "SELECT * FROM user_table";
+    
+        PreparedStatement statement = connection.prepareStatement(query);
+        ResultSet resultSet = statement.executeQuery();
+    
+        while (resultSet.next()) {
+            User user = new User(
+                    resultSet.getString("username"),
+                    resultSet.getString("password"),
+                    resultSet.getString("position"));
+            userList.add(user);
+        }
+    
+        return userList;
+    }
+    
 
     public static int modify(User user) throws SQLException {
 

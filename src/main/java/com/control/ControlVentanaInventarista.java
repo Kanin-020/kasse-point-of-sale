@@ -28,7 +28,7 @@ import com.view.VistaAbastecerProducto;
 import com.view.VistaCrearProducto;
 import com.view.LoginView;
 import com.view.VistaModificarProducto;
-import com.view.VistaVentanaAdministrador;
+import com.view.GeneralManagerView;
 import com.view.VistaVentanaInventarista;
 
 /**
@@ -196,8 +196,8 @@ public class ControlVentanaInventarista implements ActionListener {
             if (respuesta == JOptionPane.YES_OPTION) {
                 vistaVentanaInventarista.setVisible(false);
                 vistaVentanaInventarista.dispose();
-                VistaVentanaAdministrador ventanaAdministrador = new VistaVentanaAdministrador();
-                ControlVentanaAdministrador controlAdministrador = new ControlVentanaAdministrador(
+                GeneralManagerView ventanaAdministrador = new GeneralManagerView();
+                GeneralManagerController controlAdministrador = new GeneralManagerController(
                         ventanaAdministrador);
                 ventanaAdministrador.setVisible(true);
             } else {
