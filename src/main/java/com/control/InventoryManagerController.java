@@ -1,7 +1,9 @@
 package com.control;
 
-import javax.swing.JOptionPane;
+import static com.utils.Constants.*;
 
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.event.ActionEvent;
@@ -28,18 +30,19 @@ import com.view.InventoryManagerView;
 public class InventoryManagerController implements ActionListener {
 
     private InventoryManagerView inventoryManagerView;
-
-    private DefaultTableModel productTableModel;
+    private DefaultTableModel productTable;
 
     public InventoryManagerController(InventoryManagerView inventoryManagerView) {
         this.inventoryManagerView = inventoryManagerView;
+        this.productTable = (DefaultTableModel) inventoryManagerView.getTablaProductos().getModel();
+
         updateTable();
+
         addActionListeners();
     }
 
     private void addActionListeners() {
         inventoryManagerView.getBotonAgregar().addActionListener(this);
-        inventoryManagerView.getBotonAbastecer().addActionListener(this);
         inventoryManagerView.getBotonEliminar().addActionListener(this);
         inventoryManagerView.getBotonExcel().addActionListener(this);
         inventoryManagerView.getBotonModificar().addActionListener(this);
@@ -68,7 +71,7 @@ public class InventoryManagerController implements ActionListener {
 
     private void openAddProductView() {
         AddProductView addProductView = new AddProductView();
-        new AddProductController(addProductView, productTableModel);
+        new AddProductController(addProductView, productTable);
         addProductView.setVisible(true);
     }
 
@@ -87,18 +90,18 @@ public class InventoryManagerController implements ActionListener {
             return;
         }
 
-        int message = JOptionPane.showConfirmDialog(
+        int answer = JOptionPane.showConfirmDialog(
                 null,
                 "¿Está seguro de modificar el producto?",
                 "Confirmación",
                 JOptionPane.YES_NO_OPTION);
 
-        if (message == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             try {
 
                 Product product = createProductFromTable(index);
                 ModifyProductView modifyProductView = new ModifyProductView();
-                new ModifyProductController(modifyProductView, productTableModel, product);
+                new ModifyProductController(modifyProductView, productTable, product);
                 modifyProductView.setVisible(true);
 
             } catch (Exception exception) {
@@ -113,8 +116,8 @@ public class InventoryManagerController implements ActionListener {
     }
 
     private void deleteProduct() {
-        int indice = inventoryManagerView.getTablaProductos().getSelectedRow();
-        if (indice == -1) {
+        int index = inventoryManagerView.getTablaProductos().getSelectedRow();
+        if (index == -1) {
 
             JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Advertencia",
                     JOptionPane.WARNING_MESSAGE);
@@ -122,23 +125,23 @@ public class InventoryManagerController implements ActionListener {
             return;
         }
 
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el producto?", "Confirmación",
+        int answer = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el producto?", "Confirmación",
                 JOptionPane.YES_NO_OPTION);
-        if (respuesta == JOptionPane.YES_OPTION) {
-            Product product = createProductFromTable(indice);
+        if (answer == JOptionPane.YES_OPTION) {
+            Product product = createProductFromTable(index);
             try {
                 ProductDAO.delete(product);
-            } catch (SQLException e) {
-                e.printStackTrace();
+                updateTable();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
             }
-            updateTable();
         }
     }
 
     private void handleExportExcel() {
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Quiere generar un documento de Excel?", "Generar Excel",
+        int answer = JOptionPane.showConfirmDialog(null, "¿Quiere generar un documento de Excel?", "Generar Excel",
                 JOptionPane.YES_NO_OPTION);
-        if (respuesta == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             exportExcel();
             JOptionPane.showMessageDialog(null, "Documento generado", "Documento generado",
                     JOptionPane.INFORMATION_MESSAGE);
@@ -147,14 +150,14 @@ public class InventoryManagerController implements ActionListener {
 
     private void logout() {
 
-        int message = JOptionPane.showConfirmDialog(
+        int answer = JOptionPane.showConfirmDialog(
                 null,
                 "¿Está seguro de cerrar sesión?",
                 "Confirmación",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
-        if (message == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             inventoryManagerView.dispose();
             LoginView login = new LoginView();
             new LoginController(login);
@@ -164,29 +167,29 @@ public class InventoryManagerController implements ActionListener {
 
     private void changeToGeneralManagerWindow() {
 
-        int message = JOptionPane.showConfirmDialog(
+        int answer = JOptionPane.showConfirmDialog(
                 null,
                 "¿Está seguro de regresar a la ventana Administrador?",
                 "Confirmación",
                 JOptionPane.YES_NO_OPTION);
 
-        if (message == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             inventoryManagerView.dispose();
             GeneralManagerView generalManager = new GeneralManagerView();
             new GeneralManagerController(generalManager);
             generalManager.setVisible(true);
         }
-        
+
     }
 
     private Product createProductFromTable(int index) {
         return new Product(
-                Integer.parseInt(productTableModel.getValueAt(index, 0).toString()),
-                productTableModel.getValueAt(index, 1).toString(),
-                productTableModel.getValueAt(index, 2).toString(),
-                Integer.parseInt(productTableModel.getValueAt(index, 3).toString()),
-                Double.parseDouble(productTableModel.getValueAt(index, 4).toString()),
-                Double.parseDouble(productTableModel.getValueAt(index, 5).toString()));
+                Integer.parseInt(productTable.getValueAt(index, INVENTORY_CODE_INDEX).toString()),
+                productTable.getValueAt(index, INVENTORY_NAME_INDEX).toString(),
+                productTable.getValueAt(index, INVENTORY_CATEGORY_INDEX).toString(),
+                Integer.parseInt(productTable.getValueAt(index, INVENTORY_QUANTITY_INDEX).toString()),
+                Double.parseDouble(productTable.getValueAt(index, INVENTORY_SUPPLIER_COST_INDEX).toString()),
+                Double.parseDouble(productTable.getValueAt(index, INVENTORY_COST_OF_SALE_INDEX).toString()));
     }
 
     private void exportExcel() {
@@ -194,7 +197,15 @@ public class InventoryManagerController implements ActionListener {
         XSSFWorkbook book = new XSSFWorkbook();
         XSSFSheet sheet = book.createSheet("Ventana 1");
 
-        String[] headers = { "Codigo", "Nombre", "Categoria", "Cantidad", "Costo", "Precio/Venta" };
+        String[] headers = {
+                PRODUCT_CODE_HEADER,
+                PRODUCT_NAME_HEADER,
+                PRODUCT_CATEGORY_HEADER,
+                PRODUCT_QUANTITY_HEADER,
+                PRODUCT_SUPPLIER_COST_HEADER,
+                PRODUCT_COST_OF_SALE_HEADER
+        };
+
         XSSFRow headerRow = sheet.createRow(0);
         for (int i = 0; i < headers.length; i++) {
             headerRow.createCell(i).setCellValue(headers[i]);
@@ -223,46 +234,58 @@ public class InventoryManagerController implements ActionListener {
 
         try (FileOutputStream fileout = new FileOutputStream("ReporteDeVenta.xlsx")) {
             book.write(fileout);
-        } catch (IOException e) {
-            String message = (e instanceof FileNotFoundException) ? "Archivo no encontrado" : "Proceso cancelado";
+        } catch (IOException exception) {
+            String message = (exception instanceof FileNotFoundException) ? "Archivo no encontrado"
+                    : "Proceso cancelado";
             JOptionPane.showMessageDialog(null, message, "Alerta", JOptionPane.WARNING_MESSAGE);
-            Logger.getLogger(InventoryManagerController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(InventoryManagerController.class.getName()).log(Level.SEVERE, null, exception);
         } finally {
             try {
                 book.close();
-            } catch (IOException e) {
-                Logger.getLogger(InventoryManagerController.class.getName()).log(Level.SEVERE, null, e);
+            } catch (IOException exception) {
+                Logger.getLogger(InventoryManagerController.class.getName()).log(Level.SEVERE, null, exception);
             }
         }
     }
 
     private void updateTable() {
 
-        try {
-
-            productTableModel = (DefaultTableModel) this.inventoryManagerView.getTablaProductos().getModel();
-
-            productTableModel.setRowCount(0);
-
-            ArrayList<Product> productList = ProductDAO.selectAll();
-
-            for (Product product : productList) {
-                Object[] rows = {
-                        product.getCode(), product.getName(),
-                        product.getCategory(), product.getQuantity(),
-                        product.getSupplierCost(), product.getCostOfSale()
-                };
-
-                productTableModel.addRow(rows);
-            }
-
-        } catch (SQLException exception) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Error al cargar la tabla de productos: " + exception.getMessage(),
-                    "Error",
+        if (productTable == null) {
+            JOptionPane.showMessageDialog(null, "Error: La tabla no está inicializada.", "Error",
                     JOptionPane.ERROR_MESSAGE);
+            return;
         }
+
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+
+            @Override
+            protected Void doInBackground() {
+                try {
+
+                    productTable.setRowCount(0);
+
+                    ArrayList<Product> productList = ProductDAO.selectAll();
+                    for (Product product : productList) {
+                        Object[] rows = {
+                                product.getCode(), product.getName(),
+                                product.getCategory(), product.getQuantity(),
+                                product.getSupplierCost(), product.getCostOfSale()
+                        };
+                        productTable.addRow(rows);
+                    }
+
+                } catch (SQLException exception) {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Error al cargar la tabla de productos: " + exception.getMessage(),
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                return null;
+            }
+        };
+
+        worker.execute();
 
     }
 

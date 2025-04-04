@@ -1,5 +1,7 @@
 package com.control;
 
+import static com.utils.Constants.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -62,10 +64,10 @@ public class ModifyProductController implements ActionListener {
 
             updateTable(product, modifiedProduct);
 
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException exception) {
             JOptionPane.showMessageDialog(null, "Entrada invalida", "Alerta", JOptionPane.WARNING_MESSAGE);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
 
     }
@@ -74,8 +76,7 @@ public class ModifyProductController implements ActionListener {
         modifyProductView.dispose();
     }
 
-
-    private void fillForm(){
+    private void fillForm() {
         modifyProductView.getFieldNombre().setText(product.getName());
         modifyProductView.getComboBoxCategoria().setSelectedItem(product.getCategory());
         modifyProductView.getFieldCantidad().setText(String.valueOf(product.getQuantity()));
@@ -84,18 +85,19 @@ public class ModifyProductController implements ActionListener {
     }
 
     private void updateTable(Product product, Product modifiedProduct) {
-   
+
         int rowCount = productTableModel.getRowCount();
 
         for (int i = 0; i < rowCount; i++) {
-            
-            if (productTableModel.getValueAt(i, 0).equals(product.getCode())) { 
 
-                productTableModel.setValueAt(modifiedProduct.getName(), i, 1);
-                productTableModel.setValueAt(modifiedProduct.getCategory(), i, 2);
-                productTableModel.setValueAt(modifiedProduct.getQuantity(), i, 3);
-                productTableModel.setValueAt(modifiedProduct.getSupplierCost(), i, 4);
-                productTableModel.setValueAt(modifiedProduct.getCostOfSale(), i, 5);
+            if (productTableModel.getValueAt(i, INVENTORY_CODE_INDEX).equals(product.getCode())) {
+
+                productTableModel.setValueAt(modifiedProduct.getName(), i, INVENTORY_NAME_INDEX);
+                productTableModel.setValueAt(modifiedProduct.getCategory(), i, INVENTORY_CATEGORY_INDEX);
+                productTableModel.setValueAt(modifiedProduct.getQuantity(), i, INVENTORY_QUANTITY_INDEX);
+                productTableModel.setValueAt(modifiedProduct.getSupplierCost(), i, INVENTORY_SUPPLIER_COST_INDEX);
+                productTableModel.setValueAt(modifiedProduct.getCostOfSale(), i, INVENTORY_COST_OF_SALE_INDEX);
+
                 break;
             }
         }

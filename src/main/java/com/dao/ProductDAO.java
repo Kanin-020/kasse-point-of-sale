@@ -36,11 +36,14 @@ public class ProductDAO {
 
         PreparedStatement statement = connection.prepareStatement(query);
 
-        ResultSet resultSet = statement.executeQuery(query);
+        statement.setInt(1, product.getCode());
+
+        ResultSet resultSet = statement.executeQuery();
 
         while (resultSet.next()) {
 
             product = new Product(
+                    resultSet.getInt("code"),
                     resultSet.getString("name"),
                     resultSet.getString("category"),
                     resultSet.getInt("quantity"),

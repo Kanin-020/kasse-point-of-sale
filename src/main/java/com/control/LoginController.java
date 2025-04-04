@@ -1,22 +1,26 @@
 package com.control;
 
+import static com.utils.Constants.GENERAL_MANAGER;
+import static com.utils.Constants.INVENTORY_MANAGER;
+import static com.utils.Constants.SELLER;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Optional;
 import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 import com.dao.UserDAO;
 import com.data.User;
-import com.data.UserPosition;
 import com.view.LoginView;
 import com.view.GeneralManagerView;
 import com.view.InventoryManagerView;
-import com.view.VistaVentanaVendedor;
+import com.view.SellerView;
 
 public class LoginController implements ActionListener {
 
-    private final LoginView loginView;
+    private LoginView loginView;
 
     public LoginController(LoginView loginView) {
         this.loginView = loginView;
@@ -69,23 +73,23 @@ public class LoginController implements ActionListener {
 
     private void selectWindow(String position) {
 
-        javax.swing.JFrame view;
+        JFrame view;
         Object controller;
         boolean switchActivated = false;
 
         switch (position) {
-            case UserPosition.GENERAL_MANAGER:
+            case GENERAL_MANAGER:
                 view = new GeneralManagerView();
                 controller = new GeneralManagerController((GeneralManagerView) view);
                 break;
-            case UserPosition.INVENTORY_MANAGER:
+            case INVENTORY_MANAGER:
                 view = new InventoryManagerView();
                 controller = new InventoryManagerController((InventoryManagerView) view);
                 switchActivated = true;
                 break;
-            case UserPosition.SELLER:
-                view = new VistaVentanaVendedor();
-                controller = new ControlVentanaVendedor((VistaVentanaVendedor) view);
+            case SELLER:
+                view = new SellerView();
+                controller = new SellerController((SellerView) view);
                 switchActivated = true;
                 break;
             default:
@@ -100,12 +104,12 @@ public class LoginController implements ActionListener {
         openNewWindow(view, controller, switchActivated);
     }
 
-    private void openNewWindow(javax.swing.JFrame view, Object controller, boolean switchActivated) {
+    private void openNewWindow(JFrame view, Object controller, boolean switchActivated) {
         if (switchActivated) {
             if (view instanceof InventoryManagerView) {
                 ((InventoryManagerView) view).getBotonSwitch().setEnabled(true);
-            } else if (view instanceof VistaVentanaVendedor) {
-                ((VistaVentanaVendedor) view).getBotonSwitch().setEnabled(true);
+            } else if (view instanceof SellerView) {
+                ((SellerView) view).getBotonSwitch().setEnabled(true);
             }
         }
 

@@ -1,5 +1,7 @@
 package com.control;
 
+import static com.utils.Constants.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -7,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 
 import com.dao.UserDAO;
@@ -15,17 +18,19 @@ import com.view.GeneralManagerView;
 import com.view.LoginView;
 import com.view.AddUserView;
 import com.view.InventoryManagerView;
-import com.view.VistaVentanaVendedor;
+import com.view.SellerView;
 
 public class GeneralManagerController implements ActionListener {
 
     private GeneralManagerView generalManagerView;
-
-    private DefaultTableModel userTableModel;
+    private DefaultTableModel userTable;
 
     public GeneralManagerController(GeneralManagerView generalManagerView) {
         this.generalManagerView = generalManagerView;
+        this.userTable = (DefaultTableModel) generalManagerView.getTablaUsuarios().getModel();
+
         updateTable();
+
         addActionListeners();
     }
 
@@ -49,8 +54,8 @@ public class GeneralManagerController implements ActionListener {
             InventoryManagerView inventoryManagerView = new InventoryManagerView();
             changeWindow(inventoryManagerView, new InventoryManagerController(inventoryManagerView));
         } else if (source == generalManagerView.getBotonVentas()) {
-            VistaVentanaVendedor vistaVentanaVendedor = new VistaVentanaVendedor();
-            changeWindow(vistaVentanaVendedor, new ControlVentanaVendedor(vistaVentanaVendedor));
+            SellerView sellerView = new SellerView();
+            changeWindow(sellerView, new SellerController(sellerView));
         } else if (source == generalManagerView.getBotonSalir()) {
             logout();
         }
@@ -58,7 +63,7 @@ public class GeneralManagerController implements ActionListener {
 
     private void openAddUserView() {
         AddUserView addUserView = new AddUserView();
-        new AddUserController(addUserView, userTableModel);
+        new AddUserController(addUserView, userTable);
         addUserView.setVisible(true);
     }
 
@@ -77,19 +82,19 @@ public class GeneralManagerController implements ActionListener {
             return;
         }
 
-        int message = JOptionPane.showConfirmDialog(
+        int answer = JOptionPane.showConfirmDialog(
                 null,
                 "¿Está seguro de eliminar el usuario?",
                 "Confirmación",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
-        if (message == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             try {
 
                 User user = new User(
-                        generalManagerView.getTablaUsuarios().getValueAt(index, 0).toString(),
-                        generalManagerView.getTablaUsuarios().getValueAt(index, 1).toString());
+                        generalManagerView.getTablaUsuarios().getValueAt(index, USER_USERNAME_INDEX).toString(),
+                        generalManagerView.getTablaUsuarios().getValueAt(index, USER_PASSWORD_INDEX).toString());
 
                 UserDAO.delete(user);
 
@@ -107,14 +112,14 @@ public class GeneralManagerController implements ActionListener {
 
     private void changeWindow(javax.swing.JFrame view, Object controller) {
 
-        int message = JOptionPane.showConfirmDialog(
+        int answer = JOptionPane.showConfirmDialog(
                 null,
                 "¿Está seguro de cambiar de modo?",
                 "Confirmación",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
-        if (message == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             generalManagerView.dispose();
             view.setVisible(true);
 
@@ -124,14 +129,14 @@ public class GeneralManagerController implements ActionListener {
 
     private void logout() {
 
-        int message = JOptionPane.showConfirmDialog(
+        int answer = JOptionPane.showConfirmDialog(
                 null,
                 "¿Está seguro de cerrar sesión?",
                 "Confirmación",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
-        if (message == JOptionPane.YES_OPTION) {
+        if (answer == JOptionPane.YES_OPTION) {
             generalManagerView.dispose();
             LoginView login = new LoginView();
             new LoginController(login);
@@ -140,27 +145,44 @@ public class GeneralManagerController implements ActionListener {
     }
 
     private void updateTable() {
-        try {
 
-            userTableModel = (DefaultTableModel) generalManagerView.getTablaUsuarios()
-                    .getModel();
-
-            userTableModel.setRowCount(0);
-
-            ArrayList<User> userList = UserDAO.selectAll();
-
-            for (User user : userList) {
-                Object[] rows = { user.getUsername(), user.getPassword(), user.getPosition() };
-                userTableModel.addRow(rows);
-            }
-
-        } catch (SQLException exception) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Error al cargar la tabla de usuarios: " + exception.getMessage(),
-                    "Error",
+        if (userTable == null) {
+            JOptionPane.showMessageDialog(null, "Error: La tabla de usuarios no está inicializada.", "Error",
                     JOptionPane.ERROR_MESSAGE);
+            return;
         }
+
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+
+            @Override
+            protected Void doInBackground() {
+                try {
+                    userTable.setRowCount(0);
+
+                    ArrayList<User> userList = UserDAO.selectAll();
+
+                    for (User user : userList) {
+                        Object[] rows = {
+                                user.getUsername(),
+                                user.getPassword(),
+                                user.getPosition()
+                        };
+                        userTable.addRow(rows);
+                    }
+
+                } catch (SQLException exception) {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Error al cargar la tabla de usuarios: " + exception.getMessage(),
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                return null;
+            }
+        };
+
+        worker.execute();
+    
     }
 
 }

@@ -51,7 +51,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
         BotonAgregar = new javax.swing.JButton();
         BotonExcel = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
-        BotonAbastecer = new javax.swing.JButton();
         LabelBienvenida = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaProductos = new javax.swing.JTable();
@@ -94,9 +93,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
         BotonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonModificarB.png"))); // NOI18N
         BotonModificar.setBorder(null);
         BotonModificar.setBorderPainted(false);
-        BotonModificar.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonModificar.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonModificar.setPreferredSize(new java.awt.Dimension(200, 66));
         BotonModificar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonModificarS.png"))); // NOI18N
         BotonModificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonModificarB.png"))); // NOI18N
 
@@ -126,9 +122,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
         BotonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
         BotonAgregar.setBorder(null);
         BotonAgregar.setBorderPainted(false);
-        BotonAgregar.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonAgregar.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonAgregar.setPreferredSize(new java.awt.Dimension(200, 66));
         BotonAgregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarS.png"))); // NOI18N
         BotonAgregar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
 
@@ -158,15 +151,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
             }
         });
 
-        BotonAbastecer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAbastecerB.png"))); // NOI18N
-        BotonAbastecer.setBorder(null);
-        BotonAbastecer.setBorderPainted(false);
-        BotonAbastecer.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonAbastecer.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonAbastecer.setPreferredSize(new java.awt.Dimension(200, 66));
-        BotonAbastecer.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAbastecerS.png"))); // NOI18N
-        BotonAbastecer.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAbastecerB.png"))); // NOI18N
-
         javax.swing.GroupLayout PanelLateralIzquierdoLayout = new javax.swing.GroupLayout(PanelLateralIzquierdo);
         PanelLateralIzquierdo.setLayout(PanelLateralIzquierdoLayout);
         PanelLateralIzquierdoLayout.setHorizontalGroup(
@@ -189,7 +173,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
             .addComponent(BotonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonAbastecer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelLateralIzquierdoLayout.setVerticalGroup(
             PanelLateralIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,15 +183,13 @@ public class InventoryManagerView extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(BotonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(BotonAbastecer, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(LabelIcono)
@@ -221,7 +202,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
         jScrollPane1.setBorder(null);
 
         TablaProductos.setAutoCreateRowSorter(true);
-        TablaProductos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         TablaProductos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         TablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -358,7 +338,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAbastecer;
     private javax.swing.JButton BotonAgregar;
     private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonExcel;
@@ -382,14 +361,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
 
     public void setBotonAgregar(JButton BotonAgregar) {
         this.BotonAgregar = BotonAgregar;
-    }
-
-    public JButton getBotonAbastecer() {
-        return BotonAbastecer;
-    }
-
-    public void setBotonAbastecer(JButton BotonAbastecer) {
-        this.BotonAbastecer = BotonAbastecer;
     }
 
     public JButton getBotonEliminar() {

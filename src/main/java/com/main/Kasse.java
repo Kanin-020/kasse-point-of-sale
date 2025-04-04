@@ -1,33 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.main;
 
 import com.control.LoginController;
-import com.view.VistaInicio;
+import com.view.SplashView;
 import com.view.LoginView;
 
-/**
- *
- * @author l2001
- */
 public class Kasse {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws InterruptedException {
-        VistaInicio vistaInicio = new VistaInicio();
-        vistaInicio.setVisible(true);
+        SplashView splashView = new SplashView();
+        splashView.setVisible(true);
         Thread.sleep(1300);
-        vistaInicio.dispose();
-        LoginView vistaLogin = new LoginView();
-        new LoginController(vistaLogin);
-        
-        vistaLogin.setVisible(true);
-     
+        splashView.dispose();
+        LoginView loginView = new LoginView();
+        new LoginController(loginView);
+
+        loginView.setVisible(true);
+
     }
 
 }
