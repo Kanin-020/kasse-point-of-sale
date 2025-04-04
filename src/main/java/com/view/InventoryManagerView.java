@@ -18,6 +18,7 @@ import javax.swing.JToggleButton;
  *
  * @author l2001
  */
+@SuppressWarnings("rawtypes")
 public class InventoryManagerView extends javax.swing.JFrame {
 
     /**
@@ -288,15 +289,12 @@ public class InventoryManagerView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonExcelActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonExcelActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     /**

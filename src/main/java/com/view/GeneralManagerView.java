@@ -17,6 +17,7 @@ import javax.swing.JTable;
  *
  * @author l2001
  */
+@SuppressWarnings("rawtypes")
 public class GeneralManagerView extends javax.swing.JFrame  {
 
     /**
@@ -301,23 +302,18 @@ public class GeneralManagerView extends javax.swing.JFrame  {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonAgregarActionPerformed
 
     private void BotonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInventarioActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonInventarioActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentasActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonVentasActionPerformed
 
     /**

@@ -13,12 +13,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.JToggleButton;
 
 /**
  *
  * @author l2001
  */
+@SuppressWarnings("rawtypes")
 public class SellerView extends javax.swing.JFrame {
 
     /**
@@ -377,7 +377,6 @@ public class SellerView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     /**
