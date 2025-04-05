@@ -60,7 +60,7 @@ public class SellerController implements ActionListener {
         String name = sellerView.getFieldNombre().getText();
 
         if (name.isEmpty()) {
-            showMessage("Campo de nombre vacío", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Campo de nombre vacío", "Alerta", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -71,12 +71,12 @@ public class SellerController implements ActionListener {
             if (!productList.isEmpty()) {
                 productFinded(productList.get(0));
             } else {
-                showMessage("Producto no encontrado", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Producto no encontrado", "Alerta", JOptionPane.WARNING_MESSAGE);
             }
         } catch (NumberFormatException exception) {
-            showMessage("Entrada inválida", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Entrada inválida", "Alerta", JOptionPane.WARNING_MESSAGE);
         } catch (SQLException exception) {
-            handleError(exception);
+            JOptionPane.showMessageDialog(null, exception.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -88,7 +88,7 @@ public class SellerController implements ActionListener {
             int quantity = Integer.parseInt(sellerView.getFieldCantidad().getText().trim());
 
             if (name.isEmpty()) {
-                showMessage("Campos vacíos", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Campos vacíos", "Alerta", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
@@ -106,12 +106,12 @@ public class SellerController implements ActionListener {
                 updateTotalCost();
 
             } else {
-                showMessage("Producto no encontrado", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Producto no encontrado", "Alerta", JOptionPane.WARNING_MESSAGE);
             }
         } catch (NumberFormatException exception) {
-            showMessage("Entrada inválida", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Entrada inválida", "Alerta", JOptionPane.WARNING_MESSAGE);
         } catch (SQLException exception) {
-            handleError(exception);
+            JOptionPane.showMessageDialog(null, exception.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -120,7 +120,7 @@ public class SellerController implements ActionListener {
         int index = sellerView.getTablaVentas().getSelectedRow();
 
         if (index == -1) {
-            showMessage("Debe seleccionar un producto", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Alerta", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -169,7 +169,7 @@ public class SellerController implements ActionListener {
     }
 
     private void addProductToTable(Product product, int quantity) {
-        
+
         Object[] row = {
                 tableIndex++,
                 product.getCode(),
@@ -215,7 +215,7 @@ public class SellerController implements ActionListener {
     private void updateTotalCost() {
 
         double totalCost = 0;
-        
+
         for (int i = 0; i < saleTable.getRowCount(); i++) {
             totalCost += (double) saleTable.getValueAt(i, SALE_TOTAL_INDEX);
         }
@@ -232,11 +232,12 @@ public class SellerController implements ActionListener {
     }
 
     private void productFinded(Product product) {
-        showMessage(
-            "Nombre: " + product.getName() + " " +
-            "Precio unitario: " + product.getCostOfSale() + " "+
-            "Cantidad disponible: " + product.getQuantity(),
-        JOptionPane.INFORMATION_MESSAGE);
+        String output = "Nombre: " + product.getName() + " " +
+                "Precio unitario: " + product.getCostOfSale() + " " +
+                "Cantidad disponible: " + product.getQuantity();
+
+        JOptionPane.showMessageDialog(null, output, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+
         sellerView.getFieldCodigo().setText(String.valueOf(product.getCode()));
         sellerView.getFieldNombre().setText(product.getName());
     }
@@ -244,15 +245,6 @@ public class SellerController implements ActionListener {
     private boolean confirmAction(String message) {
         return JOptionPane.showConfirmDialog(null, message, "Confirmación",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
-    }
-
-    private void showMessage(String message, int type) {
-        JOptionPane.showMessageDialog(null, message, "Alerta", type);
-    }
-
-    private void handleError(Exception exception) {
-        showMessage(exception.getMessage(), JOptionPane.ERROR_MESSAGE);
-        exception.printStackTrace();
     }
 
 }
