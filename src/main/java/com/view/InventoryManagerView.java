@@ -48,7 +48,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
         BotonEliminar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         LabelTitulo = new javax.swing.JLabel();
-        LabelIcono = new javax.swing.JLabel();
         BotonAgregar = new javax.swing.JButton();
         BotonExcel = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
@@ -60,6 +59,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
         setTitle("Kasse");
         setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(1374, 861));
+        setPreferredSize(new java.awt.Dimension(1374, 861));
 
         PanelBase.setBackground(new java.awt.Color(255, 255, 255));
         PanelBase.setPreferredSize(new java.awt.Dimension(1050, 575));
@@ -118,8 +118,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
         LabelTitulo.setText("Kasse");
         LabelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        LabelIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoPanelInventarista.png"))); // NOI18N
-
         BotonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
         BotonAgregar.setBorder(null);
         BotonAgregar.setBorderPainted(false);
@@ -167,10 +165,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
                         .addComponent(LabelTitulo)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(LabelIcono)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(BotonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -182,7 +176,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
                 .addComponent(LabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(BotonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,11 +184,9 @@ public class InventoryManagerView extends javax.swing.JFrame {
                 .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(LabelIcono)
-                .addGap(50, 50, 50))
+                .addGap(18, 18, 18))
         );
 
         LabelBienvenida.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -203,6 +195,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
         jScrollPane1.setBorder(null);
 
         TablaProductos.setAutoCreateRowSorter(true);
+        TablaProductos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         TablaProductos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         TablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -258,19 +251,19 @@ public class InventoryManagerView extends javax.swing.JFrame {
                             .addGroup(PanelBaseLayout.createSequentialGroup()
                                 .addComponent(LabelBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1165, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         PanelBaseLayout.setVerticalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
+            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
             .addGroup(PanelBaseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LabelBienvenida)
                 .addGap(18, 18, 18)
                 .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -278,11 +271,11 @@ public class InventoryManagerView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1384, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -343,7 +336,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
     private javax.swing.JButton BotonSalir;
     private javax.swing.JToggleButton BotonSwitch;
     private javax.swing.JLabel LabelBienvenida;
-    private javax.swing.JLabel LabelIcono;
     private javax.swing.JLabel LabelTitulo;
     private javax.swing.JPanel PanelBase;
     private javax.swing.JPanel PanelLateralIzquierdo;
@@ -399,14 +391,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
 
     public void setLabelBienvenida(JLabel LabelBienvenida) {
         this.LabelBienvenida = LabelBienvenida;
-    }
-
-    public JLabel getLabelIcono() {
-        return LabelIcono;
-    }
-
-    public void setLabelIcono(JLabel LabelIcono) {
-        this.LabelIcono = LabelIcono;
     }
 
     public JLabel getLabelTitulo() {

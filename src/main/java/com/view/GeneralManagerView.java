@@ -52,7 +52,6 @@ public class GeneralManagerView extends javax.swing.JFrame  {
         PanelLateralIzquierdo = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         LabelTitulo = new javax.swing.JLabel();
-        IconoAdorno = new javax.swing.JLabel();
         BotonSalir = new javax.swing.JButton();
         BotonAgregar = new javax.swing.JButton();
         BotonInventario = new javax.swing.JButton();
@@ -96,8 +95,6 @@ public class GeneralManagerView extends javax.swing.JFrame  {
         LabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         LabelTitulo.setText("Kasse");
         LabelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        IconoAdorno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoPanelAdministrador.png"))); // NOI18N
 
         BotonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAB.png"))); // NOI18N
         BotonSalir.setBorderPainted(false);
@@ -176,13 +173,8 @@ public class GeneralManagerView extends javax.swing.JFrame  {
             .addComponent(BotonVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
-                .addGroup(PanelLateralIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(IconoAdorno))
-                    .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(LabelTitulo)))
+                .addGap(53, 53, 53)
+                .addComponent(LabelTitulo)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLateralIzquierdoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -196,19 +188,17 @@ public class GeneralManagerView extends javax.swing.JFrame  {
                 .addComponent(LabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(BotonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(IconoAdorno)
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18))
         );
 
         LabelBienvenida.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -267,7 +257,7 @@ public class GeneralManagerView extends javax.swing.JFrame  {
                     .addGroup(PanelBaseLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(LabelBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(875, Short.MAX_VALUE))
+                        .addContainerGap(715, Short.MAX_VALUE))
                     .addComponent(PanelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelBaseLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
@@ -276,14 +266,14 @@ public class GeneralManagerView extends javax.swing.JFrame  {
         );
         PanelBaseLayout.setVerticalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
+            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
             .addGroup(PanelBaseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LabelBienvenida)
                 .addGap(12, 12, 12)
                 .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -291,11 +281,11 @@ public class GeneralManagerView extends javax.swing.JFrame  {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1240, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -372,7 +362,6 @@ public class GeneralManagerView extends javax.swing.JFrame  {
     private javax.swing.JButton BotonInventario;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JButton BotonVentas;
-    private javax.swing.JLabel IconoAdorno;
     private javax.swing.JLabel LabelBienvenida;
     private javax.swing.JLabel LabelTitulo;
     private javax.swing.JPanel PanelBase;
@@ -421,14 +410,6 @@ public class GeneralManagerView extends javax.swing.JFrame  {
 
     public void setBotonVentas(JButton BotonVentas) {
         this.BotonVentas = BotonVentas;
-    }
-
-    public JLabel getIconoAdorno() {
-        return IconoAdorno;
-    }
-
-    public void setIconoAdorno(JLabel IconoAdorno) {
-        this.IconoAdorno = IconoAdorno;
     }
 
     public JLabel getLabelBienvenida() {

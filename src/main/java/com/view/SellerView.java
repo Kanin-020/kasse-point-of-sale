@@ -44,7 +44,6 @@ public class SellerView extends javax.swing.JFrame {
         PanelLateralIzquierdo = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         LabelTitulo = new javax.swing.JLabel();
-        LabelIcono = new javax.swing.JLabel();
         LabelCodigo = new javax.swing.JLabel();
         LabelCantidad = new javax.swing.JLabel();
         LabelNombre = new javax.swing.JLabel();
@@ -69,6 +68,7 @@ public class SellerView extends javax.swing.JFrame {
         setTitle("Kasse");
         setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(1374, 861));
+        setPreferredSize(new java.awt.Dimension(1374, 861));
 
         PanelBase.setBackground(new java.awt.Color(255, 255, 255));
         PanelBase.setPreferredSize(new java.awt.Dimension(1050, 575));
@@ -85,8 +85,6 @@ public class SellerView extends javax.swing.JFrame {
         LabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         LabelTitulo.setText("Kasse");
         LabelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        LabelIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoPanelVendedor.png"))); // NOI18N
 
         LabelCodigo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         LabelCodigo.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,10 +150,6 @@ public class SellerView extends javax.swing.JFrame {
         PanelLateralIzquierdoLayout.setHorizontalGroup(
             PanelLateralIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(LabelIcono)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
                 .addGroup(PanelLateralIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
                         .addContainerGap()
@@ -174,7 +168,7 @@ public class SellerView extends javax.swing.JFrame {
                                     .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(FieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(FieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 25, Short.MAX_VALUE)))
+                        .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(BotonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -188,29 +182,27 @@ public class SellerView extends javax.swing.JFrame {
                 .addComponent(LabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelCodigo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelNombre)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelCantidad)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelIcono)
-                .addGap(37, 37, 37))
+                .addGap(18, 18, 18))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 102));
@@ -239,7 +231,7 @@ public class SellerView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(658, Short.MAX_VALUE)
+                .addContainerGap(371, Short.MAX_VALUE)
                 .addComponent(LabelEtiqueta)
                 .addGap(28, 28, 28)
                 .addComponent(LabelTotal)
@@ -335,7 +327,8 @@ public class SellerView extends javax.swing.JFrame {
         PanelBaseLayout.setHorizontalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBaseLayout.createSequentialGroup()
-                .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -356,21 +349,21 @@ public class SellerView extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 926, Short.MAX_VALUE)
+            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1374, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 926, Short.MAX_VALUE)
+            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -443,7 +436,6 @@ public class SellerView extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCantidad;
     private javax.swing.JLabel LabelCodigo;
     private javax.swing.JLabel LabelEtiqueta;
-    private javax.swing.JLabel LabelIcono;
     private javax.swing.JLabel LabelNombre;
     private javax.swing.JLabel LabelTitulo;
     private javax.swing.JLabel LabelTotal;
@@ -550,14 +542,6 @@ public class SellerView extends javax.swing.JFrame {
 
     public void setLabelCodigo(JLabel LabelCodigo) {
         this.LabelCodigo = LabelCodigo;
-    }
-
-    public JLabel getLabelIcono() {
-        return LabelIcono;
-    }
-
-    public void setLabelIcono(JLabel LabelIcono) {
-        this.LabelIcono = LabelIcono;
     }
 
     public JLabel getLabelNombre() {
