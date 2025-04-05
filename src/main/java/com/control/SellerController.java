@@ -18,12 +18,12 @@ import com.view.SellerView;
 public class SellerController implements ActionListener {
 
     private SellerView sellerView;
-    private DefaultTableModel productTable;
+    private DefaultTableModel saleTable;
     private int tableIndex;
 
     public SellerController(SellerView sellerView) {
         this.sellerView = sellerView;
-        this.productTable = (DefaultTableModel) sellerView.getTablaVentas().getModel();
+        this.saleTable = (DefaultTableModel) sellerView.getTablaVentas().getModel();
         this.tableIndex = 1;
 
         addActionListeners();
@@ -128,7 +128,7 @@ public class SellerController implements ActionListener {
                 JOptionPane.YES_NO_OPTION);
 
         if (answer == JOptionPane.YES_OPTION) {
-            productTable.removeRow(index);
+            saleTable.removeRow(index);
             updateTotalCost();
             tableIndex--;
         }
@@ -137,7 +137,7 @@ public class SellerController implements ActionListener {
     private void closeSale() {
         if (confirmAction("¿Está seguro de efectuar la venta?")) {
             TicketView ticketView = new TicketView();
-            new TicketController(ticketView, productTable, sellerView.getLabelTotal().getText());
+            new TicketController(ticketView, saleTable, sellerView.getLabelTotal().getText());
             ticketView.setVisible(true);
             cleanMenuData();
         }
@@ -179,22 +179,22 @@ public class SellerController implements ActionListener {
                 quantity * product.getCostOfSale()
         };
 
-        productTable.addRow(row);
+        saleTable.addRow(row);
         updateTotalCost();
     }
 
     private void addQuantity(Product product, int quantity) {
 
-        for (int i = 0; i < productTable.getRowCount(); i++) {
-            if (product.getCode() == Integer.parseInt(productTable.getValueAt(i, SALE_CODE_INDEX).toString())) {
+        for (int i = 0; i < saleTable.getRowCount(); i++) {
+            if (product.getCode() == Integer.parseInt(saleTable.getValueAt(i, SALE_CODE_INDEX).toString())) {
 
-                int currentQuantity = (Integer) productTable.getValueAt(i, SALE_QUANTITY_INDEX);
-                double currentTotal = (Double) productTable.getValueAt(i, SALE_TOTAL_INDEX);
+                int currentQuantity = (Integer) saleTable.getValueAt(i, SALE_QUANTITY_INDEX);
+                double currentTotal = (Double) saleTable.getValueAt(i, SALE_TOTAL_INDEX);
 
                 currentTotal += (product.getCostOfSale() * quantity);
 
-                productTable.setValueAt(currentQuantity += quantity, i, SALE_QUANTITY_INDEX);
-                productTable.setValueAt(currentTotal, i, SALE_TOTAL_INDEX);
+                saleTable.setValueAt(currentQuantity += quantity, i, SALE_QUANTITY_INDEX);
+                saleTable.setValueAt(currentTotal, i, SALE_TOTAL_INDEX);
             }
         }
 
@@ -203,8 +203,8 @@ public class SellerController implements ActionListener {
     private boolean isOnList(Product product) {
         boolean isOnList = false;
 
-        for (int i = 0; i < productTable.getRowCount(); i++) {
-            if (product.getCode() == Integer.parseInt(productTable.getValueAt(i, SALE_CODE_INDEX).toString())) {
+        for (int i = 0; i < saleTable.getRowCount(); i++) {
+            if (product.getCode() == Integer.parseInt(saleTable.getValueAt(i, SALE_CODE_INDEX).toString())) {
                 isOnList = true;
             }
         }
@@ -216,8 +216,8 @@ public class SellerController implements ActionListener {
 
         double totalCost = 0;
         
-        for (int i = 0; i < productTable.getRowCount(); i++) {
-            totalCost += (double) productTable.getValueAt(i, SALE_TOTAL_INDEX);
+        for (int i = 0; i < saleTable.getRowCount(); i++) {
+            totalCost += (double) saleTable.getValueAt(i, SALE_TOTAL_INDEX);
         }
 
         sellerView.getLabelTotal().setText(String.valueOf(totalCost));
@@ -227,7 +227,7 @@ public class SellerController implements ActionListener {
         sellerView.getFieldCodigo().setText("");
         sellerView.getFieldNombre().setText("");
         sellerView.getFieldCantidad().setText("");
-        productTable.setRowCount(0);
+        saleTable.setRowCount(0);
         updateTotalCost();
     }
 

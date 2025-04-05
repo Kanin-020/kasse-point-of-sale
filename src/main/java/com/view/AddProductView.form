@@ -28,17 +28,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelBase" alignment="1" pref="594" max="32767" attributes="0"/>
+          <Component id="BasePanel" alignment="1" min="-2" pref="594" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelBase" alignment="0" pref="430" max="32767" attributes="0"/>
+          <Component id="BasePanel" alignment="0" min="-2" pref="402" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="PanelBase">
+    <Container class="javax.swing.JPanel" name="BasePanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -51,43 +51,43 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelSuperior" alignment="0" max="32767" attributes="0"/>
+              <Component id="TopPanel" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="45" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="LabelNombre" min="-2" max="-2" attributes="0"/>
+                          <Component id="NameLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="FieldNombre" min="-2" pref="202" max="-2" attributes="0"/>
+                          <Component id="NameField" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="LabelCosto" min="-2" max="-2" attributes="0"/>
+                          <Component id="SupplierCostLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="FieldCosto" min="-2" pref="202" max="-2" attributes="0"/>
+                          <Component id="SupplierCostField" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="LabelCantidad" min="-2" max="-2" attributes="0"/>
+                          <Component id="QuantityLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="FieldCantidad" min="-2" pref="202" max="-2" attributes="0"/>
+                          <Component id="QuantityField" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="LabelCategoria" min="-2" max="-2" attributes="0"/>
+                          <Component id="CategoryLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="63" max="32767" attributes="0"/>
-                          <Component id="ComboBoxCategoria" min="-2" pref="202" max="-2" attributes="0"/>
+                          <Component id="CategoryComboBox" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="LabelPrecioVenta" min="-2" max="-2" attributes="0"/>
+                          <Component id="CostOfSaleLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="FieldPrecioVenta" min="-2" pref="202" max="-2" attributes="0"/>
+                          <Component id="CostOfSaleField" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="204" max="32767" attributes="0"/>
+                  <EmptySpace pref="199" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="BotonCancelar" min="-2" max="-2" attributes="0"/>
+                  <Component id="CancelButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="BotonAgregar" min="-2" max="-2" attributes="0"/>
+                  <Component id="AddButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -95,43 +95,44 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="PanelSuperior" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="TopPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NameField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="LabelCategoria" max="32767" attributes="0"/>
-                      <Component id="ComboBoxCategoria" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelCosto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldCosto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CategoryLabel" max="32767" attributes="0"/>
+                      <Component id="CategoryComboBox" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelPrecioVenta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldPrecioVenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="QuantityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="QuantityField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BotonAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SupplierCostLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SupplierCostField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="CostOfSaleLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CostOfSaleField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="CancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AddButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="PanelSuperior">
+        <Container class="javax.swing.JPanel" name="TopPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="45" green="a4" red="f9" type="rgb"/>
@@ -151,17 +152,17 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="javax.swing.JButton" name="BotonAgregar">
+        <Component class="javax.swing.JButton" name="AddButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Agregar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonCancelar">
+        <Component class="javax.swing.JButton" name="CancelButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelNombre">
+        <Component class="javax.swing.JLabel" name="NameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -169,14 +170,14 @@
             <Property name="text" type="java.lang.String" value="Nombre: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="FieldNombre">
+        <Component class="javax.swing.JTextField" name="NameField">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelCategoria">
+        <Component class="javax.swing.JLabel" name="CategoryLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -184,7 +185,7 @@
             <Property name="text" type="java.lang.String" value="Categor&#xed;a:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelCosto">
+        <Component class="javax.swing.JLabel" name="SupplierCostLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -192,7 +193,7 @@
             <Property name="text" type="java.lang.String" value="Costo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelCantidad">
+        <Component class="javax.swing.JLabel" name="QuantityLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -200,7 +201,7 @@
             <Property name="text" type="java.lang.String" value="Cantidad:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelPrecioVenta">
+        <Component class="javax.swing.JLabel" name="CostOfSaleLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -208,34 +209,34 @@
             <Property name="text" type="java.lang.String" value="Precio de venta:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="FieldCosto">
+        <Component class="javax.swing.JTextField" name="SupplierCostField">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldCostoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SupplierCostFieldActionPerformed"/>
           </Events>
         </Component>
-                <Component class="javax.swing.JTextField" name="FieldCantidad">
+        <Component class="javax.swing.JTextField" name="QuantityField">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldCantidadActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QuantityFieldActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="FieldPrecioVenta">
+        <Component class="javax.swing.JTextField" name="CostOfSaleField">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="ComboBoxCategoria">
+        <Component class="javax.swing.JComboBox" name="CategoryComboBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="8">

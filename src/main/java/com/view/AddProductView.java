@@ -35,166 +35,166 @@ public class AddProductView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelBase = new javax.swing.JPanel();
-        PanelSuperior = new javax.swing.JPanel();
-        BotonAgregar = new javax.swing.JButton();
-        BotonCancelar = new javax.swing.JButton();
-        LabelNombre = new javax.swing.JLabel();
-        FieldNombre = new javax.swing.JTextField();
-        LabelCategoria = new javax.swing.JLabel();
-        LabelCosto = new javax.swing.JLabel();
-        LabelCantidad = new javax.swing.JLabel();
-        LabelPrecioVenta = new javax.swing.JLabel();
-        FieldCosto = new javax.swing.JTextField();
-        FieldCantidad = new javax.swing.JTextField();
-        FieldPrecioVenta = new javax.swing.JTextField();
-        ComboBoxCategoria = new javax.swing.JComboBox<>();
+        BasePanel = new javax.swing.JPanel();
+        TopPanel = new javax.swing.JPanel();
+        AddButton = new javax.swing.JButton();
+        CancelButton = new javax.swing.JButton();
+        NameLabel = new javax.swing.JLabel();
+        NameField = new javax.swing.JTextField();
+        CategoryLabel = new javax.swing.JLabel();
+        SupplierCostLabel = new javax.swing.JLabel();
+        QuantityLabel = new javax.swing.JLabel();
+        CostOfSaleLabel = new javax.swing.JLabel();
+        SupplierCostField = new javax.swing.JTextField();
+        QuantityField = new javax.swing.JTextField();
+        CostOfSaleField = new javax.swing.JTextField();
+        CategoryComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agregar producto");
         setMinimumSize(new java.awt.Dimension(594, 424));
         setResizable(false);
 
-        PanelBase.setBackground(new java.awt.Color(255, 255, 255));
-        PanelBase.setPreferredSize(new java.awt.Dimension(1050, 575));
+        BasePanel.setBackground(new java.awt.Color(255, 255, 255));
+        BasePanel.setPreferredSize(new java.awt.Dimension(1050, 575));
 
-        PanelSuperior.setBackground(new java.awt.Color(249, 164, 69));
+        TopPanel.setBackground(new java.awt.Color(249, 164, 69));
 
-        javax.swing.GroupLayout PanelSuperiorLayout = new javax.swing.GroupLayout(PanelSuperior);
-        PanelSuperior.setLayout(PanelSuperiorLayout);
-        PanelSuperiorLayout.setHorizontalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
+        TopPanel.setLayout(TopPanelLayout);
+        TopPanelLayout.setHorizontalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        PanelSuperiorLayout.setVerticalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TopPanelLayout.setVerticalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        BotonAgregar.setText("Agregar");
+        AddButton.setText("Agregar");
 
-        BotonCancelar.setText("Cancelar");
+        CancelButton.setText("Cancelar");
 
-        LabelNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelNombre.setText("Nombre: ");
+        NameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NameLabel.setText("Nombre: ");
 
-        FieldNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NameField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        LabelCategoria.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelCategoria.setText("Categoría:");
+        CategoryLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CategoryLabel.setText("Categoría:");
 
-        LabelCosto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelCosto.setText("Costo:");
+        SupplierCostLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SupplierCostLabel.setText("Costo:");
 
-        LabelCantidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelCantidad.setText("Cantidad:");
+        QuantityLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        QuantityLabel.setText("Cantidad:");
 
-        LabelPrecioVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelPrecioVenta.setText("Precio de venta:");
+        CostOfSaleLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CostOfSaleLabel.setText("Precio de venta:");
 
-        FieldCosto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        FieldCosto.addActionListener(new java.awt.event.ActionListener() {
+        SupplierCostField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SupplierCostField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FieldCostoActionPerformed(evt);
+                SupplierCostFieldActionPerformed(evt);
             }
         });
 
-        FieldCantidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        FieldCantidad.addActionListener(new java.awt.event.ActionListener() {
+        QuantityField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        QuantityField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FieldCantidadActionPerformed(evt);
+                QuantityFieldActionPerformed(evt);
             }
         });
 
-        FieldPrecioVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CostOfSaleField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        ComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alimentos", "Bebidas", "Botanas", "Dulcería", "Frutas y Verduras", "Higiene", "Vinos y Licores" }));
+        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alimentos", "Bebidas", "Botanas", "Dulcería", "Frutas y Verduras", "Higiene", "Vinos y Licores" }));
 
-        javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
-        PanelBase.setLayout(PanelBaseLayout);
-        PanelBaseLayout.setHorizontalGroup(
-            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelBaseLayout.createSequentialGroup()
+        javax.swing.GroupLayout BasePanelLayout = new javax.swing.GroupLayout(BasePanel);
+        BasePanel.setLayout(BasePanelLayout);
+        BasePanelLayout.setHorizontalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(BasePanelLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(PanelBaseLayout.createSequentialGroup()
-                        .addComponent(LabelNombre)
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(BasePanelLayout.createSequentialGroup()
+                        .addComponent(NameLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
-                        .addComponent(LabelCantidad)
+                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(SupplierCostLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
-                        .addComponent(LabelCosto)
+                        .addComponent(SupplierCostField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(QuantityLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
-                        .addComponent(LabelCategoria)
+                        .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(CategoryLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelBaseLayout.createSequentialGroup()
-                        .addComponent(LabelPrecioVenta)
+                        .addComponent(CategoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BasePanelLayout.createSequentialGroup()
+                        .addComponent(CostOfSaleLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(FieldPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(204, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+                        .addComponent(CostOfSaleField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(199, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonCancelar)
+                .addComponent(CancelButton)
                 .addGap(18, 18, 18)
-                .addComponent(BotonAgregar)
+                .addComponent(AddButton)
                 .addGap(41, 41, 41))
         );
-        PanelBaseLayout.setVerticalGroup(
-            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBaseLayout.createSequentialGroup()
-                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelNombre)
-                    .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        BasePanelLayout.setVerticalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BasePanelLayout.createSequentialGroup()
+                .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NameLabel)
+                    .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LabelCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ComboBoxCategoria))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CategoryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CategoryComboBox))
                 .addGap(18, 18, 18)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCantidad)
-                    .addComponent(FieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(QuantityLabel)
+                    .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCosto)
-                    .addComponent(FieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SupplierCostLabel)
+                    .addComponent(SupplierCostField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelPrecioVenta)
-                    .addComponent(FieldPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAgregar)
-                    .addComponent(BotonCancelar))
-                .addGap(45, 45, 45))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CostOfSaleLabel)
+                    .addComponent(CostOfSaleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CancelButton)
+                    .addComponent(AddButton))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FieldCostoActionPerformed(java.awt.event.ActionEvent evt) {
+    private void SupplierCostFieldActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
-    private void FieldCantidadActionPerformed(java.awt.event.ActionEvent evt) {
+    private void QuantityFieldActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
 
@@ -238,133 +238,133 @@ public class AddProductView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAgregar;
-    private javax.swing.JButton BotonCancelar;
-    private javax.swing.JComboBox<String> ComboBoxCategoria;
-    private javax.swing.JTextField FieldCosto;
-    private javax.swing.JTextField FieldCantidad;
-    private javax.swing.JTextField FieldNombre;
-    private javax.swing.JTextField FieldPrecioVenta;
-    private javax.swing.JLabel LabelCategoria;
-    private javax.swing.JLabel LabelCosto;
-    private javax.swing.JLabel LabelCantidad;
-    private javax.swing.JLabel LabelNombre;
-    private javax.swing.JLabel LabelPrecioVenta;
-    private javax.swing.JPanel PanelBase;
-    private javax.swing.JPanel PanelSuperior;
+    private javax.swing.JButton AddButton;
+    private javax.swing.JPanel BasePanel;
+    private javax.swing.JButton CancelButton;
+    private javax.swing.JComboBox<String> CategoryComboBox;
+    private javax.swing.JLabel CategoryLabel;
+    private javax.swing.JTextField CostOfSaleField;
+    private javax.swing.JLabel CostOfSaleLabel;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JLabel NameLabel;
+    private javax.swing.JTextField QuantityField;
+    private javax.swing.JLabel QuantityLabel;
+    private javax.swing.JTextField SupplierCostField;
+    private javax.swing.JLabel SupplierCostLabel;
+    private javax.swing.JPanel TopPanel;
     // End of variables declaration//GEN-END:variables
 
 
     public JButton getBotonAgregar() {
-        return BotonAgregar;
+        return AddButton;
     }
 
     public void setBotonAgregar(JButton BotonAgregar) {
-        this.BotonAgregar = BotonAgregar;
+        this.AddButton = BotonAgregar;
     }
 
     public JComboBox<String> getComboBoxCategoria() {
-        return ComboBoxCategoria;
+        return CategoryComboBox;
     }
 
     public void setComboBoxCategoria(JComboBox<String> ComboBoxCategoria) {
-        this.ComboBoxCategoria = ComboBoxCategoria;
+        this.CategoryComboBox = ComboBoxCategoria;
     }
 
     public JTextField getFieldCosto() {
-        return FieldCosto;
+        return SupplierCostField;
     }
 
     public void setFieldCosto(JTextField FieldCosto) {
-        this.FieldCosto = FieldCosto;
+        this.SupplierCostField = FieldCosto;
     }
 
     public JTextField getFieldCantidad() {
-        return FieldCantidad;
+        return QuantityField;
     }
 
     public void setFieldCantidad(JTextField FieldCantidad) {
-        this.FieldCantidad = FieldCantidad;
+        this.QuantityField = FieldCantidad;
     }
 
     public JTextField getFieldNombre() {
-        return FieldNombre;
+        return NameField;
     }
 
     public void setFieldNombre(JTextField FieldNombre) {
-        this.FieldNombre = FieldNombre;
+        this.NameField = FieldNombre;
     }
 
     public JTextField getFieldPrecioVenta() {
-        return FieldPrecioVenta;
+        return CostOfSaleField;
     }
 
     public void setFieldPrecioVenta(JTextField FieldPrecioVenta) {
-        this.FieldPrecioVenta = FieldPrecioVenta;
+        this.CostOfSaleField = FieldPrecioVenta;
     }
 
     public JLabel getLabelCategoria() {
-        return LabelCategoria;
+        return CategoryLabel;
     }
 
     public void setLabelCategoria(JLabel LabelCategoria) {
-        this.LabelCategoria = LabelCategoria;
+        this.CategoryLabel = LabelCategoria;
     }
 
     public JLabel getLabelCosto() {
-        return LabelCosto;
+        return SupplierCostLabel;
     }
 
     public void setLabelCosto(JLabel LabelCosto) {
-        this.LabelCosto = LabelCosto;
+        this.SupplierCostLabel = LabelCosto;
     }
 
     public JLabel getLabelCantidad() {
-        return this.LabelCantidad;
+        return this.QuantityLabel;
     }
 
     public void setLabelCantidad(JLabel labelCantidad) {
-        this.LabelCantidad = labelCantidad;
+        this.QuantityLabel = labelCantidad;
     }
 
     public JLabel getLabelNombre() {
-        return LabelNombre;
+        return NameLabel;
     }
 
     public void setLabelNombre(JLabel LabelNombre) {
-        this.LabelNombre = LabelNombre;
+        this.NameLabel = LabelNombre;
     }
 
     public JLabel getLabelPrecioVenta() {
-        return LabelPrecioVenta;
+        return CostOfSaleLabel;
     }
 
     public void setLabelPrecioVenta(JLabel LabelPrecioVenta) {
-        this.LabelPrecioVenta = LabelPrecioVenta;
+        this.CostOfSaleLabel = LabelPrecioVenta;
     }
 
     public JPanel getPanelBase() {
-        return PanelBase;
+        return BasePanel;
     }
 
     public void setPanelBase(JPanel PanelBase) {
-        this.PanelBase = PanelBase;
+        this.BasePanel = PanelBase;
     }
 
     public JPanel getPanelSuperior() {
-        return PanelSuperior;
+        return TopPanel;
     }
 
     public void setPanelSuperior(JPanel PanelSuperior) {
-        this.PanelSuperior = PanelSuperior;
+        this.TopPanel = PanelSuperior;
     }
 
     public JButton getBotonCancelar() {
-        return BotonCancelar;
+        return CancelButton;
     }
 
     public void setBotonCancelar(JButton BotonCancelar) {
-        this.BotonCancelar = BotonCancelar;
+        this.CancelButton = BotonCancelar;
     }
 
 

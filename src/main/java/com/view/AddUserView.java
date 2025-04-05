@@ -35,112 +35,112 @@ public class AddUserView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelBase = new javax.swing.JPanel();
-        PanelSuperior = new javax.swing.JPanel();
-        BotonAgregar = new javax.swing.JButton();
-        BotonCancelar = new javax.swing.JButton();
-        LabelUsuario = new javax.swing.JLabel();
-        FieldUsuario = new javax.swing.JTextField();
-        FieldContraseña = new javax.swing.JTextField();
-        LabelContraseña = new javax.swing.JLabel();
-        LabelCargo = new javax.swing.JLabel();
-        ComboBoxCargo = new javax.swing.JComboBox<>();
+        BasePanel = new javax.swing.JPanel();
+        TopPanel = new javax.swing.JPanel();
+        AddButton = new javax.swing.JButton();
+        CancelButton = new javax.swing.JButton();
+        UsernameLabel = new javax.swing.JLabel();
+        UsernameField = new javax.swing.JTextField();
+        PasswordField = new javax.swing.JTextField();
+        PasswordLabel = new javax.swing.JLabel();
+        PositionLabel = new javax.swing.JLabel();
+        PositionComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agregar usuario");
         setMinimumSize(new java.awt.Dimension(594, 424));
         setResizable(false);
 
-        PanelBase.setBackground(new java.awt.Color(255, 255, 255));
-        PanelBase.setPreferredSize(new java.awt.Dimension(1050, 575));
+        BasePanel.setBackground(new java.awt.Color(255, 255, 255));
+        BasePanel.setPreferredSize(new java.awt.Dimension(1050, 575));
 
-        PanelSuperior.setBackground(new java.awt.Color(43, 87, 154));
+        TopPanel.setBackground(new java.awt.Color(43, 87, 154));
 
-        javax.swing.GroupLayout PanelSuperiorLayout = new javax.swing.GroupLayout(PanelSuperior);
-        PanelSuperior.setLayout(PanelSuperiorLayout);
-        PanelSuperiorLayout.setHorizontalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
+        TopPanel.setLayout(TopPanelLayout);
+        TopPanelLayout.setHorizontalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        PanelSuperiorLayout.setVerticalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TopPanelLayout.setVerticalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        BotonAgregar.setText("Agregar");
+        AddButton.setText("Agregar");
 
-        BotonCancelar.setText("Cancelar");
+        CancelButton.setText("Cancelar");
 
-        LabelUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelUsuario.setText("Usuario:");
+        UsernameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        UsernameLabel.setText("Usuario:");
 
-        FieldUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        UsernameField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        FieldContraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        FieldContraseña.addActionListener(new java.awt.event.ActionListener() {
+        PasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FieldContraseñaActionPerformed(evt);
+                PasswordFieldActionPerformed(evt);
             }
         });
 
-        LabelContraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelContraseña.setText("Contraseña:");
+        PasswordLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        PasswordLabel.setText("Contraseña:");
 
-        LabelCargo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        LabelCargo.setText("Cargo:");
+        PositionLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        PositionLabel.setText("Cargo:");
 
-        ComboBoxCargo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ComboBoxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "General Manager", "Inventory Manager", "Seller" }));
+        PositionComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        PositionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "General Manager", "Inventory Manager", "Seller" }));
 
-        javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
-        PanelBase.setLayout(PanelBaseLayout);
-        PanelBaseLayout.setHorizontalGroup(
-            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
+        javax.swing.GroupLayout BasePanelLayout = new javax.swing.GroupLayout(BasePanel);
+        BasePanel.setLayout(BasePanelLayout);
+        BasePanelLayout.setHorizontalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
                 .addContainerGap(60, Short.MAX_VALUE)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
-                        .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelBaseLayout.createSequentialGroup()
-                                .addComponent(LabelContraseña)
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BasePanelLayout.createSequentialGroup()
+                                .addComponent(PasswordLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(FieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelBaseLayout.createSequentialGroup()
-                                .addComponent(LabelCargo)
+                                .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BasePanelLayout.createSequentialGroup()
+                                .addComponent(PositionLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ComboBoxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelBaseLayout.createSequentialGroup()
-                                .addComponent(LabelUsuario)
+                                .addComponent(PositionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BasePanelLayout.createSequentialGroup()
+                                .addComponent(UsernameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(195, 195, 195))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
-                        .addComponent(BotonCancelar)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(CancelButton)
                         .addGap(18, 18, 18)
-                        .addComponent(BotonAgregar)
+                        .addComponent(AddButton)
                         .addGap(40, 40, 40))))
         );
-        PanelBaseLayout.setVerticalGroup(
-            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBaseLayout.createSequentialGroup()
-                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        BasePanelLayout.setVerticalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BasePanelLayout.createSequentialGroup()
+                .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelUsuario)
-                    .addComponent(FieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UsernameLabel)
+                    .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelContraseña)
-                    .addComponent(FieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PasswordLabel)
+                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboBoxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelCargo))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PositionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PositionLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonCancelar)
-                    .addComponent(BotonAgregar))
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CancelButton)
+                    .addComponent(AddButton))
                 .addGap(46, 46, 46))
         );
 
@@ -148,18 +148,18 @@ public class AddUserView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FieldContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldContraseñaActionPerformed
-    }//GEN-LAST:event_FieldContraseñaActionPerformed
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
+    }//GEN-LAST:event_PasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,96 +204,96 @@ public class AddUserView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAgregar;
-    private javax.swing.JButton BotonCancelar;
-    private javax.swing.JComboBox<String> ComboBoxCargo;
-    private javax.swing.JTextField FieldContraseña;
-    private javax.swing.JTextField FieldUsuario;
-    private javax.swing.JLabel LabelCargo;
-    private javax.swing.JLabel LabelContraseña;
-    private javax.swing.JLabel LabelUsuario;
-    private javax.swing.JPanel PanelBase;
-    private javax.swing.JPanel PanelSuperior;
+    private javax.swing.JButton AddButton;
+    private javax.swing.JPanel BasePanel;
+    private javax.swing.JButton CancelButton;
+    private javax.swing.JTextField PasswordField;
+    private javax.swing.JLabel PasswordLabel;
+    private javax.swing.JComboBox<String> PositionComboBox;
+    private javax.swing.JLabel PositionLabel;
+    private javax.swing.JPanel TopPanel;
+    private javax.swing.JTextField UsernameField;
+    private javax.swing.JLabel UsernameLabel;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBotonAgregar() {
-        return BotonAgregar;
+        return AddButton;
     }
 
     public void setBotonAgregar(JButton BotonAgregar) {
-        this.BotonAgregar = BotonAgregar;
+        this.AddButton = BotonAgregar;
     }
 
     public JButton getBotonCancelar() {
-        return BotonCancelar;
+        return CancelButton;
     }
 
     public void setBotonCancelar(JButton BotonCancelar) {
-        this.BotonCancelar = BotonCancelar;
+        this.CancelButton = BotonCancelar;
     }
 
     public JComboBox<String> getComboBoxCargo() {
-        return ComboBoxCargo;
+        return PositionComboBox;
     }
 
     public void setComboBoxCargo(JComboBox<String> ComboBoxCargo) {
-        this.ComboBoxCargo = ComboBoxCargo;
+        this.PositionComboBox = ComboBoxCargo;
     }
 
     public JTextField getFieldContraseña() {
-        return FieldContraseña;
+        return PasswordField;
     }
 
     public void setFieldContraseña(JTextField FieldContraseña) {
-        this.FieldContraseña = FieldContraseña;
+        this.PasswordField = FieldContraseña;
     }
 
     public JTextField getFieldUsuario() {
-        return FieldUsuario;
+        return UsernameField;
     }
 
     public void setFieldUsuario(JTextField FieldUsuario) {
-        this.FieldUsuario = FieldUsuario;
+        this.UsernameField = FieldUsuario;
     }
 
     public JLabel getLabelCargo() {
-        return LabelCargo;
+        return PositionLabel;
     }
 
     public void setLabelCargo(JLabel LabelCargo) {
-        this.LabelCargo = LabelCargo;
+        this.PositionLabel = LabelCargo;
     }
 
     public JLabel getLabelContraseña() {
-        return LabelContraseña;
+        return PasswordLabel;
     }
 
     public void setLabelContraseña(JLabel LabelContraseña) {
-        this.LabelContraseña = LabelContraseña;
+        this.PasswordLabel = LabelContraseña;
     }
 
     public JLabel getLabelUsuario() {
-        return LabelUsuario;
+        return UsernameLabel;
     }
 
     public void setLabelUsuario(JLabel LabelUsuario) {
-        this.LabelUsuario = LabelUsuario;
+        this.UsernameLabel = LabelUsuario;
     }
 
     public JPanel getPanelBase() {
-        return PanelBase;
+        return BasePanel;
     }
 
     public void setPanelBase(JPanel PanelBase) {
-        this.PanelBase = PanelBase;
+        this.BasePanel = PanelBase;
     }
 
     public JPanel getPanelSuperior() {
-        return PanelSuperior;
+        return TopPanel;
     }
 
     public void setPanelSuperior(JPanel PanelSuperior) {
-        this.PanelSuperior = PanelSuperior;
+        this.TopPanel = PanelSuperior;
     }
 
 

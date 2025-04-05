@@ -34,7 +34,7 @@ public class InventoryManagerController implements ActionListener {
 
     public InventoryManagerController(InventoryManagerView inventoryManagerView) {
         this.inventoryManagerView = inventoryManagerView;
-        this.productTable = (DefaultTableModel) inventoryManagerView.getTablaProductos().getModel();
+        this.productTable = (DefaultTableModel) inventoryManagerView.getProductTable().getModel();
 
         updateTable();
 
@@ -77,7 +77,7 @@ public class InventoryManagerController implements ActionListener {
 
     private void modifyProduct() {
 
-        int index = inventoryManagerView.getTablaProductos().getSelectedRow();
+        int index = inventoryManagerView.getProductTable().getSelectedRow();
 
         if (index == -1) {
 
@@ -116,7 +116,7 @@ public class InventoryManagerController implements ActionListener {
     }
 
     private void deleteProduct() {
-        int index = inventoryManagerView.getTablaProductos().getSelectedRow();
+        int index = inventoryManagerView.getProductTable().getSelectedRow();
         if (index == -1) {
 
             JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Advertencia",
@@ -211,13 +211,13 @@ public class InventoryManagerController implements ActionListener {
             headerRow.createCell(i).setCellValue(headers[i]);
         }
 
-        int rowCount = inventoryManagerView.getTablaProductos().getRowCount();
+        int rowCount = inventoryManagerView.getProductTable().getRowCount();
 
         for (int i = 0; i < rowCount; i++) {
             XSSFRow row = sheet.createRow(i + 1);
 
             for (int j = 0; j < headers.length; j++) {
-                Object cellValue = inventoryManagerView.getTablaProductos().getValueAt(i, j);
+                Object cellValue = inventoryManagerView.getProductTable().getValueAt(i, j);
                 if (cellValue != null) {
                     if (cellValue instanceof Long) {
                         row.createCell(j).setCellValue((Long) cellValue);

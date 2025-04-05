@@ -47,19 +47,19 @@ public class GeneralManagerView extends javax.swing.JFrame  {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelBase = new javax.swing.JPanel();
-        PanelSuperior = new javax.swing.JPanel();
-        PanelLateralIzquierdo = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        LabelTitulo = new javax.swing.JLabel();
-        BotonSalir = new javax.swing.JButton();
-        BotonAgregar = new javax.swing.JButton();
-        BotonInventario = new javax.swing.JButton();
-        BotonEliminar = new javax.swing.JButton();
-        BotonVentas = new javax.swing.JButton();
-        LabelBienvenida = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        TablaUsuarios = new javax.swing.JTable();
+        BasePanel = new javax.swing.JPanel();
+        TopPanel = new javax.swing.JPanel();
+        LeftPanel = new javax.swing.JPanel();
+        Separator = new javax.swing.JSeparator();
+        TitleLabel = new javax.swing.JLabel();
+        LogoutButton = new javax.swing.JButton();
+        AddButton = new javax.swing.JButton();
+        InventoryManagerButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
+        SellerButton = new javax.swing.JButton();
+        WelcomeLabel = new javax.swing.JLabel();
+        ScrollPane = new javax.swing.JScrollPane();
+        UserTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kasse");
@@ -67,149 +67,149 @@ public class GeneralManagerView extends javax.swing.JFrame  {
         setMinimumSize(new java.awt.Dimension(1374, 861));
         setPreferredSize(new java.awt.Dimension(1374, 861));
 
-        PanelBase.setBackground(new java.awt.Color(255, 255, 255));
-        PanelBase.setPreferredSize(new java.awt.Dimension(1050, 575));
+        BasePanel.setBackground(new java.awt.Color(255, 255, 255));
+        BasePanel.setPreferredSize(new java.awt.Dimension(1050, 575));
 
-        PanelSuperior.setBackground(new java.awt.Color(40, 82, 144));
+        TopPanel.setBackground(new java.awt.Color(40, 82, 144));
 
-        javax.swing.GroupLayout PanelSuperiorLayout = new javax.swing.GroupLayout(PanelSuperior);
-        PanelSuperior.setLayout(PanelSuperiorLayout);
-        PanelSuperiorLayout.setHorizontalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
+        TopPanel.setLayout(TopPanelLayout);
+        TopPanelLayout.setHorizontalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        PanelSuperiorLayout.setVerticalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TopPanelLayout.setVerticalGroup(
+            TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        PanelLateralIzquierdo.setBackground(new java.awt.Color(43, 87, 154));
-        PanelLateralIzquierdo.setMaximumSize(new java.awt.Dimension(200, 32767));
-        PanelLateralIzquierdo.setMinimumSize(new java.awt.Dimension(200, 100));
-        PanelLateralIzquierdo.setPreferredSize(new java.awt.Dimension(200, 575));
+        LeftPanel.setBackground(new java.awt.Color(43, 87, 154));
+        LeftPanel.setMaximumSize(new java.awt.Dimension(200, 32767));
+        LeftPanel.setMinimumSize(new java.awt.Dimension(200, 100));
+        LeftPanel.setPreferredSize(new java.awt.Dimension(200, 575));
 
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        Separator.setForeground(new java.awt.Color(255, 255, 255));
 
-        LabelTitulo.setBackground(new java.awt.Color(255, 255, 255));
-        LabelTitulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        LabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        LabelTitulo.setText("Kasse");
-        LabelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        TitleLabel.setBackground(new java.awt.Color(255, 255, 255));
+        TitleLabel.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        TitleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        TitleLabel.setText("Kasse");
+        TitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        BotonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAB.png"))); // NOI18N
-        BotonSalir.setBorderPainted(false);
-        BotonSalir.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonSalir.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonSalir.setPreferredSize(new java.awt.Dimension(200, 66));
-        BotonSalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAS.png"))); // NOI18N
-        BotonSalir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAB.png"))); // NOI18N
-        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
+        LogoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAB.png"))); // NOI18N
+        LogoutButton.setBorderPainted(false);
+        LogoutButton.setMaximumSize(new java.awt.Dimension(200, 66));
+        LogoutButton.setMinimumSize(new java.awt.Dimension(200, 66));
+        LogoutButton.setPreferredSize(new java.awt.Dimension(200, 66));
+        LogoutButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAS.png"))); // NOI18N
+        LogoutButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonSalirAB.png"))); // NOI18N
+        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonSalirActionPerformed(evt);
+                LogoutButtonActionPerformed(evt);
             }
         });
 
-        BotonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarAB.png"))); // NOI18N
-        BotonAgregar.setBorderPainted(false);
-        BotonAgregar.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonAgregar.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonAgregar.setPreferredSize(new java.awt.Dimension(200, 66));
-        BotonAgregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarAS.png"))); // NOI18N
-        BotonAgregar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarAB.png"))); // NOI18N
-        BotonAgregar.addActionListener(new java.awt.event.ActionListener() {
+        AddButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarAB.png"))); // NOI18N
+        AddButton.setBorderPainted(false);
+        AddButton.setMaximumSize(new java.awt.Dimension(200, 66));
+        AddButton.setMinimumSize(new java.awt.Dimension(200, 66));
+        AddButton.setPreferredSize(new java.awt.Dimension(200, 66));
+        AddButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarAS.png"))); // NOI18N
+        AddButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarAB.png"))); // NOI18N
+        AddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAgregarActionPerformed(evt);
+                AddButtonActionPerformed(evt);
             }
         });
 
-        BotonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarInventarioAB.png"))); // NOI18N
-        BotonInventario.setBorderPainted(false);
-        BotonInventario.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonInventario.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonInventario.setPreferredSize(new java.awt.Dimension(200, 66));
-        BotonInventario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarInventarioAS.png"))); // NOI18N
-        BotonInventario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarInventarioAB.png"))); // NOI18N
-        BotonInventario.addActionListener(new java.awt.event.ActionListener() {
+        InventoryManagerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarInventarioAB.png"))); // NOI18N
+        InventoryManagerButton.setBorderPainted(false);
+        InventoryManagerButton.setMaximumSize(new java.awt.Dimension(200, 66));
+        InventoryManagerButton.setMinimumSize(new java.awt.Dimension(200, 66));
+        InventoryManagerButton.setPreferredSize(new java.awt.Dimension(200, 66));
+        InventoryManagerButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarInventarioAS.png"))); // NOI18N
+        InventoryManagerButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarInventarioAB.png"))); // NOI18N
+        InventoryManagerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInventarioActionPerformed(evt);
+                InventoryManagerButtonActionPerformed(evt);
             }
         });
 
-        BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonEliminarAB.png"))); // NOI18N
-        BotonEliminar.setBorderPainted(false);
-        BotonEliminar.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonEliminar.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonEliminar.setPreferredSize(new java.awt.Dimension(200, 66));
-        BotonEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonEliminarAS.png"))); // NOI18N
-        BotonEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonEliminarAB.png"))); // NOI18N
-        BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
+        DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonEliminarAB.png"))); // NOI18N
+        DeleteButton.setBorderPainted(false);
+        DeleteButton.setMaximumSize(new java.awt.Dimension(200, 66));
+        DeleteButton.setMinimumSize(new java.awt.Dimension(200, 66));
+        DeleteButton.setPreferredSize(new java.awt.Dimension(200, 66));
+        DeleteButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonEliminarAS.png"))); // NOI18N
+        DeleteButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonEliminarAB.png"))); // NOI18N
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEliminarActionPerformed(evt);
+                DeleteButtonActionPerformed(evt);
             }
         });
 
-        BotonVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarVentasAB.png"))); // NOI18N
-        BotonVentas.setBorderPainted(false);
-        BotonVentas.setMaximumSize(new java.awt.Dimension(200, 66));
-        BotonVentas.setMinimumSize(new java.awt.Dimension(200, 66));
-        BotonVentas.setPreferredSize(new java.awt.Dimension(200, 66));
-        BotonVentas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarVentasAS.png"))); // NOI18N
-        BotonVentas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarVentasAB.png"))); // NOI18N
-        BotonVentas.addActionListener(new java.awt.event.ActionListener() {
+        SellerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarVentasAB.png"))); // NOI18N
+        SellerButton.setBorderPainted(false);
+        SellerButton.setMaximumSize(new java.awt.Dimension(200, 66));
+        SellerButton.setMinimumSize(new java.awt.Dimension(200, 66));
+        SellerButton.setPreferredSize(new java.awt.Dimension(200, 66));
+        SellerButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarVentasAS.png"))); // NOI18N
+        SellerButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAdministrarVentasAB.png"))); // NOI18N
+        SellerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonVentasActionPerformed(evt);
+                SellerButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout PanelLateralIzquierdoLayout = new javax.swing.GroupLayout(PanelLateralIzquierdo);
-        PanelLateralIzquierdo.setLayout(PanelLateralIzquierdoLayout);
-        PanelLateralIzquierdoLayout.setHorizontalGroup(
-            PanelLateralIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLateralIzquierdoLayout.createSequentialGroup()
+        javax.swing.GroupLayout LeftPanelLayout = new javax.swing.GroupLayout(LeftPanel);
+        LeftPanel.setLayout(LeftPanelLayout);
+        LeftPanelLayout.setHorizontalGroup(
+            LeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(BotonInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
+                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(InventoryManagerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(LogoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(SellerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AddButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(LeftPanelLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addComponent(LabelTitulo)
+                .addComponent(TitleLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLateralIzquierdoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSeparator1)
+                .addComponent(Separator)
                 .addContainerGap())
         );
-        PanelLateralIzquierdoLayout.setVerticalGroup(
-            PanelLateralIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLateralIzquierdoLayout.createSequentialGroup()
+        LeftPanelLayout.setVerticalGroup(
+            LeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeftPanelLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addComponent(LabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BotonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(InventoryManagerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SellerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
-        LabelBienvenida.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        LabelBienvenida.setText("¡Bienvenido!");
+        WelcomeLabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        WelcomeLabel.setText("¡Bienvenido!");
 
-        jScrollPane2.setBorder(null);
+        ScrollPane.setBorder(null);
 
-        TablaUsuarios.setAutoCreateRowSorter(true);
-        TablaUsuarios.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        TablaUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        TablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        UserTable.setAutoCreateRowSorter(true);
+        UserTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        UserTable.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        UserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -232,48 +232,48 @@ public class GeneralManagerView extends javax.swing.JFrame  {
                 return canEdit [columnIndex];
             }
         });
-        TablaUsuarios.setToolTipText("");
-        TablaUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TablaUsuarios.setGridColor(new java.awt.Color(255, 255, 255));
-        TablaUsuarios.setRowHeight(30);
-        TablaUsuarios.setSelectionBackground(new java.awt.Color(153, 204, 255));
-        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        TablaUsuarios.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(TablaUsuarios);
-        if (TablaUsuarios.getColumnModel().getColumnCount() > 0) {
-            TablaUsuarios.getColumnModel().getColumn(0).setResizable(false);
-            TablaUsuarios.getColumnModel().getColumn(0).setPreferredWidth(100);
-            TablaUsuarios.getColumnModel().getColumn(1).setResizable(false);
-            TablaUsuarios.getColumnModel().getColumn(2).setResizable(false);
+        UserTable.setToolTipText("");
+        UserTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        UserTable.setGridColor(new java.awt.Color(255, 255, 255));
+        UserTable.setRowHeight(30);
+        UserTable.setSelectionBackground(new java.awt.Color(153, 204, 255));
+        UserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        UserTable.getTableHeader().setReorderingAllowed(false);
+        ScrollPane.setViewportView(UserTable);
+        if (UserTable.getColumnModel().getColumnCount() > 0) {
+            UserTable.getColumnModel().getColumn(0).setResizable(false);
+            UserTable.getColumnModel().getColumn(0).setPreferredWidth(100);
+            UserTable.getColumnModel().getColumn(1).setResizable(false);
+            UserTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
-        PanelBase.setLayout(PanelBaseLayout);
-        PanelBaseLayout.setHorizontalGroup(
-            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBaseLayout.createSequentialGroup()
-                .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelBaseLayout.createSequentialGroup()
+        javax.swing.GroupLayout BasePanelLayout = new javax.swing.GroupLayout(BasePanel);
+        BasePanel.setLayout(BasePanelLayout);
+        BasePanelLayout.setHorizontalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BasePanelLayout.createSequentialGroup()
+                .addComponent(LeftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BasePanelLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(LabelBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(WelcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(715, Short.MAX_VALUE))
-                    .addComponent(PanelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelBaseLayout.createSequentialGroup()
+                    .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(BasePanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jScrollPane2)
+                        .addComponent(ScrollPane)
                         .addContainerGap())))
         );
-        PanelBaseLayout.setVerticalGroup(
-            PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLateralIzquierdo, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
-            .addGroup(PanelBaseLayout.createSequentialGroup()
+        BasePanelLayout.setVerticalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LeftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addGroup(BasePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelBienvenida)
+                .addComponent(WelcomeLabel)
                 .addGap(12, 12, 12)
-                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+                .addComponent(ScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -281,30 +281,30 @@ public class GeneralManagerView extends javax.swing.JFrame  {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-    }//GEN-LAST:event_BotonSalirActionPerformed
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+    }//GEN-LAST:event_LogoutButtonActionPerformed
 
-    private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
-    }//GEN-LAST:event_BotonAgregarActionPerformed
+    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
+    }//GEN-LAST:event_AddButtonActionPerformed
 
-    private void BotonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInventarioActionPerformed
-    }//GEN-LAST:event_BotonInventarioActionPerformed
+    private void InventoryManagerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventoryManagerButtonActionPerformed
+    }//GEN-LAST:event_InventoryManagerButtonActionPerformed
 
-    private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-    }//GEN-LAST:event_BotonEliminarActionPerformed
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
-    private void BotonVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentasActionPerformed
-    }//GEN-LAST:event_BotonVentasActionPerformed
+    private void SellerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SellerButtonActionPerformed
+    }//GEN-LAST:event_SellerButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,123 +357,123 @@ public class GeneralManagerView extends javax.swing.JFrame  {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAgregar;
-    private javax.swing.JButton BotonEliminar;
-    private javax.swing.JButton BotonInventario;
-    private javax.swing.JButton BotonSalir;
-    private javax.swing.JButton BotonVentas;
-    private javax.swing.JLabel LabelBienvenida;
-    private javax.swing.JLabel LabelTitulo;
-    private javax.swing.JPanel PanelBase;
-    private javax.swing.JPanel PanelLateralIzquierdo;
-    private javax.swing.JPanel PanelSuperior;
-    private javax.swing.JTable TablaUsuarios;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton AddButton;
+    private javax.swing.JPanel BasePanel;
+    private javax.swing.JButton DeleteButton;
+    private javax.swing.JButton InventoryManagerButton;
+    private javax.swing.JPanel LeftPanel;
+    private javax.swing.JButton LogoutButton;
+    private javax.swing.JScrollPane ScrollPane;
+    private javax.swing.JButton SellerButton;
+    private javax.swing.JSeparator Separator;
+    private javax.swing.JLabel TitleLabel;
+    private javax.swing.JPanel TopPanel;
+    private javax.swing.JTable UserTable;
+    private javax.swing.JLabel WelcomeLabel;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBotonAgregar() {
-        return BotonAgregar;
+        return AddButton;
     }
 
     public void setBotonAgregar(JButton BotonAgregar) {
-        this.BotonAgregar = BotonAgregar;
+        this.AddButton = BotonAgregar;
     }
 
     public JButton getBotonEliminar() {
-        return BotonEliminar;
+        return DeleteButton;
     }
 
     public void setBotonEliminar(JButton BotonEliminar) {
-        this.BotonEliminar = BotonEliminar;
+        this.DeleteButton = BotonEliminar;
     }
 
     public JButton getBotonInventario() {
-        return BotonInventario;
+        return InventoryManagerButton;
     }
 
     public void setBotonInventario(JButton BotonInventario) {
-        this.BotonInventario = BotonInventario;
+        this.InventoryManagerButton = BotonInventario;
     }
 
     public JButton getBotonSalir() {
-        return BotonSalir;
+        return LogoutButton;
     }
 
     public void setBotonSalir(JButton BotonSalir) {
-        this.BotonSalir = BotonSalir;
+        this.LogoutButton = BotonSalir;
     }
 
     public JButton getBotonVentas() {
-        return BotonVentas;
+        return SellerButton;
     }
 
     public void setBotonVentas(JButton BotonVentas) {
-        this.BotonVentas = BotonVentas;
+        this.SellerButton = BotonVentas;
     }
 
     public JLabel getLabelBienvenida() {
-        return LabelBienvenida;
+        return WelcomeLabel;
     }
 
     public void setLabelBienvenida(JLabel LabelBienvenida) {
-        this.LabelBienvenida = LabelBienvenida;
+        this.WelcomeLabel = LabelBienvenida;
     }
 
     public JLabel getLabelTitulo() {
-        return LabelTitulo;
+        return TitleLabel;
     }
 
     public void setLabelTitulo(JLabel LabelTitulo) {
-        this.LabelTitulo = LabelTitulo;
+        this.TitleLabel = LabelTitulo;
     }
 
     public JPanel getPanelBase() {
-        return PanelBase;
+        return BasePanel;
     }
 
     public void setPanelBase(JPanel PanelBase) {
-        this.PanelBase = PanelBase;
+        this.BasePanel = PanelBase;
     }
 
     public JPanel getPanelLateralIzquierdo() {
-        return PanelLateralIzquierdo;
+        return LeftPanel;
     }
 
     public void setPanelLateralIzquierdo(JPanel PanelLateralIzquierdo) {
-        this.PanelLateralIzquierdo = PanelLateralIzquierdo;
+        this.LeftPanel = PanelLateralIzquierdo;
     }
 
     public JPanel getPanelSuperior() {
-        return PanelSuperior;
+        return TopPanel;
     }
 
     public void setPanelSuperior(JPanel PanelSuperior) {
-        this.PanelSuperior = PanelSuperior;
+        this.TopPanel = PanelSuperior;
     }
 
     public JTable getTablaUsuarios() {
-        return TablaUsuarios;
+        return UserTable;
     }
 
     public void setTablaUsuarios(JTable TablaUsuarios) {
-        this.TablaUsuarios = TablaUsuarios;
+        this.UserTable = TablaUsuarios;
     }
 
     public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
+        return ScrollPane;
     }
 
     public void setjScrollPane2(JScrollPane jScrollPane2) {
-        this.jScrollPane2 = jScrollPane2;
+        this.ScrollPane = jScrollPane2;
     }
 
     public JSeparator getjSeparator1() {
-        return jSeparator1;
+        return Separator;
     }
 
     public void setjSeparator1(JSeparator jSeparator1) {
-        this.jSeparator1 = jSeparator1;
+        this.Separator = jSeparator1;
     }
 
 

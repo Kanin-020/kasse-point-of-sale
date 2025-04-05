@@ -31,8 +31,8 @@ public class SplashView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        BasePanel = new javax.swing.JPanel();
+        SplashContent = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Splash");
@@ -41,22 +41,22 @@ public class SplashView extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(626, 326));
 
-        jPanel2.setBackground(new java.awt.Color(242, 242, 247));
+        BasePanel.setBackground(new java.awt.Color(242, 242, 247));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/VentanaDeInicio.png"))); // NOI18N
+        SplashContent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/VentanaDeInicio.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+        javax.swing.GroupLayout BasePanelLayout = new javax.swing.GroupLayout(BasePanel);
+        BasePanel.setLayout(BasePanelLayout);
+        BasePanelLayout.setHorizontalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BasePanelLayout.createSequentialGroup()
+                .addComponent(SplashContent)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+        BasePanelLayout.setVerticalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BasePanelLayout.createSequentialGroup()
+                .addComponent(SplashContent)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -64,11 +64,11 @@ public class SplashView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -117,7 +117,7 @@ public class SplashView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel BasePanel;
+    private javax.swing.JLabel SplashContent;
     // End of variables declaration//GEN-END:variables
 }

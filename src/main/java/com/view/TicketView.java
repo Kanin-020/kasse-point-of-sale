@@ -37,101 +37,101 @@ public class TicketView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        LabelLocal = new javax.swing.JLabel();
+        BasePanel = new javax.swing.JPanel();
+        StoreNameLabel = new javax.swing.JLabel();
         Icono = new javax.swing.JLabel();
-        LabelRFC = new javax.swing.JLabel();
-        LabelLugar = new javax.swing.JLabel();
-        LabelMerida = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TextPanelCampo = new javax.swing.JTextPane();
-        Separador = new javax.swing.JSeparator();
-        BotonGenerar = new javax.swing.JToggleButton();
+        RFCLabel = new javax.swing.JLabel();
+        PlaceLabel = new javax.swing.JLabel();
+        StateLabel = new javax.swing.JLabel();
+        ScrollPane = new javax.swing.JScrollPane();
+        ListContent = new javax.swing.JTextPane();
+        Separator = new javax.swing.JSeparator();
+        GenerateButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        BasePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        LabelLocal.setText("Abarrotes Doña Yolis");
+        StoreNameLabel.setText("Abarrotes Doña Yolis");
 
         Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Fuente.png"))); // NOI18N
 
-        LabelRFC.setText("R.F.C           TK1821873-RMC-ASA ");
+        RFCLabel.setText("R.F.C           TK1821873-RMC-ASA ");
 
-        LabelLugar.setText("Colonia Francisco de Montejo\t    CP 97203 \t");
+        PlaceLabel.setText("Colonia Francisco de Montejo\t    CP 97203 \t");
 
-        LabelMerida.setText("Mérida Yucatán");
+        StateLabel.setText("Mérida Yucatán");
 
-        TextPanelCampo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        TextPanelCampo.setAutoscrolls(false);
-        TextPanelCampo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(TextPanelCampo);
+        ListContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        ListContent.setAutoscrolls(false);
+        ListContent.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        ScrollPane.setViewportView(ListContent);
 
-        BotonGenerar.setText("Generar");
-        BotonGenerar.setBorder(null);
-        BotonGenerar.setVerifyInputWhenFocusTarget(false);
+        GenerateButton.setText("Generar");
+        GenerateButton.setBorder(null);
+        GenerateButton.setVerifyInputWhenFocusTarget(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout BasePanelLayout = new javax.swing.GroupLayout(BasePanel);
+        BasePanel.setLayout(BasePanelLayout);
+        BasePanelLayout.setHorizontalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
                 .addContainerGap(64, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Separador, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
                         .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(154, 154, 154))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelRFC)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(LabelLugar)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(LabelMerida)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RFCLabel)
+                            .addGroup(BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(PlaceLabel)
+                                .addGroup(BasePanelLayout.createSequentialGroup()
+                                    .addComponent(StateLabel)
                                     .addGap(88, 88, 88))))
                         .addGap(145, 145, 145))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BotonGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(GenerateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(LabelLocal)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePanelLayout.createSequentialGroup()
+                        .addComponent(StoreNameLabel)
                         .addGap(214, 214, 214))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        BasePanelLayout.setVerticalGroup(
+            BasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BasePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelLocal)
+                .addComponent(StoreNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GenerateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Icono)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelRFC)
+                .addComponent(RFCLabel)
                 .addGap(18, 18, 18)
-                .addComponent(LabelLugar)
+                .addComponent(PlaceLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelMerida)
+                .addComponent(StateLabel)
                 .addGap(18, 18, 18)
-                .addComponent(Separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
+                .addComponent(ScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,16 +173,16 @@ public class TicketView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton BotonGenerar;
+    private javax.swing.JPanel BasePanel;
+    private javax.swing.JToggleButton GenerateButton;
     private javax.swing.JLabel Icono;
-    private javax.swing.JLabel LabelLocal;
-    private javax.swing.JLabel LabelLugar;
-    private javax.swing.JLabel LabelMerida;
-    private javax.swing.JLabel LabelRFC;
-    private javax.swing.JSeparator Separador;
-    private javax.swing.JTextPane TextPanelCampo;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane ListContent;
+    private javax.swing.JLabel PlaceLabel;
+    private javax.swing.JLabel RFCLabel;
+    private javax.swing.JScrollPane ScrollPane;
+    private javax.swing.JSeparator Separator;
+    private javax.swing.JLabel StateLabel;
+    private javax.swing.JLabel StoreNameLabel;
     // End of variables declaration//GEN-END:variables
 
     
@@ -196,76 +196,76 @@ public class TicketView extends javax.swing.JFrame {
     }
 
     public JLabel getLabelLocal() {
-        return LabelLocal;
+        return StoreNameLabel;
     }
 
     public void setLabelLocal(JLabel LabelLocal) {
-        this.LabelLocal = LabelLocal;
+        this.StoreNameLabel = LabelLocal;
     }
 
     public JLabel getLabelLugar() {
-        return LabelLugar;
+        return PlaceLabel;
     }
 
     public void setLabelLugar(JLabel LabelLugar) {
-        this.LabelLugar = LabelLugar;
+        this.PlaceLabel = LabelLugar;
     }
 
     public JLabel getLabelMerida() {
-        return LabelMerida;
+        return StateLabel;
     }
 
     public void setLabelMerida(JLabel LabelMerida) {
-        this.LabelMerida = LabelMerida;
+        this.StateLabel = LabelMerida;
     }
 
     public JLabel getLabelRFC() {
-        return LabelRFC;
+        return RFCLabel;
     }
 
     public void setLabelRFC(JLabel LabelRFC) {
-        this.LabelRFC = LabelRFC;
+        this.RFCLabel = LabelRFC;
     }
 
 
     public JSeparator getSeparador() {
-        return Separador;
+        return Separator;
     }
 
     public void setSeparador(JSeparator Separador) {
-        this.Separador = Separador;
+        this.Separator = Separador;
     }
 
     public JTextPane getTextPanelCampo() {
-        return TextPanelCampo;
+        return ListContent;
     }
 
     public void setTextPanelCampo(JTextPane TextPanelCampo) {
-        this.TextPanelCampo = TextPanelCampo;
+        this.ListContent = TextPanelCampo;
     }
 
     public JPanel getjPanel1() {
-        return jPanel1;
+        return BasePanel;
     }
 
     public void setjPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
+        this.BasePanel = jPanel1;
     }
 
     public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
+        return ScrollPane;
     }
 
     public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
+        this.ScrollPane = jScrollPane1;
     }
 
     public JToggleButton getBotonGenerar() {
-        return BotonGenerar;
+        return GenerateButton;
     }
 
     public void setBotonGenerar(JToggleButton BotonGenerar) {
-        this.BotonGenerar = BotonGenerar;
+        this.GenerateButton = BotonGenerar;
     }
 
    

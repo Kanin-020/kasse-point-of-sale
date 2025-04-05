@@ -31,17 +31,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelBase" alignment="0" pref="1080" max="32767" attributes="0"/>
+          <Component id="BasePanel" alignment="0" pref="1080" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelBase" alignment="0" pref="720" max="32767" attributes="0"/>
+          <Component id="BasePanel" alignment="0" pref="720" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="PanelBase">
+    <Container class="javax.swing.JPanel" name="BasePanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -55,17 +55,17 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="PanelLateralIzquierdo" min="-2" max="-2" attributes="0"/>
+                  <Component id="LeftPanel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="LabelBienvenida" min="-2" pref="114" max="-2" attributes="0"/>
+                          <Component id="WelcomeLabel" min="-2" pref="114" max="-2" attributes="0"/>
                           <EmptySpace pref="715" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="PanelSuperior" max="32767" attributes="0"/>
+                      <Component id="TopPanel" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          <Component id="ScrollPane" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -74,21 +74,21 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelLateralIzquierdo" pref="720" max="32767" attributes="0"/>
+              <Component id="LeftPanel" pref="720" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="LabelBienvenida" min="-2" max="-2" attributes="0"/>
+                  <Component id="WelcomeLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Component id="PanelSuperior" min="-2" max="-2" attributes="0"/>
+                  <Component id="TopPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="557" max="32767" attributes="0"/>
+                  <Component id="ScrollPane" pref="557" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="PanelSuperior">
+        <Container class="javax.swing.JPanel" name="TopPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="90" green="52" red="28" type="rgb"/>
@@ -108,7 +108,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="javax.swing.JPanel" name="PanelLateralIzquierdo">
+        <Container class="javax.swing.JPanel" name="LeftPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9a" green="57" red="2b" type="rgb"/>
@@ -129,20 +129,20 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="BotonEliminar" min="-2" max="-2" attributes="0"/>
+                      <Component id="DeleteButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="BotonInventario" alignment="0" max="32767" attributes="0"/>
-                  <Component id="BotonSalir" alignment="0" max="32767" attributes="0"/>
-                  <Component id="BotonVentas" alignment="0" max="32767" attributes="0"/>
-                  <Component id="BotonAgregar" alignment="1" max="32767" attributes="0"/>
+                  <Component id="InventoryManagerButton" alignment="0" max="32767" attributes="0"/>
+                  <Component id="LogoutButton" alignment="0" max="32767" attributes="0"/>
+                  <Component id="SellerButton" alignment="0" max="32767" attributes="0"/>
+                  <Component id="AddButton" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="LabelTitulo" min="-2" max="-2" attributes="0"/>
+                      <Component id="TitleLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSeparator1" max="32767" attributes="0"/>
+                      <Component id="Separator" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -151,33 +151,33 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="LabelTitulo" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="TitleLabel" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="Separator" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="BotonAgregar" min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="AddButton" min="-2" pref="66" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="BotonEliminar" min="-2" max="-2" attributes="0"/>
+                      <Component id="DeleteButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="BotonInventario" min="-2" max="-2" attributes="0"/>
+                      <Component id="InventoryManagerButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="BotonVentas" min="-2" max="-2" attributes="0"/>
+                      <Component id="SellerButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="213" max="32767" attributes="0"/>
-                      <Component id="BotonSalir" min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="LogoutButton" min="-2" pref="66" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JSeparator" name="jSeparator1">
+            <Component class="javax.swing.JSeparator" name="Separator">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="LabelTitulo">
+            <Component class="javax.swing.JLabel" name="TitleLabel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -192,7 +192,7 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="BotonSalir">
+            <Component class="javax.swing.JButton" name="LogoutButton">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/BotonSalirAB.png"/>
@@ -215,10 +215,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonSalirActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BotonAgregar">
+            <Component class="javax.swing.JButton" name="AddButton">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/BotonAgregarAB.png"/>
@@ -241,10 +241,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAgregarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BotonInventario">
+            <Component class="javax.swing.JButton" name="InventoryManagerButton">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/BotonAdministrarInventarioAB.png"/>
@@ -267,10 +267,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonInventarioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InventoryManagerButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BotonEliminar">
+            <Component class="javax.swing.JButton" name="DeleteButton">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/BotonEliminarAB.png"/>
@@ -293,10 +293,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonEliminarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BotonVentas">
+            <Component class="javax.swing.JButton" name="SellerButton">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/BotonAdministrarVentasAB.png"/>
@@ -319,12 +319,12 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVentasActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SellerButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="LabelBienvenida">
+        <Component class="javax.swing.JLabel" name="WelcomeLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="20" style="0"/>
@@ -332,7 +332,7 @@
             <Property name="text" type="java.lang.String" value="&#xa1;Bienvenido!"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+        <Container class="javax.swing.JScrollPane" name="ScrollPane">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -344,7 +344,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="TablaUsuarios">
+            <Component class="javax.swing.JTable" name="UserTable">
               <Properties>
                 <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
