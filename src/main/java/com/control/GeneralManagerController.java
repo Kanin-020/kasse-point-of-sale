@@ -27,7 +27,7 @@ public class GeneralManagerController implements ActionListener {
 
     public GeneralManagerController(GeneralManagerView generalManagerView) {
         this.generalManagerView = generalManagerView;
-        this.userTable = (DefaultTableModel) generalManagerView.getTablaUsuarios().getModel();
+        this.userTable = (DefaultTableModel) generalManagerView.getUserTable().getModel();
 
         updateTable();
 
@@ -35,28 +35,28 @@ public class GeneralManagerController implements ActionListener {
     }
 
     private void addActionListeners() {
-        generalManagerView.getBotonAgregar().addActionListener(this);
-        generalManagerView.getBotonEliminar().addActionListener(this);
-        generalManagerView.getBotonInventario().addActionListener(this);
-        generalManagerView.getBotonVentas().addActionListener(this);
-        generalManagerView.getBotonSalir().addActionListener(this);
+        generalManagerView.getAddButton().addActionListener(this);
+        generalManagerView.getDeleteButton().addActionListener(this);
+        generalManagerView.getInventoryManagerButton().addActionListener(this);
+        generalManagerView.getSellerButton().addActionListener(this);
+        generalManagerView.getLogoutButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
 
-        if (source == generalManagerView.getBotonAgregar()) {
+        if (source == generalManagerView.getAddButton()) {
             openAddUserView();
-        } else if (source == generalManagerView.getBotonEliminar()) {
+        } else if (source == generalManagerView.getDeleteButton()) {
             deleteUser();
-        } else if (source == generalManagerView.getBotonInventario()) {
+        } else if (source == generalManagerView.getInventoryManagerButton()) {
             InventoryManagerView inventoryManagerView = new InventoryManagerView();
             changeWindow(inventoryManagerView, new InventoryManagerController(inventoryManagerView));
-        } else if (source == generalManagerView.getBotonVentas()) {
+        } else if (source == generalManagerView.getSellerButton()) {
             SellerView sellerView = new SellerView();
             changeWindow(sellerView, new SellerController(sellerView));
-        } else if (source == generalManagerView.getBotonSalir()) {
+        } else if (source == generalManagerView.getLogoutButton()) {
             logout();
         }
     }
@@ -69,7 +69,7 @@ public class GeneralManagerController implements ActionListener {
 
     private void deleteUser() {
 
-        int index = generalManagerView.getTablaUsuarios().getSelectedRow();
+        int index = generalManagerView.getUserTable().getSelectedRow();
 
         if (index == -1) {
 
@@ -93,8 +93,8 @@ public class GeneralManagerController implements ActionListener {
             try {
 
                 User user = new User(
-                        generalManagerView.getTablaUsuarios().getValueAt(index, USER_USERNAME_INDEX).toString(),
-                        generalManagerView.getTablaUsuarios().getValueAt(index, USER_PASSWORD_INDEX).toString());
+                        generalManagerView.getUserTable().getValueAt(index, USER_USERNAME_INDEX).toString(),
+                        generalManagerView.getUserTable().getValueAt(index, USER_PASSWORD_INDEX).toString());
 
                 UserDAO.delete(user);
 

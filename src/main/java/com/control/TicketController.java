@@ -30,7 +30,7 @@ public class TicketController implements ActionListener, Printable {
     }
 
     private void addActionListeners() {
-        ticketView.getBotonGenerar().addActionListener(this);
+        ticketView.getGenerateButton().addActionListener(this);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class TicketController implements ActionListener, Printable {
 
         Object source = event.getSource();
 
-        if (source == ticketView.getBotonGenerar()) {
+        if (source == ticketView.getGenerateButton()) {
             printTicket();
         }
 
@@ -70,7 +70,7 @@ public class TicketController implements ActionListener, Printable {
         }
 
         stringBuilder.append("\n\t\t\t\t\t\tTotal: ").append(this.totalCost);
-        ticketView.getTextPanelCampo().setText(stringBuilder.toString());
+        ticketView.getListContent().setText(stringBuilder.toString());
 
     }
 
@@ -84,7 +84,7 @@ public class TicketController implements ActionListener, Printable {
         Graphics2D graphics2D = (Graphics2D) graphics;
         graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
         graphics2D.scale(1, 1);
-        ticketView.getjPanel1().printAll(graphics);
+        ticketView.getBasePanel().printAll(graphics);
 
         return PAGE_EXISTS;
     }

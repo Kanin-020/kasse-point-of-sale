@@ -273,120 +273,118 @@ public class ModifyProductView extends javax.swing.JFrame {
     private javax.swing.JPanel TopPanel;
     // End of variables declaration//GEN-END:variables
 
-
-    public JButton getBotonModificar() {
-        return ModifyButton;
-    }
-
-    public void setBotonModificar(JButton BotonModificar) {
-        this.ModifyButton = BotonModificar;
-    }
-
-    public JComboBox<String> getComboBoxCategoria() {
-        return CategoryComboBox;
-    }
-
-    public void setComboBoxCategoria(JComboBox<String> ComboBoxCategoria) {
-        this.CategoryComboBox = ComboBoxCategoria;
-    }
-
-
-    public JTextField getFieldCosto() {
-        return SupplierCostField;
-    }
-
-    public void setFieldCosto(JTextField FieldCosto) {
-        this.SupplierCostField = FieldCosto;
-    }
-
-    public JTextField getFieldCantidad() {
-        return QuantityField;
-    }
-
-    public void setFieldCantidad(JTextField FieldCantidad) {
-        this.QuantityField = FieldCantidad;
-    }
-
-    public JTextField getFieldNombre() {
-        return NameField;
-    }
-
-    public void setFieldNombre(JTextField FieldNombre) {
-        this.NameField = FieldNombre;
-    }
-
-    public JTextField getFieldPrecioVenta() {
-        return CostOfSaleField;
-    }
-
-    public void setFieldPrecioVenta(JTextField FieldPrecioVenta) {
-        this.CostOfSaleField = FieldPrecioVenta;
-    }
-
-    public JLabel getLabelCategoria() {
-        return CategoryLabel;
-    }
-
-    public void setLabelCategoria(JLabel LabelCategoria) {
-        this.CategoryLabel = LabelCategoria;
-    }
-
-    public JLabel getLabelCosto() {
-        return SupplierCostLabel;
-    }
-
-    public void setLabelCosto(JLabel LabelCosto) {
-        this.SupplierCostLabel = LabelCosto;
-    }
-
-    public JLabel getLabelCantidad() {
-        return QuantityLabel;
-    }
-
-    public void setLabelCantidad(JLabel LabelCantidad) {
-        this.QuantityLabel = LabelCantidad;
-    }
-
-    public JLabel getLabelNombre() {
-        return NameLabel;
-    }
-
-    public void setLabelNombre(JLabel LabelNombre) {
-        this.NameLabel = LabelNombre;
-    }
-
-    public JLabel getLabelPrecioVenta() {
-        return CostOfSaleLabel;
-    }
-
-    public void setLabelPrecioVenta(JLabel LabelPrecioVenta) {
-        this.CostOfSaleLabel = LabelPrecioVenta;
-    }
-
-    public JPanel getPanelBase() {
+    public JPanel getBasePanel() {
         return BasePanel;
     }
 
-    public void setPanelBase(JPanel PanelBase) {
-        this.BasePanel = PanelBase;
+    public void setBasePanel(JPanel BasePanel) {
+        this.BasePanel = BasePanel;
     }
 
-    public JPanel getPanelSuperior() {
-        return TopPanel;
-    }
-
-    public void setPanelSuperior(JPanel PanelSuperior) {
-        this.TopPanel = PanelSuperior;
-    }
-
-    public JButton getBotonCancelar() {
+    public JButton getCancelButton() {
         return CancelButton;
     }
 
-    public void setBotonCancelar(JButton BotonCancelar) {
-        this.CancelButton = BotonCancelar;
+    public void setCancelButton(JButton CancelButton) {
+        this.CancelButton = CancelButton;
     }
 
+    public JComboBox<String> getCategoryComboBox() {
+        return CategoryComboBox;
+    }
 
+    public void setCategoryComboBox(JComboBox<String> CategoryComboBox) {
+        this.CategoryComboBox = CategoryComboBox;
+    }
+
+    public JLabel getCategoryLabel() {
+        return CategoryLabel;
+    }
+
+    public void setCategoryLabel(JLabel CategoryLabel) {
+        this.CategoryLabel = CategoryLabel;
+    }
+
+    public JTextField getCostOfSaleField() {
+        return CostOfSaleField;
+    }
+
+    public void setCostOfSaleField(JTextField CostOfSaleField) {
+        this.CostOfSaleField = CostOfSaleField;
+    }
+
+    public JLabel getCostOfSaleLabel() {
+        return CostOfSaleLabel;
+    }
+
+    public void setCostOfSaleLabel(JLabel CostOfSaleLabel) {
+        this.CostOfSaleLabel = CostOfSaleLabel;
+    }
+
+    public JButton getModifyButton() {
+        return ModifyButton;
+    }
+
+    public void setModifyButton(JButton ModifyButton) {
+        this.ModifyButton = ModifyButton;
+    }
+
+    public JTextField getNameField() {
+        return NameField;
+    }
+
+    public void setNameField(JTextField NameField) {
+        this.NameField = NameField;
+    }
+
+    public JLabel getNameLabel() {
+        return NameLabel;
+    }
+
+    public void setNameLabel(JLabel NameLabel) {
+        this.NameLabel = NameLabel;
+    }
+
+    public JTextField getQuantityField() {
+        return QuantityField;
+    }
+
+    public void setQuantityField(JTextField QuantityField) {
+        this.QuantityField = QuantityField;
+    }
+
+    public JLabel getQuantityLabel() {
+        return QuantityLabel;
+    }
+
+    public void setQuantityLabel(JLabel QuantityLabel) {
+        this.QuantityLabel = QuantityLabel;
+    }
+
+    public JTextField getSupplierCostField() {
+        return SupplierCostField;
+    }
+
+    public void setSupplierCostField(JTextField SupplierCostField) {
+        this.SupplierCostField = SupplierCostField;
+    }
+
+    public JLabel getSupplierCostLabel() {
+        return SupplierCostLabel;
+    }
+
+    public void setSupplierCostLabel(JLabel SupplierCostLabel) {
+        this.SupplierCostLabel = SupplierCostLabel;
+    }
+
+    public JPanel getTopPanel() {
+        return TopPanel;
+    }
+
+    public void setTopPanel(JPanel TopPanel) {
+        this.TopPanel = TopPanel;
+    }
+    
+    
 
 }

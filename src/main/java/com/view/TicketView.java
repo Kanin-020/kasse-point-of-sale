@@ -185,7 +185,21 @@ public class TicketView extends javax.swing.JFrame {
     private javax.swing.JLabel StoreNameLabel;
     // End of variables declaration//GEN-END:variables
 
-    
+    public JPanel getBasePanel() {
+        return BasePanel;
+    }
+
+    public void setBasePanel(JPanel BasePanel) {
+        this.BasePanel = BasePanel;
+    }
+
+    public JToggleButton getGenerateButton() {
+        return GenerateButton;
+    }
+
+    public void setGenerateButton(JToggleButton GenerateButton) {
+        this.GenerateButton = GenerateButton;
+    }
 
     public JLabel getIcono() {
         return Icono;
@@ -195,81 +209,60 @@ public class TicketView extends javax.swing.JFrame {
         this.Icono = Icono;
     }
 
-    public JLabel getLabelLocal() {
-        return StoreNameLabel;
-    }
-
-    public void setLabelLocal(JLabel LabelLocal) {
-        this.StoreNameLabel = LabelLocal;
-    }
-
-    public JLabel getLabelLugar() {
-        return PlaceLabel;
-    }
-
-    public void setLabelLugar(JLabel LabelLugar) {
-        this.PlaceLabel = LabelLugar;
-    }
-
-    public JLabel getLabelMerida() {
-        return StateLabel;
-    }
-
-    public void setLabelMerida(JLabel LabelMerida) {
-        this.StateLabel = LabelMerida;
-    }
-
-    public JLabel getLabelRFC() {
-        return RFCLabel;
-    }
-
-    public void setLabelRFC(JLabel LabelRFC) {
-        this.RFCLabel = LabelRFC;
-    }
-
-
-    public JSeparator getSeparador() {
-        return Separator;
-    }
-
-    public void setSeparador(JSeparator Separador) {
-        this.Separator = Separador;
-    }
-
-    public JTextPane getTextPanelCampo() {
+    public JTextPane getListContent() {
         return ListContent;
     }
 
-    public void setTextPanelCampo(JTextPane TextPanelCampo) {
-        this.ListContent = TextPanelCampo;
+    public void setListContent(JTextPane ListContent) {
+        this.ListContent = ListContent;
     }
 
-    public JPanel getjPanel1() {
-        return BasePanel;
+    public JLabel getPlaceLabel() {
+        return PlaceLabel;
     }
 
-    public void setjPanel1(JPanel jPanel1) {
-        this.BasePanel = jPanel1;
+    public void setPlaceLabel(JLabel PlaceLabel) {
+        this.PlaceLabel = PlaceLabel;
     }
 
-    public JScrollPane getjScrollPane1() {
+    public JLabel getRFCLabel() {
+        return RFCLabel;
+    }
+
+    public void setRFCLabel(JLabel RFCLabel) {
+        this.RFCLabel = RFCLabel;
+    }
+
+    public JScrollPane getScrollPane() {
         return ScrollPane;
     }
 
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.ScrollPane = jScrollPane1;
+    public void setScrollPane(JScrollPane ScrollPane) {
+        this.ScrollPane = ScrollPane;
     }
 
-    public JToggleButton getBotonGenerar() {
-        return GenerateButton;
+    public JSeparator getSeparator() {
+        return Separator;
     }
 
-    public void setBotonGenerar(JToggleButton BotonGenerar) {
-        this.GenerateButton = BotonGenerar;
+    public void setSeparator(JSeparator Separator) {
+        this.Separator = Separator;
     }
 
-   
+    public JLabel getStateLabel() {
+        return StateLabel;
+    }
 
- 
+    public void setStateLabel(JLabel StateLabel) {
+        this.StateLabel = StateLabel;
+    }
+
+    public JLabel getStoreNameLabel() {
+        return StoreNameLabel;
+    }
+
+    public void setStoreNameLabel(JLabel StoreNameLabel) {
+        this.StoreNameLabel = StoreNameLabel;
+    }
     
 }

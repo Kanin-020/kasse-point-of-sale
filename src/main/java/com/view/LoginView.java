@@ -208,52 +208,68 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotonIniciarSesion() {
+    public JPanel getBasePanel() {
+        return BasePanel;
+    }
+
+    public void setBasePanel(JPanel BasePanel) {
+        this.BasePanel = BasePanel;
+    }
+
+    public JPanel getContentPanel() {
+        return ContentPanel;
+    }
+
+    public void setContentPanel(JPanel ContentPanel) {
+        this.ContentPanel = ContentPanel;
+    }
+
+    public JButton getLoginButton() {
         return LoginButton;
     }
 
-    public void setBotonIniciarSesion(JButton BotonIniciarSesion) {
-        this.LoginButton = BotonIniciarSesion;
+    public void setLoginButton(JButton LoginButton) {
+        this.LoginButton = LoginButton;
     }
 
-    public JPasswordField getFieldContraseña() {
+    public JPasswordField getPasswordField() {
         return PasswordField;
     }
 
-    public void setFieldContraseña(JPasswordField FieldContraseña) {
-        this.PasswordField = FieldContraseña;
+    public void setPasswordField(JPasswordField PasswordField) {
+        this.PasswordField = PasswordField;
     }
 
-    public JTextField getFieldUsuario() {
-        return UserField;
-    }
-
-    public void setFieldUsuario(JTextField FieldUsuario) {
-        this.UserField = FieldUsuario;
-    }
-
-    public JLabel getLabelContraseña() {
+    public JLabel getPasswordLabel() {
         return PasswordLabel;
     }
 
-    public void setLabelContraseña(JLabel LabelContraseña) {
-        this.PasswordLabel = LabelContraseña;
+    public void setPasswordLabel(JLabel PasswordLabel) {
+        this.PasswordLabel = PasswordLabel;
     }
 
-    public JLabel getLabelTitulo() {
+    public JLabel getTitleLabel() {
         return TitleLabel;
     }
 
-    public void setLabelTitulo(JLabel LabelTitulo) {
-        this.TitleLabel = LabelTitulo;
+    public void setTitleLabel(JLabel TitleLabel) {
+        this.TitleLabel = TitleLabel;
     }
 
-    public JLabel getLabelUsuario() {
+    public JTextField getUserField() {
+        return UserField;
+    }
+
+    public void setUserField(JTextField UserField) {
+        this.UserField = UserField;
+    }
+
+    public JLabel getUserLabel() {
         return UserLabel;
     }
 
-    public void setLabelUsuario(JLabel LabelUsuario) {
-        this.UserLabel = LabelUsuario;
+    public void setUserLabel(JLabel UserLabel) {
+        this.UserLabel = UserLabel;
     }
 
     public JEditorPane getjEditorPane1() {
@@ -264,22 +280,6 @@ public class LoginView extends javax.swing.JFrame {
         this.jEditorPane1 = jEditorPane1;
     }
 
-    public JPanel getjPanel1() {
-        return BasePanel;
-    }
-
-    public void setjPanel1(JPanel jPanel1) {
-        this.BasePanel = jPanel1;
-    }
-
-    public JPanel getjPanel2() {
-        return ContentPanel;
-    }
-
-    public void setjPanel2(JPanel jPanel2) {
-        this.ContentPanel = jPanel2;
-    }
-
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -287,5 +287,7 @@ public class LoginView extends javax.swing.JFrame {
     public void setjScrollPane1(JScrollPane jScrollPane1) {
         this.jScrollPane1 = jScrollPane1;
     }
-
+    
+    
+    
 }

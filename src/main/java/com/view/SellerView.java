@@ -448,190 +448,190 @@ public class SellerView extends javax.swing.JFrame {
     private javax.swing.JLabel WelcomeLabel;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotonAgregar() {
+    public JButton getAddButton() {
         return AddButton;
     }
 
-    public void setBotonAgregar(JButton BotonAgregar) {
-        this.AddButton = BotonAgregar;
+    public void setAddButton(JButton AddButton) {
+        this.AddButton = AddButton;
     }
 
-    public JLabel getBotonBienvenida() {
-        return WelcomeLabel;
-    }
-
-    public void setBotonBienvenida(JLabel BotonBienvenida) {
-        this.WelcomeLabel = BotonBienvenida;
-    }
-
-    public JButton getBotonEliminar() {
-        return DeleteButton;
-    }
-
-    public void setBotonEliminar(JButton BotonEliminar) {
-        this.DeleteButton = BotonEliminar;
-    }
-
-    public JButton getBotonListo() {
-        return DoneButton;
-    }
-
-    public void setBotonListo(JButton BotonListo) {
-        this.DoneButton = BotonListo;
-    }
-
-    public JButton getBotonSalir() {
-        return LogoutButton;
-    }
-
-    public void setBotonSalir(JButton BotonSalir) {
-        this.LogoutButton = BotonSalir;
-    }
-
-    public JButton getBotonSwitch() {
-        return SwitchButton;
-    }
-
-    public void setBotonSwitch(JButton BotonSwitch) {
-        this.SwitchButton = BotonSwitch;
-    }
-
-    public JTextField getFieldCantidad() {
-        return QuantityField;
-    }
-
-    public void setFieldCantidad(JTextField FieldCantidad) {
-        this.QuantityField = FieldCantidad;
-    }
-
-    public JTextField getFieldCodigo() {
-        return CodeField;
-    }
-
-    public void setFieldCodigo(JTextField FieldCodigo) {
-        this.CodeField = FieldCodigo;
-    }
-
-    public JTextField getFieldNombre() {
-        return NameField;
-    }
-
-    public void setFieldNombre(JTextField FieldNombre) {
-        this.NameField = FieldNombre;
-    }
-
-    public JLabel getLabelCantidad() {
-        return QuantityLabel;
-    }
-
-    public void setLabelCantidad(JLabel LabelCantidad) {
-        this.QuantityLabel = LabelCantidad;
-    }
-
-    public JLabel getLabelEtiqueta() {
-        return TotalTextLabel;
-    }
-
-    public void setLabelEtiqueta(JLabel LabelEtiqueta) {
-        this.TotalTextLabel = LabelEtiqueta;
-    }
-
-    public JLabel getLabelCodigo() {
-        return CodeLabel;
-    }
-
-    public void setLabelCodigo(JLabel LabelCodigo) {
-        this.CodeLabel = LabelCodigo;
-    }
-
-    public JLabel getLabelNombre() {
-        return NameLabel;
-    }
-
-    public void setLabelNombre(JLabel LabelNombre) {
-        this.NameLabel = LabelNombre;
-    }
-
-    public JLabel getLabelTitulo() {
-        return TitleLabel;
-    }
-
-    public void setLabelTitulo(JLabel LabelTitulo) {
-        this.TitleLabel = LabelTitulo;
-    }
-
-    public JLabel getLabelTotal() {
-        return TotalLabel;
-    }
-
-    public void setLabelTotal(JLabel LabelTotal) {
-        this.TotalLabel = LabelTotal;
-    }
-
-    public JPanel getPanelBase() {
+    public JPanel getBasePanel() {
         return BasePanel;
     }
 
-    public void setPanelBase(JPanel PanelBase) {
-        this.BasePanel = PanelBase;
+    public void setBasePanel(JPanel BasePanel) {
+        this.BasePanel = BasePanel;
     }
 
-    public JPanel getPanelLateralIzquierdo() {
-        return LeftPanel;
-    }
-
-    public void setPanelLateralIzquierdo(JPanel PanelLateralIzquierdo) {
-        this.LeftPanel = PanelLateralIzquierdo;
-    }
-
-    public JPanel getPanelSuperior() {
-        return TopPanel;
-    }
-
-    public void setPanelSuperior(JPanel PanelSuperior) {
-        this.TopPanel = PanelSuperior;
-    }
-
-    public JTable getTablaVentas() {
-        return SaleTable;
-    }
-
-    public void setTablaVentas(JTable TablaVentas) {
-        this.SaleTable = TablaVentas;
-    }
-
-    public JPanel getjPanel1() {
+    public JPanel getBottomPanel() {
         return BottomPanel;
     }
 
-    public void setjPanel1(JPanel jPanel1) {
-        this.BottomPanel = jPanel1;
+    public void setBottomPanel(JPanel BottomPanel) {
+        this.BottomPanel = BottomPanel;
     }
 
-    public JScrollPane getjScrollPane1() {
-        return ScrollPane;
+    public JTextField getCodeField() {
+        return CodeField;
     }
 
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.ScrollPane = jScrollPane1;
+    public void setCodeField(JTextField CodeField) {
+        this.CodeField = CodeField;
     }
 
-    public JSeparator getjSeparator1() {
-        return Separator;
+    public JLabel getCodeLabel() {
+        return CodeLabel;
     }
 
-    public void setjSeparator1(JSeparator jSeparator1) {
-        this.Separator = jSeparator1;
+    public void setCodeLabel(JLabel CodeLabel) {
+        this.CodeLabel = CodeLabel;
     }
 
-    public JButton getBotonBuscar() {
+    public JButton getDeleteButton() {
+        return DeleteButton;
+    }
+
+    public void setDeleteButton(JButton DeleteButton) {
+        this.DeleteButton = DeleteButton;
+    }
+
+    public JButton getDoneButton() {
+        return DoneButton;
+    }
+
+    public void setDoneButton(JButton DoneButton) {
+        this.DoneButton = DoneButton;
+    }
+
+    public JButton getFindButton() {
         return FindButton;
     }
 
-    public void setBotonBuscar(JButton BotonBuscar) {
-        this.FindButton = BotonBuscar;
+    public void setFindButton(JButton FindButton) {
+        this.FindButton = FindButton;
     }
 
+    public JPanel getLeftPanel() {
+        return LeftPanel;
+    }
+
+    public void setLeftPanel(JPanel LeftPanel) {
+        this.LeftPanel = LeftPanel;
+    }
+
+    public JButton getLogoutButton() {
+        return LogoutButton;
+    }
+
+    public void setLogoutButton(JButton LogoutButton) {
+        this.LogoutButton = LogoutButton;
+    }
+
+    public JTextField getNameField() {
+        return NameField;
+    }
+
+    public void setNameField(JTextField NameField) {
+        this.NameField = NameField;
+    }
+
+    public JLabel getNameLabel() {
+        return NameLabel;
+    }
+
+    public void setNameLabel(JLabel NameLabel) {
+        this.NameLabel = NameLabel;
+    }
+
+    public JTextField getQuantityField() {
+        return QuantityField;
+    }
+
+    public void setQuantityField(JTextField QuantityField) {
+        this.QuantityField = QuantityField;
+    }
+
+    public JLabel getQuantityLabel() {
+        return QuantityLabel;
+    }
+
+    public void setQuantityLabel(JLabel QuantityLabel) {
+        this.QuantityLabel = QuantityLabel;
+    }
+
+    public JTable getSaleTable() {
+        return SaleTable;
+    }
+
+    public void setSaleTable(JTable SaleTable) {
+        this.SaleTable = SaleTable;
+    }
+
+    public JScrollPane getScrollPane() {
+        return ScrollPane;
+    }
+
+    public void setScrollPane(JScrollPane ScrollPane) {
+        this.ScrollPane = ScrollPane;
+    }
+
+    public JSeparator getSeparator() {
+        return Separator;
+    }
+
+    public void setSeparator(JSeparator Separator) {
+        this.Separator = Separator;
+    }
+
+    public JButton getSwitchButton() {
+        return SwitchButton;
+    }
+
+    public void setSwitchButton(JButton SwitchButton) {
+        this.SwitchButton = SwitchButton;
+    }
+
+    public JLabel getTitleLabel() {
+        return TitleLabel;
+    }
+
+    public void setTitleLabel(JLabel TitleLabel) {
+        this.TitleLabel = TitleLabel;
+    }
+
+    public JPanel getTopPanel() {
+        return TopPanel;
+    }
+
+    public void setTopPanel(JPanel TopPanel) {
+        this.TopPanel = TopPanel;
+    }
+
+    public JLabel getTotalLabel() {
+        return TotalLabel;
+    }
+
+    public void setTotalLabel(JLabel TotalLabel) {
+        this.TotalLabel = TotalLabel;
+    }
+
+    public JLabel getTotalTextLabel() {
+        return TotalTextLabel;
+    }
+
+    public void setTotalTextLabel(JLabel TotalTextLabel) {
+        this.TotalTextLabel = TotalTextLabel;
+    }
+
+    public JLabel getWelcomeLabel() {
+        return WelcomeLabel;
+    }
+
+    public void setWelcomeLabel(JLabel WelcomeLabel) {
+        this.WelcomeLabel = WelcomeLabel;
+    }
+    
     
 
 }

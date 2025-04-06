@@ -24,19 +24,19 @@ public class LoginController implements ActionListener {
 
     public LoginController(LoginView loginView) {
         this.loginView = loginView;
-        this.loginView.getBotonIniciarSesion().addActionListener(this);
+        this.loginView.getLoginButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent evento) {
-        if (evento.getSource() == loginView.getBotonIniciarSesion()) {
+        if (evento.getSource() == loginView.getLoginButton()) {
             login();
         }
     }
 
     private void login() {
-        String username = loginView.getFieldUsuario().getText();
-        String password = new String(loginView.getFieldContraseña().getPassword());
+        String username = loginView.getUserField().getText();
+        String password = new String(loginView.getPasswordField().getPassword());
 
         Optional<User> user = validateCredentials(username, password);
 
@@ -107,9 +107,9 @@ public class LoginController implements ActionListener {
     private void openNewWindow(JFrame view, Object controller, boolean switchActivated) {
         if (switchActivated) {
             if (view instanceof InventoryManagerView) {
-                ((InventoryManagerView) view).getBotonSwitch().setEnabled(true);
+                ((InventoryManagerView) view).getSwitchButton().setEnabled(true);
             } else if (view instanceof SellerView) {
-                ((SellerView) view).getBotonSwitch().setEnabled(true);
+                ((SellerView) view).getSwitchButton().setEnabled(true);
             }
         }
 

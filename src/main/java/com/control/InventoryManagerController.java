@@ -42,29 +42,29 @@ public class InventoryManagerController implements ActionListener {
     }
 
     private void addActionListeners() {
-        inventoryManagerView.getBotonAgregar().addActionListener(this);
-        inventoryManagerView.getBotonEliminar().addActionListener(this);
-        inventoryManagerView.getBotonExcel().addActionListener(this);
-        inventoryManagerView.getBotonModificar().addActionListener(this);
-        inventoryManagerView.getBotonSalir().addActionListener(this);
-        inventoryManagerView.getBotonSwitch().addActionListener(this);
+        inventoryManagerView.getAddButton().addActionListener(this);
+        inventoryManagerView.getDeleteButton().addActionListener(this);
+        inventoryManagerView.getExcelButton().addActionListener(this);
+        inventoryManagerView.getModifyButton().addActionListener(this);
+        inventoryManagerView.getLogoutButton().addActionListener(this);
+        inventoryManagerView.getSwitchButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
 
-        if (source == inventoryManagerView.getBotonAgregar()) {
+        if (source == inventoryManagerView.getAddButton()) {
             openAddProductView();
-        } else if (source == inventoryManagerView.getBotonModificar()) {
+        } else if (source == inventoryManagerView.getModifyButton()) {
             modifyProduct();
-        } else if (source == inventoryManagerView.getBotonEliminar()) {
+        } else if (source == inventoryManagerView.getDeleteButton()) {
             deleteProduct();
-        } else if (source == inventoryManagerView.getBotonExcel()) {
+        } else if (source == inventoryManagerView.getExcelButton()) {
             handleExportExcel();
-        } else if (source == inventoryManagerView.getBotonSalir()) {
+        } else if (source == inventoryManagerView.getLogoutButton()) {
             logout();
-        } else if (source == inventoryManagerView.getBotonSwitch()) {
+        } else if (source == inventoryManagerView.getSwitchButton()) {
             changeToGeneralManagerWindow();
         }
     }

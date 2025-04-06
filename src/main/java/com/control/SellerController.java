@@ -23,41 +23,41 @@ public class SellerController implements ActionListener {
 
     public SellerController(SellerView sellerView) {
         this.sellerView = sellerView;
-        this.saleTable = (DefaultTableModel) sellerView.getTablaVentas().getModel();
+        this.saleTable = (DefaultTableModel) sellerView.getSaleTable().getModel();
         this.tableIndex = 1;
 
         addActionListeners();
     }
 
     private void addActionListeners() {
-        sellerView.getBotonBuscar().addActionListener(this);
-        sellerView.getBotonAgregar().addActionListener(this);
-        sellerView.getBotonEliminar().addActionListener(this);
-        sellerView.getBotonSalir().addActionListener(this);
-        sellerView.getBotonSwitch().addActionListener(this);
-        sellerView.getBotonListo().addActionListener(this);
+        sellerView.getFindButton().addActionListener(this);
+        sellerView.getAddButton().addActionListener(this);
+        sellerView.getDeleteButton().addActionListener(this);
+        sellerView.getLogoutButton().addActionListener(this);
+        sellerView.getSwitchButton().addActionListener(this);
+        sellerView.getDoneButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
-        if (source == sellerView.getBotonBuscar())
+        if (source == sellerView.getFindButton())
             searchProduct();
-        else if (source == sellerView.getBotonAgregar())
+        else if (source == sellerView.getAddButton())
             addProduct();
-        else if (source == sellerView.getBotonEliminar())
+        else if (source == sellerView.getDeleteButton())
             deleteProduct();
-        else if (source == sellerView.getBotonListo())
+        else if (source == sellerView.getDoneButton())
             closeSale();
-        else if (source == sellerView.getBotonSalir())
+        else if (source == sellerView.getLogoutButton())
             Logout();
-        else if (source == sellerView.getBotonSwitch())
+        else if (source == sellerView.getSwitchButton())
             changeToGeneralManagerWindow();
     }
 
     private void searchProduct() {
-        int code = Integer.parseInt(sellerView.getFieldCodigo().getText());
-        String name = sellerView.getFieldNombre().getText();
+        int code = Integer.parseInt(sellerView.getCodeField().getText());
+        String name = sellerView.getNameField().getText();
 
         if (name.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo de nombre vacío", "Alerta", JOptionPane.WARNING_MESSAGE);
@@ -83,9 +83,9 @@ public class SellerController implements ActionListener {
     private void addProduct() {
         try {
 
-            int code = Integer.parseInt(sellerView.getFieldCodigo().getText().trim());
-            String name = sellerView.getFieldNombre().getText().trim();
-            int quantity = Integer.parseInt(sellerView.getFieldCantidad().getText().trim());
+            int code = Integer.parseInt(sellerView.getCodeField().getText().trim());
+            String name = sellerView.getNameField().getText().trim();
+            int quantity = Integer.parseInt(sellerView.getQuantityField().getText().trim());
 
             if (name.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Campos vacíos", "Alerta", JOptionPane.WARNING_MESSAGE);
@@ -117,7 +117,7 @@ public class SellerController implements ActionListener {
 
     private void deleteProduct() {
 
-        int index = sellerView.getTablaVentas().getSelectedRow();
+        int index = sellerView.getSaleTable().getSelectedRow();
 
         if (index == -1) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un producto", "Alerta", JOptionPane.WARNING_MESSAGE);
@@ -140,7 +140,7 @@ public class SellerController implements ActionListener {
 
             if (confirmAction("¿Está seguro de efectuar la venta?")) {
                 TicketView ticketView = new TicketView();
-                new TicketController(ticketView, saleTable, sellerView.getLabelTotal().getText());
+                new TicketController(ticketView, saleTable, sellerView.getTotalLabel().getText());
                 ticketView.setVisible(true);
                 cleanMenuData();
             }
@@ -228,13 +228,13 @@ public class SellerController implements ActionListener {
             totalCost += (double) saleTable.getValueAt(i, SALE_TOTAL_INDEX);
         }
 
-        sellerView.getLabelTotal().setText(String.valueOf(totalCost));
+        sellerView.getTotalLabel().setText(String.valueOf(totalCost));
     }
 
     private void cleanMenuData() {
-        sellerView.getFieldCodigo().setText("");
-        sellerView.getFieldNombre().setText("");
-        sellerView.getFieldCantidad().setText("");
+        sellerView.getCodeField().setText("");
+        sellerView.getNameField().setText("");
+        sellerView.getQuantityField().setText("");
         saleTable.setRowCount(0);
         updateTotalCost();
     }
@@ -246,8 +246,8 @@ public class SellerController implements ActionListener {
 
         JOptionPane.showMessageDialog(null, output, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
 
-        sellerView.getFieldCodigo().setText(String.valueOf(product.getCode()));
-        sellerView.getFieldNombre().setText(product.getName());
+        sellerView.getCodeField().setText(String.valueOf(product.getCode()));
+        sellerView.getNameField().setText(product.getName());
     }
 
     private boolean confirmAction(String message) {

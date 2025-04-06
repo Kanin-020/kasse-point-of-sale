@@ -21,17 +21,17 @@ public class AddProductController implements ActionListener {
         this.addProductView = addProductView;
         this.productTable = productTable;
 
-        this.addProductView.getBotonAgregar().addActionListener(this);
-        this.addProductView.getBotonCancelar().addActionListener(this);
+        this.addProductView.getAddButton().addActionListener(this);
+        this.addProductView.getCancelButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
 
-        if (source == addProductView.getBotonAgregar()) {
+        if (source == addProductView.getAddButton()) {
             addProduct();
-        } else if (source == addProductView.getBotonCancelar()) {
+        } else if (source == addProductView.getCancelButton()) {
             cancel();
         }
 
@@ -44,11 +44,11 @@ public class AddProductController implements ActionListener {
             Random random = new Random();
 
             int code = 100000 + random.nextInt(900000);
-            String name = addProductView.getFieldNombre().getText().trim();
-            String category = addProductView.getComboBoxCategoria().getSelectedItem().toString();
-            int quantity = Integer.parseInt(addProductView.getFieldCantidad().getText().trim());
-            double supplierCost = Double.parseDouble(addProductView.getFieldCosto().getText().trim());
-            double costOfSale = Double.parseDouble(addProductView.getFieldPrecioVenta().getText().trim());
+            String name = addProductView.getNameField().getText().trim();
+            String category = addProductView.getCategoryComboBox().getSelectedItem().toString();
+            int quantity = Integer.parseInt(addProductView.getQuantityField().getText().trim());
+            double supplierCost = Double.parseDouble(addProductView.getSupplierCostField().getText().trim());
+            double costOfSale = Double.parseDouble(addProductView.getCostOfSaleField().getText().trim());
 
             if (name.isEmpty() || category.equals("None")) {
 

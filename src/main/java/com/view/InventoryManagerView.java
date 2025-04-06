@@ -48,7 +48,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
         DeleteButton = new javax.swing.JButton();
         Separator = new javax.swing.JSeparator();
         TitleLabel = new javax.swing.JLabel();
-        RenameButton = new javax.swing.JButton();
+        AddButton = new javax.swing.JButton();
         ExcelButton = new javax.swing.JButton();
         LogoutButton = new javax.swing.JButton();
         WelcomeLabel = new javax.swing.JLabel();
@@ -118,11 +118,11 @@ public class InventoryManagerView extends javax.swing.JFrame {
         TitleLabel.setText("Kasse");
         TitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        RenameButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
-        RenameButton.setBorder(null);
-        RenameButton.setBorderPainted(false);
-        RenameButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarS.png"))); // NOI18N
-        RenameButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
+        AddButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
+        AddButton.setBorder(null);
+        AddButton.setBorderPainted(false);
+        AddButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarS.png"))); // NOI18N
+        AddButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonAgregarB.png"))); // NOI18N
 
         ExcelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BotonExcelB.png"))); // NOI18N
         ExcelButton.setBorderPainted(false);
@@ -165,7 +165,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
                         .addComponent(TitleLabel)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(RenameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AddButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ExcelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(LogoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -177,7 +177,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(RenameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ModifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -329,6 +329,7 @@ public class InventoryManagerView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddButton;
     private javax.swing.JPanel BasePanel;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton ExcelButton;
@@ -336,7 +337,6 @@ public class InventoryManagerView extends javax.swing.JFrame {
     private javax.swing.JButton LogoutButton;
     private javax.swing.JButton ModifyButton;
     private javax.swing.JTable ProductTable;
-    private javax.swing.JButton RenameButton;
     private javax.swing.JScrollPane ScrollPane;
     private javax.swing.JSeparator Separator;
     private javax.swing.JToggleButton SwitchButton;
@@ -345,120 +345,118 @@ public class InventoryManagerView extends javax.swing.JFrame {
     private javax.swing.JLabel WelcomeLabel;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotonAgregar() {
-        return RenameButton;
+    public JButton getAddButton() {
+        return AddButton;
     }
 
-    public void setBotonAgregar(JButton BotonAgregar) {
-        this.RenameButton = BotonAgregar;
+    public void setAddButton(JButton AddButton) {
+        this.AddButton = AddButton;
     }
 
-    public JButton getBotonEliminar() {
-        return DeleteButton;
-    }
-
-    public void setBotonEliminar(JButton BotonEliminar) {
-        this.DeleteButton = BotonEliminar;
-    }
-
-    public JButton getBotonExcel() {
-        return ExcelButton;
-    }
-
-    public void setBotonExcel(JButton BotonExcel) {
-        this.ExcelButton = BotonExcel;
-    }
-
-    public JButton getBotonModificar() {
-        return ModifyButton;
-    }
-
-    public void setBotonModificar(JButton BotonModificar) {
-        this.ModifyButton = BotonModificar;
-    }
-
-    public JButton getBotonSalir() {
-        return LogoutButton;
-    }
-
-    public void setBotonSalir(JButton BotonSalir) {
-        this.LogoutButton = BotonSalir;
-    }
-
-    public JLabel getLabelBienvenida() {
-        return WelcomeLabel;
-    }
-
-    public void setLabelBienvenida(JLabel LabelBienvenida) {
-        this.WelcomeLabel = LabelBienvenida;
-    }
-
-    public JLabel getLabelTitulo() {
-        return TitleLabel;
-    }
-
-    public void setLabelTitulo(JLabel LabelTitulo) {
-        this.TitleLabel = LabelTitulo;
-    }
-
-    public JPanel getPanelBase() {
+    public JPanel getBasePanel() {
         return BasePanel;
     }
 
-    public void setPanelBase(JPanel PanelBase) {
-        this.BasePanel = PanelBase;
+    public void setBasePanel(JPanel BasePanel) {
+        this.BasePanel = BasePanel;
     }
 
-    public JPanel getPanelLateralIzquierdo() {
+    public JButton getDeleteButton() {
+        return DeleteButton;
+    }
+
+    public void setDeleteButton(JButton DeleteButton) {
+        this.DeleteButton = DeleteButton;
+    }
+
+    public JButton getExcelButton() {
+        return ExcelButton;
+    }
+
+    public void setExcelButton(JButton ExcelButton) {
+        this.ExcelButton = ExcelButton;
+    }
+
+    public JPanel getLeftPanel() {
         return LeftPanel;
     }
 
-    public void setPanelLateralIzquierdo(JPanel PanelLateralIzquierdo) {
-        this.LeftPanel = PanelLateralIzquierdo;
+    public void setLeftPanel(JPanel LeftPanel) {
+        this.LeftPanel = LeftPanel;
     }
 
-    public JPanel getPanelSuperior() {
-        return TopPanel;
+    public JButton getLogoutButton() {
+        return LogoutButton;
     }
 
-    public void setPanelSuperior(JPanel PanelSuperior) {
-        this.TopPanel = PanelSuperior;
+    public void setLogoutButton(JButton LogoutButton) {
+        this.LogoutButton = LogoutButton;
     }
 
-
-    public JScrollPane getjScrollPane1() {
-        return ScrollPane;
+    public JButton getModifyButton() {
+        return ModifyButton;
     }
 
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.ScrollPane = jScrollPane1;
-    }
-
-    public JSeparator getjSeparator1() {
-        return Separator;
-    }
-
-    public void setjSeparator1(JSeparator jSeparator1) {
-        this.Separator = jSeparator1;
-    }
-
-    public JToggleButton getBotonSwitch() {
-        return SwitchButton;
-    }
-
-    public void setBotonSwitch(JToggleButton BotonSwitch) {
-        this.SwitchButton = BotonSwitch;
+    public void setModifyButton(JButton ModifyButton) {
+        this.ModifyButton = ModifyButton;
     }
 
     public JTable getProductTable() {
         return ProductTable;
     }
 
-    public void setProductTable(JTable TablaProductos) {
-        this.ProductTable = TablaProductos;
+    public void setProductTable(JTable ProductTable) {
+        this.ProductTable = ProductTable;
     }
 
+    public JScrollPane getScrollPane() {
+        return ScrollPane;
+    }
 
+    public void setScrollPane(JScrollPane ScrollPane) {
+        this.ScrollPane = ScrollPane;
+    }
 
+    public JSeparator getSeparator() {
+        return Separator;
+    }
+
+    public void setSeparator(JSeparator Separator) {
+        this.Separator = Separator;
+    }
+
+    public JToggleButton getSwitchButton() {
+        return SwitchButton;
+    }
+
+    public void setSwitchButton(JToggleButton SwitchButton) {
+        this.SwitchButton = SwitchButton;
+    }
+
+    public JLabel getTitleLabel() {
+        return TitleLabel;
+    }
+
+    public void setTitleLabel(JLabel TitleLabel) {
+        this.TitleLabel = TitleLabel;
+    }
+
+    public JPanel getTopPanel() {
+        return TopPanel;
+    }
+
+    public void setTopPanel(JPanel TopPanel) {
+        this.TopPanel = TopPanel;
+    }
+
+    public JLabel getWelcomeLabel() {
+        return WelcomeLabel;
+    }
+
+    public void setWelcomeLabel(JLabel WelcomeLabel) {
+        this.WelcomeLabel = WelcomeLabel;
+    }
+    
+    
 
 }

@@ -18,17 +18,17 @@ public class AddUserController implements ActionListener {
         this.addUserView = addUserView;
         this.userTable = userTable;
 
-        this.addUserView.getBotonAgregar().addActionListener(this);
-        this.addUserView.getBotonCancelar().addActionListener(this);
+        this.addUserView.getAddButton().addActionListener(this);
+        this.addUserView.getCancelButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
 
-        if (source == addUserView.getBotonAgregar()) {
+        if (source == addUserView.getAddButton()) {
             addUser();
-        } else if (source == addUserView.getBotonCancelar()) {
+        } else if (source == addUserView.getCancelButton()) {
             cancel();
         }
     }
@@ -37,9 +37,9 @@ public class AddUserController implements ActionListener {
 
         try {
 
-            String username = addUserView.getFieldUsuario().getText().trim();
-            String password = addUserView.getFieldContraseña().getText().trim();
-            String position = addUserView.getComboBoxCargo().getSelectedItem().toString();
+            String username = addUserView.getUsernameField().getText().trim();
+            String password = addUserView.getPasswordField().getText().trim();
+            String position = addUserView.getPositionComboBox().getSelectedItem().toString();
 
             if (username.isEmpty() || password.isEmpty() || position.isEmpty() || position.equals("None")) {
 

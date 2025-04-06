@@ -216,87 +216,86 @@ public class AddUserView extends javax.swing.JFrame {
     private javax.swing.JLabel UsernameLabel;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotonAgregar() {
+    public JButton getAddButton() {
         return AddButton;
     }
 
-    public void setBotonAgregar(JButton BotonAgregar) {
-        this.AddButton = BotonAgregar;
+    public void setAddButton(JButton AddButton) {
+        this.AddButton = AddButton;
     }
 
-    public JButton getBotonCancelar() {
-        return CancelButton;
-    }
-
-    public void setBotonCancelar(JButton BotonCancelar) {
-        this.CancelButton = BotonCancelar;
-    }
-
-    public JComboBox<String> getComboBoxCargo() {
-        return PositionComboBox;
-    }
-
-    public void setComboBoxCargo(JComboBox<String> ComboBoxCargo) {
-        this.PositionComboBox = ComboBoxCargo;
-    }
-
-    public JTextField getFieldContraseña() {
-        return PasswordField;
-    }
-
-    public void setFieldContraseña(JTextField FieldContraseña) {
-        this.PasswordField = FieldContraseña;
-    }
-
-    public JTextField getFieldUsuario() {
-        return UsernameField;
-    }
-
-    public void setFieldUsuario(JTextField FieldUsuario) {
-        this.UsernameField = FieldUsuario;
-    }
-
-    public JLabel getLabelCargo() {
-        return PositionLabel;
-    }
-
-    public void setLabelCargo(JLabel LabelCargo) {
-        this.PositionLabel = LabelCargo;
-    }
-
-    public JLabel getLabelContraseña() {
-        return PasswordLabel;
-    }
-
-    public void setLabelContraseña(JLabel LabelContraseña) {
-        this.PasswordLabel = LabelContraseña;
-    }
-
-    public JLabel getLabelUsuario() {
-        return UsernameLabel;
-    }
-
-    public void setLabelUsuario(JLabel LabelUsuario) {
-        this.UsernameLabel = LabelUsuario;
-    }
-
-    public JPanel getPanelBase() {
+    public JPanel getBasePanel() {
         return BasePanel;
     }
 
-    public void setPanelBase(JPanel PanelBase) {
-        this.BasePanel = PanelBase;
+    public void setBasePanel(JPanel BasePanel) {
+        this.BasePanel = BasePanel;
     }
 
-    public JPanel getPanelSuperior() {
+    public JButton getCancelButton() {
+        return CancelButton;
+    }
+
+    public void setCancelButton(JButton CancelButton) {
+        this.CancelButton = CancelButton;
+    }
+
+    public JTextField getPasswordField() {
+        return PasswordField;
+    }
+
+    public void setPasswordField(JTextField PasswordField) {
+        this.PasswordField = PasswordField;
+    }
+
+    public JLabel getPasswordLabel() {
+        return PasswordLabel;
+    }
+
+    public void setPasswordLabel(JLabel PasswordLabel) {
+        this.PasswordLabel = PasswordLabel;
+    }
+
+    public JComboBox<String> getPositionComboBox() {
+        return PositionComboBox;
+    }
+
+    public void setPositionComboBox(JComboBox<String> PositionComboBox) {
+        this.PositionComboBox = PositionComboBox;
+    }
+
+    public JLabel getPositionLabel() {
+        return PositionLabel;
+    }
+
+    public void setPositionLabel(JLabel PositionLabel) {
+        this.PositionLabel = PositionLabel;
+    }
+
+    public JPanel getTopPanel() {
         return TopPanel;
     }
 
-    public void setPanelSuperior(JPanel PanelSuperior) {
-        this.TopPanel = PanelSuperior;
+    public void setTopPanel(JPanel TopPanel) {
+        this.TopPanel = TopPanel;
     }
 
+    public JTextField getUsernameField() {
+        return UsernameField;
+    }
 
+    public void setUsernameField(JTextField UsernameField) {
+        this.UsernameField = UsernameField;
+    }
 
+    public JLabel getUsernameLabel() {
+        return UsernameLabel;
+    }
+
+    public void setUsernameLabel(JLabel UsernameLabel) {
+        this.UsernameLabel = UsernameLabel;
+    }
+    
+    
 
 }

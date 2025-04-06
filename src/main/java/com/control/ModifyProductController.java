@@ -30,17 +30,17 @@ public class ModifyProductController implements ActionListener {
 
         fillForm();
 
-        this.modifyProductView.getBotonModificar().addActionListener(this);
-        this.modifyProductView.getBotonCancelar().addActionListener(this);
+        this.modifyProductView.getModifyButton().addActionListener(this);
+        this.modifyProductView.getCancelButton().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
 
-        if (source == modifyProductView.getBotonModificar()) {
+        if (source == modifyProductView.getModifyButton()) {
             modifyProduct();
-        } else if (source == modifyProductView.getBotonCancelar()) {
+        } else if (source == modifyProductView.getCancelButton()) {
             cancel();
         }
 
@@ -50,11 +50,11 @@ public class ModifyProductController implements ActionListener {
 
         try {
 
-            String name = modifyProductView.getFieldNombre().getText().trim();
-            String category = modifyProductView.getComboBoxCategoria().getSelectedItem().toString();
-            int quantity = Integer.parseInt(modifyProductView.getFieldCantidad().getText().trim());
-            double supplierCost = Double.parseDouble(modifyProductView.getFieldCosto().getText().trim());
-            double costOfSale = Double.parseDouble(modifyProductView.getFieldPrecioVenta().getText().trim());
+            String name = modifyProductView.getNameField().getText().trim();
+            String category = modifyProductView.getCategoryComboBox().getSelectedItem().toString();
+            int quantity = Integer.parseInt(modifyProductView.getQuantityField().getText().trim());
+            double supplierCost = Double.parseDouble(modifyProductView.getSupplierCostField().getText().trim());
+            double costOfSale = Double.parseDouble(modifyProductView.getCostOfSaleField().getText().trim());
 
             Product modifiedProduct = new Product(name, category, quantity, supplierCost, costOfSale);
 
@@ -77,11 +77,11 @@ public class ModifyProductController implements ActionListener {
     }
 
     private void fillForm() {
-        modifyProductView.getFieldNombre().setText(product.getName());
-        modifyProductView.getComboBoxCategoria().setSelectedItem(product.getCategory());
-        modifyProductView.getFieldCantidad().setText(String.valueOf(product.getQuantity()));
-        modifyProductView.getFieldCosto().setText(String.valueOf(product.getSupplierCost()));
-        modifyProductView.getFieldPrecioVenta().setText(String.valueOf(product.getCostOfSale()));
+        modifyProductView.getNameField().setText(product.getName());
+        modifyProductView.getCategoryComboBox().setSelectedItem(product.getCategory());
+        modifyProductView.getQuantityField().setText(String.valueOf(product.getQuantity()));
+        modifyProductView.getSupplierCostField().setText(String.valueOf(product.getSupplierCost()));
+        modifyProductView.getCostOfSaleField().setText(String.valueOf(product.getCostOfSale()));
     }
 
     private void updateTable(Product product, Product modifiedProduct) {
