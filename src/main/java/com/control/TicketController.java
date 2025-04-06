@@ -27,7 +27,6 @@ public class TicketController implements ActionListener, Printable {
 
         addActionListeners();
 
-        ticketView.getBotonGenerar().setVisible(false);
     }
 
     private void addActionListeners() {

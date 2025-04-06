@@ -135,12 +135,20 @@ public class SellerController implements ActionListener {
     }
 
     private void closeSale() {
-        if (confirmAction("¿Está seguro de efectuar la venta?")) {
-            TicketView ticketView = new TicketView();
-            new TicketController(ticketView, saleTable, sellerView.getLabelTotal().getText());
-            ticketView.setVisible(true);
-            cleanMenuData();
+        
+        if(saleTable.getRowCount() > 0){
+
+            if (confirmAction("¿Está seguro de efectuar la venta?")) {
+                TicketView ticketView = new TicketView();
+                new TicketController(ticketView, saleTable, sellerView.getLabelTotal().getText());
+                ticketView.setVisible(true);
+                cleanMenuData();
+            }
+
+        } else{
+            JOptionPane.showMessageDialog(null, "Lista vacía", "Alerta", JOptionPane.WARNING_MESSAGE);
         }
+
     }
 
     private void Logout() {
